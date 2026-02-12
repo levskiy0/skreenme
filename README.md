@@ -20,10 +20,6 @@
   <a href="https://github.com/levskiy0/skreenme/releases/latest">Download</a>
 </p>
 
-<p align="center">
-  <a href="https://www.producthunt.com/products/skreen-free-beta?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-screen-me" target="_blank" rel="noopener noreferrer"><img alt="Screen[me] - Take beautiful screenshots instantly on Mac | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1077623&amp;theme=light&amp;t=1770825371626"></a>
-</p>
-
 ---
 
 <p align="center">
