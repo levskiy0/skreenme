@@ -5,6 +5,47 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.0.2</title>
+            <pubDate>Mon, 17 Feb 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>18</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New Features</h3>
+                <ul>
+                    <li>Crop tool — trim screenshots to any region, with re-crop support</li>
+                    <li>Inline text editing — edit text annotations directly on canvas (double-click to edit)</li>
+                    <li>Text badge style — colored background with auto-contrasting text</li>
+                    <li>Counter pin style — pin-shaped counter badges alongside classic circles</li>
+                    <li>Canvas styling modes — None / Auto / Manual (replaces Beautify toggle, press B to cycle)</li>
+                    <li>Pixel color sampler — hover to see hex color of any pixel</li>
+                </ul>
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Selection handles now draggable outside canvas bounds</li>
+                    <li>Arrow and line handles offset for easier grabbing on thick strokes</li>
+                    <li>Ruler snaps to physical pixel boundaries (Retina-aware)</li>
+                    <li>Magnifier resizes symmetrically from center</li>
+                    <li>Native resolution export — pixel-perfect output without scaling artifacts</li>
+                    <li>Faster zoom controls (0.25 step, scroll-wheel sensitivity)</li>
+                    <li>New animated mode switcher for Screenshot/Code toggle</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed race condition in auto-detection when switching screenshots</li>
+                    <li>Fixed keyboard shortcuts firing during text editing</li>
+                    <li>Fixed color hex conversion for non-sRGB colors</li>
+                    <li>Fixed potential crash from stale annotation indices</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.2/Skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.0.1</title>
             <pubDate>Sun, 16 Feb 2026 12:00:00 +0000</pubDate>
             <sparkle:version>15</sparkle:version>
@@ -12,11 +53,13 @@
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <description><![CDATA[
                 <ul>
-                    <li>Bug fixes and improvements</li>
+                    <li>New: Magnifier tool — zoom into any area of the screenshot (1.5x–5x)</li>
+                    <li>Improved: Smarter sensitive data detection with multi-candidate OCR matching</li>
+                    <li>Added: Automatic updates via Sparkle</li>
                 </ul>
             ]]></description>
             <enclosure
-                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.1/skreenme.dmg"
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.1/Skreenme.dmg"
                     length="0"
                     type="application/octet-stream"
                     sparkle:edSignature="" />
