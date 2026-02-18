@@ -5,6 +5,40 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.0.3</title>
+            <pubDate>Wed, 19 Feb 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>24</sparkle:version>
+            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New Features</h3>
+                <ul>
+                    <li>Smart Crop</li>
+                    <li>Paste from Clipboard — paste images via ⌘V or from the menu bar (supports copied files too)</li>
+                    <li>Rounded corners for rectangles — toggle continuous rounded corners on rectangle annotations</li>
+                    <li>Freehand resize — scale freehand drawings with selection handles</li>
+                    <li>Redesigned gradient presets — fresh curated palette organized by mood</li>
+                </ul>
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Magnifier uses rounded rectangle shape instead of circle</li>
+                    <li>Smoother blur/pixelate regions — no jitter during drag</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Editor window now reappears after cancelling screenshot capture (ESC)</li>
+                    <li>Text annotation frame matches rendered size precisely</li>
+                    <li>Arrow and line handles positioned exactly at endpoints</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.3/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.0.2</title>
             <pubDate>Mon, 17 Feb 2026 12:00:00 +0000</pubDate>
             <sparkle:version>18</sparkle:version>
@@ -39,7 +73,7 @@
                 </ul>
             ]]></description>
             <enclosure
-                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.2/Skreenme.dmg"
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.2/skreenme.dmg"
                     length="0"
                     type="application/octet-stream"
                     sparkle:edSignature="" />
@@ -59,7 +93,7 @@
                 </ul>
             ]]></description>
             <enclosure
-                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.1/Skreenme.dmg"
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.1/skreenme.dmg"
                     length="0"
                     type="application/octet-stream"
                     sparkle:edSignature="" />
