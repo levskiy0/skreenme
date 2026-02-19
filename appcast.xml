@@ -5,6 +5,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.0.5</title>
+            <pubDate>Wed, 19 Feb 2026 20:00:00 +0000</pubDate>
+            <sparkle:version>27</sparkle:version>
+            <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Automatic update checks now work reliably for menu bar apps</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.5/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.0.4</title>
             <pubDate>Wed, 19 Feb 2026 18:00:00 +0000</pubDate>
             <sparkle:version>25</sparkle:version>
