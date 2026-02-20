@@ -5,6 +5,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.0.6</title>
+            <pubDate>Thu, 20 Feb 2026 22:00:00 +0000</pubDate>
+            <sparkle:version>28</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New Features</h3>
+                <ul>
+                    <li>Solid fill redaction — completely opaque black overlay that makes data recovery impossible (unlike blur/pixelate which can be reversed)</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.6/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.0.5</title>
             <pubDate>Wed, 19 Feb 2026 20:00:00 +0000</pubDate>
             <sparkle:version>27</sparkle:version>
