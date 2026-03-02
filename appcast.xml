@@ -5,6 +5,31 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.0.7</title>
+            <pubDate>Sun, 02 Mar 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>29</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Editor window stays on top — no more losing it behind other windows</li>
+                    <li>Resize handle cursors now work correctly when hovering over selection handles inside the canvas</li>
+                    <li>Update dialog is now always visible for menu bar apps</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Pressing ESC during hotkey capture no longer opens an empty editor</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.7/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.0.6</title>
             <pubDate>Thu, 20 Feb 2026 22:00:00 +0000</pubDate>
             <sparkle:version>28</sparkle:version>
