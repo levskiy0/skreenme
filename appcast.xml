@@ -5,6 +5,34 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.0.8</title>
+            <pubDate>Mon, 03 Mar 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>30</sparkle:version>
+            <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Much better syntax highlighting — upgraded to highlight.js v11 with proper compound CSS class support</li>
+                    <li>Richer Go and Rust coloring — package names, method calls, types, and macros now get distinct colors</li>
+                    <li>Bold and italic font styles from themes are now preserved in code snippets</li>
+                    <li>Full-code highlighting for exports — no more context loss at line boundaries</li>
+                    <li>Fixed Tokyo Night theme mapping</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Paste (⌘V), copy (⌘C), and undo (⌘Z) now work correctly in the code editor</li>
+                    <li>Code editor shows "Start typing..." placeholder instead of a comment</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.8/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.0.7</title>
             <pubDate>Sun, 02 Mar 2026 12:00:00 +0000</pubDate>
             <sparkle:version>29</sparkle:version>
