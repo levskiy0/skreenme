@@ -5,6 +5,32 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.0.9</title>
+            <pubDate>Thu, 20 Mar 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>31</sparkle:version>
+            <sparkle:shortVersionString>1.0.9</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New</h3>
+                <ul>
+                    <li>Custom canvas size — enter exact W×H dimensions in the aspect ratio menu</li>
+                    <li>Save reusable size presets in Settings → Export</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed crash when drawing annotations on macOS 14</li>
+                    <li>Crash reporting now works — Sentry SDK properly initialized</li>
+                    <li>Screen capture without permission no longer produces a blank screenshot — app now opens Settings and explains that permission is required</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.0.9/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.0.8</title>
             <pubDate>Mon, 03 Mar 2026 12:00:00 +0000</pubDate>
             <sparkle:version>30</sparkle:version>
