@@ -5,6 +5,26 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.1.0</title>
+            <pubDate>Thu, 20 Mar 2026 18:00:00 +0000</pubDate>
+            <sparkle:version>32</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed app hang on launch caused by Sparkle update check blocking the main thread</li>
+                    <li>Fixed data race in annotation and effect rendering on macOS 14</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.1.0/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.0.9</title>
             <pubDate>Thu, 20 Mar 2026 12:00:00 +0000</pubDate>
             <sparkle:version>31</sparkle:version>
