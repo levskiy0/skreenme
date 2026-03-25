@@ -5,6 +5,27 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.1.2</title>
+            <pubDate>Tue, 25 Mar 2026 18:00:00 +0000</pubDate>
+            <sparkle:version>35</sparkle:version>
+            <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed app hanging for 5+ seconds on launch — replaced heavy material background with lightweight rendering in the startup notification</li>
+                    <li>Non-blocking Sparkle update UI — update dialogs no longer freeze the app (uses sheets instead of modal alerts)</li>
+                    <li>Improved crash symbolication — dSYM upload now automated in release builds</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.1.2/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.1.1</title>
             <pubDate>Mon, 24 Mar 2026 18:00:00 +0000</pubDate>
             <sparkle:version>34</sparkle:version>
