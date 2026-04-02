@@ -5,6 +5,28 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.1.3</title>
+            <pubDate>Wed, 02 Apr 2026 18:00:00 +0000</pubDate>
+            <sparkle:version>36</sparkle:version>
+            <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New</h3>
+                <ul>
+                    <li>Procedural backgrounds</li>
+                    <li>Background blur</li>
+                    <li>Background Grain</li>
+                    <li>Progress indicator - thin bar at the bottom shows during heavy processing</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.1.3/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.1.2</title>
             <pubDate>Tue, 25 Mar 2026 18:00:00 +0000</pubDate>
             <sparkle:version>35</sparkle:version>
