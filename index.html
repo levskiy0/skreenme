@@ -70,23 +70,7 @@
       animation: gradient-flow 18s linear infinite;
     }
 
-    [data-theme="dark"] .btn-primary::before {
-      background: conic-gradient(
-        from 0deg,
-        #071f10,
-        #0f4a25,
-        #1e8040,
-        #3ecf5e,
-        #5de87a,
-        #5de87a,
-        #3ecf5e,
-        #1e8040,
-        #0f4a25,
-        #071f10
-      );
-    }
-
-    [data-theme="dark"] .btn-glow {
+[data-theme="dark"] .btn-glow {
       background: #1e1e22;
       border: 1px solid rgba(255,255,255,0.12);
     }
@@ -129,12 +113,11 @@
       display: inline-flex;
       align-items: center;
       gap: 0;
-      background: var(--bg3);
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 100px;
       padding: 3px;
       cursor: pointer;
-      margin-bottom: 1.5rem;
       position: relative;
     }
 
@@ -162,8 +145,8 @@
       left: 3px;
       height: calc(100% - 6px);
       border-radius: 100px;
-      background: var(--bg);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+      background: var(--bg3);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
       transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), width 0.25s cubic-bezier(0.4,0,0.2,1);
       z-index: 0;
     }
@@ -249,72 +232,30 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    /* aurora border — включается на hover */
+    /* spotlight за курсором — как у кнопки GitHub */
     .btn-primary::before {
       content: '';
       position: absolute;
-      width: 400px;
-      height: 400px;
-      left: 50%;
-      top: 50%;
-      background: conic-gradient(
-        from 0deg,
-        #0a3d1f,
-        #1a7a3c,
-        #3ecf5e,
-        #80ffaa,
-        #c8ffe0,
-        #c8ffe0,
-        #80ffaa,
-        #3ecf5e,
-        #1a7a3c,
-        #0a3d1f
-      );
-      animation: beam-spin 2.5s linear infinite;
-      animation-play-state: paused;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(80px circle at var(--px, 50%) var(--py, 50%), rgba(255,255,255,0.25), transparent 70%);
       opacity: 0;
       transition: opacity 0.3s;
+      pointer-events: none;
       z-index: 1;
     }
 
-    .btn-primary:hover::before {
-      animation-play-state: running;
-      opacity: 1;
-    }
-
-    @keyframes beam-spin {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to   { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    /* inner fill: зеленый → черный на hover */
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      inset: 1.5px;
-      border-radius: 99px;
-      background: var(--accent);
-      z-index: 2;
-      transition: background 0.3s;
-    }
-
-    .btn-primary:hover::after { background: #111114; }
-
-    /* light theme hover — светло-зелёный фон, тёмно-зелёный текст */
-    :root .btn-primary:hover::after { background: #d4f7de; }
-    :root .btn-primary:hover { color: #0f5c28; box-shadow: 0 8px 32px rgba(62,207,94,0.25); }
-
-    [data-theme="dark"] .btn-primary:hover::after { background: #111114; }
-    [data-theme="dark"] .btn-primary:hover { color: #fff; }
+    .btn-primary:hover::before { opacity: 1; }
 
     .btn-primary span {
       position: relative;
-      z-index: 3;
+      z-index: 2;
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 8px 32px rgba(62,207,94,0.3);
+      box-shadow: 0 8px 32px rgba(62,207,94,0.35);
+      filter: brightness(1.06);
     }
 
     .btn-outline {
@@ -831,18 +772,6 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="theme-toggle" id="theme-toggle">
-    <div class="theme-toggle-thumb" id="toggle-thumb"></div>
-    <div class="theme-toggle-option active" id="opt-light">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      Light
-    </div>
-    <div class="theme-toggle-option" id="opt-dark">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      Dark
-    </div>
-  </div>
-
   <div class="hero-badges">
     <span class="hero-badge">✦ Public Beta</span>
     <span class="hero-badge">macOS 14+</span>
@@ -872,6 +801,17 @@
     </a>
   </div>
   <p class="hero-note">Free · No subscription · No cloud · macOS 14 Sonoma+</p>
+  <div class="theme-toggle" id="theme-toggle" style="margin-top: 2rem; margin-bottom: 0;">
+    <div class="theme-toggle-thumb" id="toggle-thumb"></div>
+    <div class="theme-toggle-option active" id="opt-light">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      Light
+    </div>
+    <div class="theme-toggle-option" id="opt-dark">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      Dark
+    </div>
+  </div>
 </section>
 
 <!-- PREVIEW -->
@@ -1122,6 +1062,7 @@
   }
 
   document.querySelectorAll('.btn-glow').forEach(el => trackMouse(el, '--x', '--y'));
+  document.querySelectorAll('.btn-primary').forEach(el => trackMouse(el, '--px', '--py'));
 
 </script>
 </body>
