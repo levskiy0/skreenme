@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Skreen[me] — Screenshot Beautifier for macOS</title>
+  <meta name="description" content="Transform screenshots and code snippets into beautiful, shareable images. Custom backgrounds, syntax highlighting, annotations, and privacy redaction. Native macOS menu bar app. Free download.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Skreen[me] — Screenshot Beautifier for macOS">
+  <meta property="og:description" content="Transform screenshots and code snippets into beautiful, shareable images. Custom backgrounds, code themes, annotations & auto privacy redaction.">
+  <meta property="og:image" content="assets/preview.png">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skreen[me] — Screenshot Beautifier for macOS">
+  <meta name="twitter:description" content="Turn raw screenshots into polished images. Custom backgrounds, code snippets, annotations & privacy redaction. Native macOS app.">
+  <meta name="twitter:image" content="assets/preview.png">
+
+  <!-- SEO keywords -->
+  <meta name="keywords" content="screenshot beautifier mac, screenshot editor macOS, code screenshot tool, carbon alternative mac, xnapper alternative, cleanshot x alternative, macos menu bar app, code to image mac, syntax highlighting screenshot">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg2: #f7f7f9;
+      --bg3: #efeff3;
+      --border: rgba(0,0,0,0.08);
+      --text: #111115;
+      --muted: #6b6b80;
+      --accent: #3ecf5e;
+      --accent2: #2db84d;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 60px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .nav-brand img {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--muted);
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.55rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      z-index: 0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    /* aurora border — включается на hover */
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      left: 50%;
+      top: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #0a3d1f,
+        #1a7a3c,
+        #3ecf5e,
+        #80ffaa,
+        #e0fff0,
+        #ffffff,
+        #e0fff0,
+        #80ffaa,
+        #3ecf5e,
+        #1a7a3c,
+        #0a3d1f
+      );
+      animation: beam-spin 2.5s linear infinite;
+      animation-play-state: paused;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1;
+    }
+
+    .btn-primary:hover::before {
+      animation-play-state: running;
+      opacity: 1;
+    }
+
+    @keyframes beam-spin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* inner fill: зеленый → черный на hover */
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 1.5px;
+      border-radius: 8px;
+      background: var(--accent);
+      z-index: 2;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover::after { background: #111114; }
+
+    .btn-primary span {
+      position: relative;
+      z-index: 3;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 32px rgba(62,207,94,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover { background: var(--bg2); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 160px 2rem 100px;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 16px;
+      border-radius: 10px;
+      background: rgba(62,207,94,0.08);
+      border: 1px solid rgba(62,207,94,0.22);
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), #2db84d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-cta .btn { font-size: 0.95rem; padding: 0.75rem 1.75rem; }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── PREVIEW ── */
+    .preview {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 2rem 120px;
+    }
+
+    .preview-inner {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .preview-inner img,
+    .preview-inner video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── FEATURES ── */
+    .section {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 120px 2rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 3.5rem;
+      line-height: 1.7;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2.25rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s, border-color 0.3s;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    /* border glow follows cursor */
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 18px;
+      background-image: radial-gradient(
+        180px at var(--mx, 50%) var(--my, 50%),
+        rgba(0, 0, 0, 0.08),
+        transparent 70%
+      );
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .feature-card::before { display: none; }
+
+    .feature-card > * { position: relative; z-index: 1; }
+
+    .feature-card:hover {
+      border-color: rgba(0,0,0,0.14);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .feature-card:hover::after  { opacity: 1; }
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-icon {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── COMPARISON ── */
+    .comparison {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 120px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    thead th {
+      background: var(--bg2);
+      padding: 1.1rem 1.5rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+      border-bottom: 1px solid var(--border);
+    }
+
+    thead th:first-child { color: var(--text); }
+    thead th.highlight { color: var(--accent); }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.1s;
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--bg2); }
+
+    tbody td {
+      padding: 1rem 1.5rem;
+      color: var(--muted);
+    }
+
+    tbody td:first-child { color: var(--text); font-weight: 500; }
+
+    .check { color: var(--green); font-weight: 600; }
+    .cross { color: var(--red); opacity: 0.45; }
+
+    /* ── INSTALL ── */
+    .install {
+      text-align: center;
+      padding: 120px 2rem 160px;
+      background: var(--bg2);
+    }
+
+    .install h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+
+    .install > p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    .install-steps {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin: 3.5rem 0;
+      text-align: left;
+    }
+
+    .install-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      max-width: 210px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(62,207,94,0.1);
+      border: 1px solid rgba(62,207,94,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .install-step h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .install-step p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    .system-req {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1.25rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    footer .brand img {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      opacity: 0.6;
+    }
+
+    footer nav {
+      position: static;
+      background: transparent;
+      border: none;
+      padding: 0;
+      height: auto;
+      backdrop-filter: none;
+    }
+
+    footer nav a {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    footer nav a:hover { color: var(--text); }
+
+    /* ── GLOW BUTTON (hero GitHub) ── */
+    .btn-glow {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.75rem 1.75rem;
+      background: #111114;
+      color: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    /* white spotlight follows cursor */
+    .btn-glow-border {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(100px circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.15), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .btn-glow:hover .btn-glow-border { opacity: 1; }
+    .btn-glow-bg { display: none; }
+
+    .btn-glow-content {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-glow-stars {
+      padding: 2px 9px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .btn-glow:hover {
+      background: #1d1d20;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    /* ── GITHUB STAR BUTTON ── */
+    .gh-star-btn {
+      display: inline-flex;
+      align-items: stretch;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .gh-star-btn:hover { border-color: rgba(0,0,0,0.2); }
+
+    .gh-star-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .gh-star-btn:hover .gh-star-left { background: var(--bg3); }
+
+    .gh-star-count {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .install-steps { gap: 1.75rem; }
+      .hero { padding: 130px 1.5rem 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <img src="assets/logo.png" alt="Skreen[me] logo">
+    Skreen[me]
+  </div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#compare">Compare</a>
+    <a href="https://github.com/levskiy0/skreenme" class="gh-star-btn" id="nav-github-btn">
+      <span class="gh-star-left">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        Star
+      </span>
+      <span class="gh-star-count" id="nav-star-count">—</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    ✦ Public Beta · macOS 14+
+  </div>
+  <h1>
+    Screenshot Beautifier<br>
+    <span>for macOS</span>
+  </h1>
+  <p class="hero-sub">
+    Transform raw screenshots and code snippets into polished, shareable images.
+    Custom backgrounds, syntax highlighting, annotations, and privacy redaction —
+    all from your menu bar.
+  </p>
+  <div class="hero-cta">
+    <a href="https://github.com/levskiy0/skreenme/releases/latest" class="btn btn-primary">
+      <span>↓ &nbsp;Download for macOS</span>
+    </a>
+    <a href="https://github.com/levskiy0/skreenme" class="btn-glow" id="github-btn">
+      <span class="btn-glow-border"></span>
+      <span class="btn-glow-bg"></span>
+      <span class="btn-glow-content">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="opacity:0.85"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+        <span class="btn-glow-stars">★ <span id="star-num">—</span></span>
+      </span>
+    </a>
+  </div>
+  <p class="hero-note">Free · No subscription · No cloud · macOS 14 Sonoma+</p>
+</section>
+
+<!-- PREVIEW -->
+<div class="preview">
+  <div class="preview-inner">
+    <video autoplay loop muted playsinline poster="assets/preview.png">
+      <source src="assets/preview.mp4" type="video/mp4">
+      <img src="assets/preview.png" alt="Skreen[me] screenshot beautifier — custom backgrounds, code snippets, annotations demo">
+    </video>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <p class="section-label">Features</p>
+  <h2>Everything you need to make screenshots shine</h2>
+  <p class="section-sub">
+    One menu bar app that replaces three separate tools.
+  </p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🖼</div>
+      <h3>Screenshot Beautification</h3>
+      <p>Wrap any screenshot in gradients, solid colors, or your own image. Adjust padding, corner radius, shadow, and frame color.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👨‍💻</div>
+      <h3>Code Screenshots</h3>
+      <p>Paste a snippet, pick a language and theme. 21 languages, 10 themes — Dracula, Monokai, Nord, GitHub and more. Export PNG or SVG.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✏️</div>
+      <h3>Annotations</h3>
+      <p>Arrows, rectangles, ellipses, text, freehand, markers, numbered counters, ruler. Built for tutorials and bug reports.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✨</div>
+      <h3>Auto-Beautify</h3>
+      <p>One click to auto-pick a matching gradient, padding, shadow, and frame based on your screenshot's dominant colors.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Privacy & Auto-Redaction</h3>
+      <p>Auto-detects faces, emails, API keys, and phone numbers and redacts them before you share. All on-device — nothing leaves your Mac.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⌨️</div>
+      <h3>Menu Bar & Hotkeys</h3>
+      <p>Lives quietly in the menu bar. Capture any area or window with a global hotkey. Always one keypress away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison" id="compare">
+  <p class="section-label">Compare</p>
+  <h2>Compared to CleanShot X, Xnapper, Carbon</h2>
+  <p class="section-sub" style="margin-bottom:2rem">
+    The only tool that combines screenshot beautification, code screenshots, annotations, and privacy redaction in one native app.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th class="highlight">Skreen[me]</th>
+          <th>CleanShot X</th>
+          <th>Xnapper</th>
+          <th>Carbon / Ray.so</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Screenshot beautification</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Code screenshots</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Annotation tools</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Auto privacy redaction</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Native macOS app</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span> web</td>
+        </tr>
+        <tr>
+          <td>No subscription</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Menu bar</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section class="install" id="download">
+  <p class="section-label" style="text-align:center">Install</p>
+  <h2>Get started in 30 seconds</h2>
+  <p>No account. No subscription. Just download and go.</p>
+
+  <div class="install-steps">
+    <div class="install-step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>Download</h4>
+        <p>Grab the .dmg from the latest release</p>
+      </div>
+    </div>
+    <div class="install-step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>Install</h4>
+        <p>Drag Skreen[me] to your Applications folder</p>
+      </div>
+    </div>
+    <div class="install-step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>Launch</h4>
+        <p>Grant Screen Recording permission when prompted</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://github.com/levskiy0/skreenme/releases/latest" class="btn btn-primary" style="font-size:1rem; padding: 0.85rem 2.5rem;">
+    <span>↓ &nbsp;Download for macOS</span>
+  </a>
+  <p class="system-req">Requires macOS 14 Sonoma or later · Auto-updates via Sparkle</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="brand">
+    <img src="assets/logo.png" alt="Skreen[me]">
+    Skreen[me] · Crafted with ❤️ for macOS
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a href="https://github.com/levskiy0/skreenme">GitHub</a>
+      <a href="https://github.com/levskiy0/skreenme/issues">Issues</a>
+      <a href="https://github.com/levskiy0/skreenme/releases">Releases</a>
+    </div>
+  </nav>
+</footer>
+
+<script>
+  // GitHub stars
+  fetch('https://api.github.com/repos/levskiy0/skreenme')
+    .then(r => r.json())
+    .then(data => {
+      const n = data.stargazers_count;
+      if (typeof n === 'number') {
+        const label = n >= 1000 ? (n / 1000).toFixed(1) + 'k' : n;
+        ['star-num', 'nav-star-count'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = label;
+        });
+      }
+    })
+    .catch(() => {});
+
+  // Spotlight hover effect
+  function trackMouse(el, xVar, yVar) {
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty(xVar, (e.clientX - r.left) + 'px');
+      el.style.setProperty(yVar, (e.clientY - r.top) + 'px');
+    });
+  }
+
+  document.querySelectorAll('.btn-glow').forEach(el => trackMouse(el, '--x', '--y'));
+
+  // 3D tilt + spotlight on feature cards
+  document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      const cx = r.width / 2;
+      const cy = r.height / 2;
+      const rotY =  ((x - cx) / cx) * 7;
+      const rotX = -((y - cy) / cy) * 7;
+      card.style.transform = `perspective(700px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(6px)`;
+      card.style.setProperty('--mx', x + 'px');
+      card.style.setProperty('--my', y + 'px');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      setTimeout(() => { card.style.transform = ''; }, 300);
+    });
+  });
+</script>
+</body>
+</html>
