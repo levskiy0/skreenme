@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="assets/logo.png" width="128" height="128" alt="Skreen">
+  <img src="assets/logo.png" width="128" height="128" alt="Skreen[me] — Screenshot Beautifier for macOS">
 </p>
 
-<h1 align="center">Skreen[me]</h1>
+<h1 align="center">Skreen[me] — Screenshot Beautifier for macOS</h1>
 
 <p align="center">
-  Screenshot beautifier for macOS.<br>
-  Lives in the menu bar. Capture, style, share.
+  Transform screenshots and code snippets into beautiful, shareable images.<br>
+  Custom backgrounds · Annotations · Privacy redaction · Lives in your menu bar.
 </p>
 
 <p align="center">
@@ -17,41 +17,61 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/levskiy0/skreenme/releases/latest">Download</a>
+  <a href="https://github.com/levskiy0/skreenme/releases/latest">Download for macOS</a>
 </p>
 
 ---
 
 <p align="center">
-  <img src="assets/preview.gif" alt="Skreen[me] Preview">
+  <img src="assets/preview.gif" alt="Skreen[me] screenshot beautifier demo — custom backgrounds, code snippets, annotations">
 </p>
 
-Skreen takes your screenshots and code snippets and wraps them in customizable backgrounds, paddings, shadows, and rounded corners.
+**Skreen[me]** is a native macOS app that turns raw screenshots and code snippets into polished, professional images. Capture with a global hotkey, style with gradients or custom backgrounds, annotate, redact sensitive info — and share in seconds. No subscription. No cloud. Runs entirely on your Mac.
 
-## Features
+## Screenshot Beautification
 
-**Screenshots** - capture area or window with a global hotkey, style it with gradients, solid colors, or your own image as background. Adjust paddings, corner radius, shadows, frame color. Export as PNG or copy to clipboard.
+Capture any area or window with a global hotkey and instantly wrap it in a custom background. Choose from gradients, solid colors, or your own image. Fine-tune padding, corner radius, shadow depth, and frame color. Export as PNG or copy directly to clipboard.
 
-**Code** - paste a snippet, pick a language and a theme, get a styled code image. Syntax highlighting for 21 languages, 10 themes (Dracula, Monokai, Nord, etc). Export as PNG or SVG.
+## Code Screenshots with Syntax Highlighting
 
-**Annotations** - arrows, rectangles, ellipses, text, freehand, markers, numbered counters, ruler. Blur and pixelate for redacting sensitive areas.
+Paste a code snippet, select language and theme — get a styled, shareable image. Supports 21 programming languages and 10 themes including Dracula, Monokai, Nord, GitHub, and more. Export as PNG or SVG.
 
-**Beautify** - one click to auto-pick a matching gradient, padding, shadow, and frame based on your screenshot's colors.
+## Annotation Tools
 
-**Privacy** - auto-detects faces and sensitive data (emails, API keys, phone numbers) and redacts them. All processing stays on your Mac.
+Add context to any screenshot with arrows, rectangles, ellipses, freehand drawing, text labels, markers, numbered counters, and a ruler. Built for documenting bugs, writing tutorials, and creating step-by-step guides.
+
+## Auto-Beautify
+
+One click to automatically pick a matching gradient, optimal padding, shadow, and frame based on the dominant colors of your screenshot. Great results without manual tweaking.
+
+## Privacy & Auto-Redaction
+
+Automatically detects and redacts faces, email addresses, API keys, and phone numbers before you share. All processing runs on-device — nothing leaves your Mac.
 
 ## Install
 
 Download the `.dmg` from [Releases](https://github.com/levskiy0/skreenme/releases/latest), drag to Applications, launch. Grant Screen Recording permission when prompted.
 
-Requires macOS 14+.
+Requires macOS 14 Sonoma or later.
 
 ## Updates
 
-Auto-updates via Sparkle. Check manually from the menu bar.
+Auto-updates via Sparkle. Check manually from the menu bar icon.
 
 ---
 
-[Issues & feedback](https://github.com/levskiy0/skreenme/issues)
+## Compared to CleanShot X, Xnapper, Carbon
 
-<p align="left">Crafted with ❤️</p>
+| Feature | Skreen[me] | CleanShot X | Xnapper | Carbon / Ray.so |
+|---|---|---|---|---|
+| Screenshot beautification | ✅ | ✅ | ✅ | ❌ |
+| Code screenshots | ✅ | ❌ | ❌ | ✅ |
+| Annotation tools | ✅ | ✅ | ❌ | ❌ |
+| Auto privacy redaction | ✅ | ❌ | ❌ | ❌ |
+| Native macOS app | ✅ | ✅ | ✅ | ❌ (web) |
+| No subscription | ✅ | ❌ | ✅ | ✅ |
+| Menu bar | ✅ | ✅ | ✅ | ❌ |
+
+---
+
+[Issues & feedback](https://github.com/levskiy0/skreenme/issues) · Crafted with ❤️ for macOS
