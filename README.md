@@ -23,7 +23,7 @@
 ---
 
 <p align="center">
-  <img src="assets/preview.gif" alt="Skreen[me] screenshot beautifier demo — custom backgrounds, code snippets, annotations">
+  <img src="assets/preview.png" alt="Skreen[me] screenshot beautifier demo — custom backgrounds, code snippets, annotations">
 </p>
 
 **Skreen[me]** is a native macOS app that turns raw screenshots and code snippets into polished, professional images. Capture with a global hotkey, style with gradients or custom backgrounds, annotate, redact sensitive info — and share in seconds. No subscription. No cloud. Runs entirely on your Mac.
