@@ -1,10 +1,8 @@
 <div align="center">
 
 <p align="center">
-  <img src="assets/logo.png" width="128" height="128" alt="Skreen[me] — Screenshot Beautifier for macOS">
+  <img src="assets/logo.png" height="64" alt="Skreen[me] — Screenshot Beautifier for macOS">
 </p>
-
-# Skreen[me]
 
 **Native macOS screenshot app. Beautify, annotate, auto-redact.**
 
