@@ -5,6 +5,40 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.1.5</title>
+            <pubDate>Fri, 18 Apr 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>39</sparkle:version>
+            <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New</h3>
+                <ul>
+                    <li>Stickers — add stickers to screenshots from a built-in gallery; drag to place, rotate and scale with handles; import your own PNG/JPEG stickers</li>
+                    <li>Alt word selection — hold Alt with the Marker or Redact tool active to highlight OCR-detected words on hover; click to instantly apply the annotation to that word</li>
+                    <li>Double-click on an auto-redacted region to remove it</li>
+                    <li>Watermark support — add a custom text or image watermark to exports</li>
+                </ul>
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Redrawn toolbar icons for padding, shadow, and corner radius controls</li>
+                    <li>Marker cursor now scales with zoom — size matches the actual drawn stroke width at any zoom level</li>
+                    <li>Dropdown panels use a solid background instead of the translucent system glass effect</li>
+                    <li>Sticker rotation handle is closer to the sticker, line thickness matches the selection outline, and hides when outside the canvas</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed scroll pass-through in zoom/pan mode so panels respond correctly when zoomed in</li>
+                    <li>Fixed stale annotation index crashes in text editor closures</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.1.5/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.1.4</title>
             <pubDate>Thu, 03 Apr 2026 18:00:00 +0000</pubDate>
             <sparkle:version>38</sparkle:version>
