@@ -5,6 +5,36 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.1.6</title>
+            <pubDate>Thu, 01 May 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>40</sparkle:version>
+            <sparkle:shortVersionString>1.1.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New</h3>
+                <ul>
+                    <li>Showcase mode — present your screenshots in a polished multi-frame layout; arrange, resize, and export as a single image</li>
+                    <li>Device frames — wrap screenshots in realistic device mockups (iPhone, iPad, MacBook, browser window)</li>
+                </ul>
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Expanded sticker gallery with new categories; sticker search now works across all packs</li>
+                    <li>Procedural backgrounds — new pattern styles (grid, dots, topography, circuit); all patterns now support custom color tinting</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed sticker import not persisting after restart</li>
+                    <li>Fixed procedural background rendering artifacts at non-integer zoom levels</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.1.6/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.1.5</title>
             <pubDate>Fri, 18 Apr 2026 12:00:00 +0000</pubDate>
             <sparkle:version>39</sparkle:version>
