@@ -5,6 +5,40 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.2.0</title>
+            <pubDate>Sat, 01 Aug 2026 21:37:33 +0000</pubDate>
+            <sparkle:version>43</sparkle:version>
+            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New</h3>
+                <ul>
+                    <li>Screenshot History — browse previous captures in the editor and reopen any screenshot with one click</li>
+                    <li>Quick Access — a compact post-capture panel for editing, copying, saving, dragging, or deleting a screenshot</li>
+                    <li>Text and QR from Image — extract text and QR code contents from screenshots, with configurable result notifications</li>
+                    <li>Combine Screenshots — arrange multiple captures using Grid or Free Canvas layouts</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed screenshot history items not opening in the editor</li>
+                    <li>Fixed selection reset, blur dragging, and per-item blur property updates</li>
+                    <li>Fixed Grid layout refresh after resize or rotation and preserved zoom while editing composite screenshots</li>
+                    <li>Selection handles outside the canvas remain interactive; Crop is unavailable for composite canvases</li>
+                    <li>Fixed Quick Access dismissal timing and hover behavior</li>
+                </ul>
+                <h3>Removed</h3>
+                <ul>
+                    <li>Removed the beta Showcase Editor and Device Frames functionality</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.2.0/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.1.6</title>
             <pubDate>Thu, 01 May 2026 12:00:00 +0000</pubDate>
             <sparkle:version>40</sparkle:version>
