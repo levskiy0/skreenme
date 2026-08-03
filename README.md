@@ -17,7 +17,7 @@ Capture → Recognize → Combine → Style → Annotate → Share. Everything o
 ---
 
 <p align="center">
-  <img src="assets/preview.png" alt="Skreen[me] screenshot beautifier demo — custom backgrounds, code snippets, annotations">
+  <img src="website/public/images/skreen-editor-annotated.png" alt="Skreen[me] screenshot beautifier demo — custom backgrounds, code snippets, annotations">
 </p>
 
 Your screenshot workflow probably looks like this: capture → open Preview to crop → open Figma to add a nice background → open Carbon to make the code pretty → manually blur the API key you almost forgot about → repeat for every single screenshot.
