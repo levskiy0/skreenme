@@ -139,28 +139,6 @@ After a capture, optional **Quick Access** gives you immediate actions over the 
 
 ---
 
-## How Skreen compares
-
-| | **Skreen** | CleanShot X | Xnapper | Carbon / ray.so | Shottr |
-|---|---|---|---|---|---|
-| **Price** | Public Beta | Paid | Freemium / one-time | Free (web) | Paid / one-time |
-| **Area & window capture** | ✅ | ✅ | ✅ | ❌ | ✅ |
-| **Scrolling capture** | ✅ | ✅ | ❌ | ❌ | ✅ |
-| **Timed & repeat capture** | ✅ | ✅ | ❌ | ❌ | ✅ |
-| **Text & QR recognition** | ✅ On-device | OCR | OCR | ❌ | ✅ OCR + QR |
-| **Screenshot history** | ✅ | ✅ | ✅ | ❌ | ❌ |
-| **Combine screenshots** | ✅ Grid + Free Canvas | ✅ Free positioning | ❌ | ❌ | ✅ Canvas |
-| **Code mode** | ✅ 21 languages | ❌ | ❌ | ✅ Web only | ❌ |
-| **Beautiful backgrounds** | ✅ 48 + procedural | ✅ | ✅ | Limited | ✅ |
-| **Auto-Beautify** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Annotations** | ✅ 13 tools | ✅ | Basic | ❌ | ✅ |
-| **Auto PII redaction** | ✅ On-device | ❌ | ✅ On-device | ❌ | ❌ |
-| **Watermarks & stickers** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Runs offline** | ✅ | ✅ | ✅ | ❌ | ✅ |
-| **PNG & SVG export** | ✅ | PNG | PNG | ✅ | PNG |
-
----
-
 ## More features worth knowing about
 
 **Crop**: free-form, re-crop without losing the original, or **Smart Crop** — Vision saliency detection finds the most interesting region automatically.

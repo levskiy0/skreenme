@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skreen.me/sitemap-index.xml

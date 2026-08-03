@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const releases = [
+  {
+    version: '1.2.2',
+    date: 'August 3, 2026',
+    title: 'Scrolling Capture',
+    items: [
+      'Capture a selected scrollable area as one continuous screenshot.',
+      'Choose the direction and control start, pause, resume, finish, and cancel from a compact panel.',
+      'Faster frame collection with lossless background compression for taller captures.',
+      'Improved stitching around fixed headers, footers, sidebars, floating controls, and translucent Dock areas.',
+      'Completed scrolling captures open directly in the screenshot editor.',
+    ],
+  },
+  {
+    version: '1.2.1',
+    date: 'August 2, 2026',
+    title: 'Repeat and Timed Capture',
+    items: [
+      'Repeat Last Area from the menu bar or a customizable global shortcut.',
+      'Timed Capture with 3, 5, 10, or 15 second delays and a visible in-selection countdown.',
+      'Clearer Grid and Free Canvas controls across the multi-screenshot editor.',
+      'Redaction effects now process the visible composite screenshot pixels in Grid Mode.',
+    ],
+  },
+  {
+    version: '1.2.0',
+    date: 'August 1, 2026',
+    title: 'History, Quick Access, OCR, and Compositions',
+    items: [
+      'Local Screenshot History inside the editor with one-click reopen and add-to-composition actions.',
+      'Quick Access panel for edit, copy, save, drag, delete, and dismiss immediately after capture.',
+      'On-device text and QR recognition from captured areas and existing screenshots.',
+      'Combine screenshots using configurable Grid or expandable Free Canvas layouts.',
+      'Capture-and-add actions for building a multi-screenshot composition as you work.',
+    ],
+  },
+  {
+    version: '1.1.6',
+    date: 'May 1, 2026',
+    title: 'Editor polish and a larger sticker library',
+    items: [
+      'Expanded the built-in sticker gallery and improved search across sticker packs.',
+      'Continued stability, interaction, and visual-system improvements throughout the editor.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Skreen Changelog — New macOS Screenshot Features"
+  description="See what is new in Skreen: scrolling capture, screenshot history, Quick Access, OCR and QR recognition, multi-image composition, privacy tools, and editor improvements."
+>
+  <section class="page-hero">
+    <div class="shell">
+      <div class="breadcrumbs"><a href="/">Skreen</a> / Changelog</div>
+      <p class="eyebrow">Release notes</p>
+      <h1 class="display" style="font-size: clamp(4.4rem, 9vw, 8.5rem); max-width: 950px">The app keeps moving. Your workflow gets shorter.</h1>
+      <p class="page-lead">New capture modes, safer sharing, and a more capable editor — shipped as native macOS updates.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell changelog-list">
+      {releases.map((release) => (
+        <article class="release reveal">
+          <div class="release-meta"><strong>v{release.version}</strong>{release.date}</div>
+          <div>
+            <h2>{release.title}</h2>
+            <ul>{release.items.map((item) => <li>{item}</li>)}</ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="shell reveal">
+      <p class="kicker">Current release · v1.2.2</p>
+      <h2 class="display">Try what is new.</h2>
+      <p>Skreen updates itself through Sparkle, or you can download the latest notarized DMG directly.</p>
+      <a class="button" href="/download/">Download latest release ↘</a>
+    </div>
+  </section>
+</BaseLayout>

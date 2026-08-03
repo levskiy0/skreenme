@@ -1,0 +1,118 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  bodyClass?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  image = '/images/og.jpg',
+  noindex = false,
+  bodyClass,
+  structuredData,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+const fullTitle = title.includes('Skreen') ? title : `${title} — Skreen`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="256x256" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="theme-color" content="#11130f" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Skreen" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="Skreen screenshot editor for macOS" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    {structuredData && (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
+    <slot name="head" />
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell nav-shell">
+        <a class="brand" href="/" aria-label="Skreen home">
+          <img src="/images/logo.png" width="160" height="36" alt="Skreen" />
+        </a>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="/#features">Features</a>
+          <a href="/changelog/">Changelog</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="github-link" href="https://github.com/levskiy0/skreenme" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button button-small" href="/download/">Download <span aria-hidden="true">↘</span></a>
+        </div>
+
+        <details class="mobile-menu">
+          <summary aria-label="Open navigation"><span></span><span></span></summary>
+          <nav aria-label="Mobile navigation">
+            <a href="/#features">Features</a>
+            <a href="/changelog/">Changelog</a>
+            <a href="/download/">Download Skreen</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer simple-footer">
+      <div class="shell">
+        <span>© {new Date().getFullYear()} Skreen</span>
+        <nav aria-label="Footer navigation">
+          <a href="/changelog/">Changelog</a>
+          <a href="https://github.com/levskiy0/skreenme">GitHub</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reducedMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          }
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+      } else {
+        document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const downloadUrl = 'https://github.com/levskiy0/skreenme/releases/latest';
+
+const features = [
+  {
+    icon: '↕',
+    title: 'Scrolling screenshots',
+    text: 'Capture long pages, conversations, and any scrollable area as one image.',
+  },
+  {
+    icon: '✎',
+    title: 'Annotations',
+    text: 'Add arrows, shapes, text, highlights, counters, and freehand drawings.',
+  },
+  {
+    icon: '▧',
+    title: 'Beautiful backgrounds',
+    text: 'Add padding, gradients, patterns, shadows, rounded corners, and presets.',
+  },
+  {
+    icon: '●',
+    title: 'Private redaction',
+    text: 'Find sensitive data on-device and hide it before the screenshot leaves your Mac.',
+  },
+  {
+    icon: 'Aa',
+    title: 'Text recognition & QR',
+    text: 'Select any area to copy its text or decode a QR code with Apple Vision.',
+  },
+  {
+    icon: '⊞',
+    title: 'Combine screenshots',
+    text: 'Arrange multiple captures in a Grid or on a flexible Free Canvas.',
+  },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Skreen',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'macOS 14 Sonoma or later',
+  softwareVersion: '1.2.2',
+  description: 'A native macOS screenshot app for capture, editing, OCR, beautification, redaction, and combining images.',
+  downloadUrl,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free public beta' },
+};
+---
+
+<BaseLayout
+  title="Skreen — Screenshot Tool for Mac"
+  description="A native macOS screenshot tool with scrolling capture, annotations, beautiful backgrounds, text recognition, and private redaction."
+  structuredData={structuredData}
+  bodyClass="home-light"
+>
+  <section class="simple-hero">
+    <div class="shell simple-hero-grid">
+      <div class="simple-hero-copy">
+        <p class="simple-kicker">Screenshot app for Mac</p>
+        <h1>Take the shot.<br /><span>Finish it here.</span></h1>
+        <p class="simple-lead">Capture, annotate, beautify, and safely share — in one native Mac app.</p>
+        <a class="simple-download" href="/download/">
+          <strong>Download Skreen</strong>
+          <span>Free beta · macOS 14+</span>
+        </a>
+        <p class="simple-trust">Native Swift · Everything stays on your Mac</p>
+      </div>
+      <div class="simple-hero-visual" aria-label="Skreen application preview">
+        <img
+          src="/images/skreen-editor-annotated.png"
+          width="2306"
+          height="1750"
+          alt="Skreen editor annotating a screenshot"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="simple-features" id="features">
+    <div class="shell">
+      <div class="simple-features-head">
+        <p class="simple-kicker">One app, end to end</p>
+        <h2>Everything a screenshot needs.</h2>
+      </div>
+      <div class="simple-grid">
+        {features.map((feature) => (
+          <article class="simple-card">
+            <span class="simple-icon" aria-hidden="true">{feature.icon}</span>
+            <h2>{feature.title}</h2>
+            <p>{feature.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="simple-cta">
+    <div class="shell">
+      <h2>Ready for a better screenshot?</h2>
+      <a class="simple-download" href="/download/">
+        <strong>Download Skreen</strong>
+        <span>Free beta · macOS 14+</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
