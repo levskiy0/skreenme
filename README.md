@@ -4,14 +4,13 @@
   <img src="assets/logo.png" height="64" alt="Skreen[me] — Screenshot Beautifier for macOS">
 </p>
 
-**Native macOS screenshot app. Beautify, annotate, auto-redact.**
+**Native macOS screenshot app. Capture, combine, beautify, annotate, and redact.**
 
-Capture → Style → Annotate → Redact → Share. Everything on-device. Pure Swift.
+Capture → Recognize → Combine → Style → Annotate → Share. Everything on-device. Pure Swift.
 
 [![Download](https://img.shields.io/github/v/release/levskiy0/skreenme?label=Download&color=black)](https://github.com/levskiy0/skreenme/releases/latest)
 [![macOS 14+](https://img.shields.io/badge/macOS-14%2B-white)](https://github.com/levskiy0/skreenme/releases)
 [![Public Beta](https://img.shields.io/badge/status-public%20beta-orange)](https://github.com/levskiy0/skreenme/releases)
-[![X](https://img.shields.io/badge/-@levskiy__d-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/levskiy_d)
 
 </div>
 
@@ -29,9 +28,23 @@ No code uploaded to any server. Everything happens on your machine.
 
 ---
 
+## Capture the way the task requires
+
+Skreen is more than a region shortcut. Every capture mode is available from the menu bar, with customizable global hotkeys for the actions you use most:
+
+- **Capture Area** and **Capture Window**
+- **Repeat Last Area** without drawing the same selection again
+- **Capture with Timer** after 3, 5, 10, or 15 seconds, with an in-selection countdown
+- **Scrolling Capture** with explicit start, pause, direction, finish, and cancel controls
+- **Capture Text** to recognize text and QR codes directly from a selected area
+
+Scrolling Capture automatically moves through the selected content and opens the stitched result in the editor. It detects overlap between frames and avoids repeating fixed headers, footers, sidebars, floating controls, and translucent system elements.
+
+---
+
 ## Beautiful screenshots without design skills
 
-Hit `⌘⇧0`, draw a region, and Skreen opens with your screenshot already styled — gradient background, rounded corners, shadow. One more click for **Auto-Beautify**: Skreen analyzes your screenshot's dominant colors and picks the gradient + sizing that makes it look best. Not gimmicky. Actually useful.
+Use your capture hotkey, draw a region, and Skreen opens with your screenshot ready to style — gradient background, rounded corners, shadow. One more click for **Auto-Beautify**: Skreen analyzes the screenshot's edge colors and picks a matching background and frame treatment.
 
 **48 curated gradient presets** across 8 collections — Vivid, Sunset, Ocean, Cosmic, Neon, Pastel, Dark, Nature.
 
@@ -104,24 +117,47 @@ Per-tool: stroke color, fill color, width (`1`–`5` keys), arrow style. Full un
 
 ---
 
+## Combine screenshots in one editor
+
+Capture several screens in a row, paste from the clipboard, drag files in, or reuse a screenshot from History. Then arrange everything without leaving the editor:
+
+- **Grid** — 1–5 columns, adjustable gap and inner padding, alignment, reordering, and automatic or custom background color
+- **Free Canvas** — place, resize, and rotate screenshots freely; the canvas expands to fit the composition
+- Switch between automatic styling and a clean unstyled canvas while keeping background and spacing controls available
+
+Use **Capture and Add** when you already know the next screenshot belongs in the same composition.
+
+---
+
+## Text, QR codes, History, and Quick Access
+
+**Text and QR from Image** uses Apple Vision to extract readable text and QR payloads on-device. Run it from the editor or use Capture Text as a standalone action; the same compact result panel shows recognition progress and the final read-only text.
+
+**Screenshot History** lives inside the editor as a two-column panel. Click any card to reopen it, or add an older screenshot to the current composition.
+
+After a capture, optional **Quick Access** gives you immediate actions over the preview: open the editor, copy, save, drag and drop, delete, or dismiss. Hovering the panel pauses its dismissal timer. Enable or disable it in Settings.
+
+---
+
 ## How Skreen compares
 
-| | **Skreen**        | CleanShot X | Xnapper | Carbon / ray.so | Shottr |
-|---|-------------------|---|---|---|---|
-| **Price** | Public Beta       | $29 + $19/yr | $30/device | Free (web) | $8–$30 one-time |
-| **Screenshot capture** | ✅                 | ✅ | ✅ | ❌ | ✅ |
-| **Code mode** | ✅ 21 langs        | ❌ | ❌ | ✅ web only | ❌ |
-| **Beautiful backgrounds** | ✅ 48 + procedural | Limited | Limited | Limited | ❌ |
-| **Auto-Beautify** | ✅                 | ❌ | ❌ | ❌ | ❌ |
-| **Annotations (full)** | ✅ 13 tools        | ✅ | Basic | ❌ | ✅ |
-| **Auto PII redaction** | ✅ On-device       | ❌ | Partial | ❌ | ❌ |
-| **Word-snap redact** | ✅                 | ❌ | ❌ | ❌ | ❌ |
-| **Watermarks** | ✅                 | ❌ | ❌ | ❌ | ❌ |
-| **Stickers** | ✅                 | ❌ | ❌ | ❌ | ❌ |
-| **Smart Crop** | ✅ Vision AI       | ❌ | ❌ | ❌ | ❌ |
-| **Runs offline** | ✅                 | ✅ | ✅ | ❌ | ✅ |
-| **SVG export** | ✅                 | ❌ | ❌ | ✅ | ❌ |
-| **Menu bar native** | ✅                 | ✅ | ✅ | ❌ | ✅ |
+| | **Skreen** | CleanShot X | Xnapper | Carbon / ray.so | Shottr |
+|---|---|---|---|---|---|
+| **Price** | Public Beta | Paid | Freemium / one-time | Free (web) | Paid / one-time |
+| **Area & window capture** | ✅ | ✅ | ✅ | ❌ | ✅ |
+| **Scrolling capture** | ✅ | ✅ | ❌ | ❌ | ✅ |
+| **Timed & repeat capture** | ✅ | ✅ | ❌ | ❌ | ✅ |
+| **Text & QR recognition** | ✅ On-device | OCR | OCR | ❌ | ✅ OCR + QR |
+| **Screenshot history** | ✅ | ✅ | ✅ | ❌ | ❌ |
+| **Combine screenshots** | ✅ Grid + Free Canvas | ✅ Free positioning | ❌ | ❌ | ✅ Canvas |
+| **Code mode** | ✅ 21 languages | ❌ | ❌ | ✅ Web only | ❌ |
+| **Beautiful backgrounds** | ✅ 48 + procedural | ✅ | ✅ | Limited | ✅ |
+| **Auto-Beautify** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Annotations** | ✅ 13 tools | ✅ | Basic | ❌ | ✅ |
+| **Auto PII redaction** | ✅ On-device | ❌ | ✅ On-device | ❌ | ❌ |
+| **Watermarks & stickers** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Runs offline** | ✅ | ✅ | ✅ | ❌ | ✅ |
+| **PNG & SVG export** | ✅ | PNG | PNG | ✅ | PNG |
 
 ---
 
@@ -134,6 +170,10 @@ Per-tool: stroke color, fill color, width (`1`–`5` keys), arrow style. Full un
 **Zoom & pan**: navigate large screenshots without losing context. Reset with one click.
 
 **Sticker library**: drop PNG/JPG files into `~/Library/Application Support/Skreen/Stickers/` — they appear instantly, no restart.
+
+**Quick Access**: copy, save, drag, delete, or open a fresh capture without waiting for the full editor workflow.
+
+**Screenshot History**: reopen earlier captures or bring them into a Grid or Free Canvas composition.
 
 ---
 
@@ -149,7 +189,9 @@ Requires **macOS 14 Sonoma** or later. Screen recording and accessibility permis
 
 ## Settings worth configuring once
 
-- **Hotkeys**: remap both capture shortcuts to whatever you want
+- **Hotkeys**: remap area, window, text, repeat-last-area, and timed capture shortcuts
+- **Quick Access**: choose whether the post-capture action panel appears
+- **Text recognition**: choose how standalone OCR and QR results are presented
 - **Auto-save folder**: configure once, files always land in the right place
 - **Auto-close after export**: copy → clipboard → window closes automatically
 - **Detection toggles**: enable/disable each PII category independently

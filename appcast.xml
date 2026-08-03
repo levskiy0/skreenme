@@ -3,6 +3,32 @@
     <channel>
         <title>Skreen Updates</title>
         <language>en</language>
+        <item>
+            <title>Version 1.2.2</title>
+            <pubDate>Mon, 03 Aug 2026 09:44:14 +0000</pubDate>
+            <sparkle:version>45</sparkle:version>
+            <sparkle:shortVersionString>1.2.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New</h3>
+                <ul>
+                    <li>Scrolling Capture — select a scrollable area, choose a direction, and automatically capture it as one continuous screenshot</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed duplicated content and visible gaps between scrolling capture frames</li>
+                    <li>Fixed repeated fixed headers, footers, sidebars, floating chats, and translucent Dock areas</li>
+                    <li>Fixed captures stopping after only a few frames on high-resolution displays</li>
+                    <li>Reduced page hover side effects by moving the pointer away between automatic scroll steps</li>
+                    <li>Improved zoom behavior for very tall screenshots</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.2.2/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
 
         <item>
             <title>Version 1.2.0</title>
