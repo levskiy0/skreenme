@@ -2,10 +2,10 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://skreen.me',
+  site: 'https://skreenme.com',
   output: 'static',
   integrations: [sitemap({
-    filter: (page) => page !== 'https://skreen.me/download/',
+    filter: (page) => page !== 'https://skreenme.com/download/',
   })],
   build: {
     format: 'directory',

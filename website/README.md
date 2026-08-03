@@ -1,6 +1,6 @@
 # Skreen website
 
-Static Astro website for [skreen.me](https://skreen.me), deployed to GitHub Pages.
+Static Astro website for [skreenme.com](https://skreenme.com), deployed to GitHub Pages.
 
 ## Local development
 

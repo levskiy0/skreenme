@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skreen.me/sitemap-index.xml
+Sitemap: https://skreenme.com/sitemap-index.xml
