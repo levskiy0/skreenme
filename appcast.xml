@@ -4,6 +4,35 @@
         <title>Skreen Updates</title>
         <language>en</language>
         <item>
+            <title>Version 1.2.3</title>
+            <pubDate>Mon, 28 Sep 2026 15:16:16 +0000</pubDate>
+            <sparkle:version>46</sparkle:version>
+            <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New</h3>
+                <ul>
+                    <li>Choose the current desktop wallpaper or a built-in macOS wallpaper as the background for screenshots and code snippets</li>
+                </ul>
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Redesigned editor and capture icons with clearer meanings, consistent sizing, and lighter strokes</li>
+                    <li>Screenshot exports preserve the source image's native pixel density for sharper results</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Improved scrolling capture stitching to avoid repeated page sections and false seams while preserving content beside floating controls</li>
+                    <li>Aligned cropping to source pixels to prevent thin blank strips along cropped edges</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.2.3/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+
+        <item>
             <title>Version 1.2.2</title>
             <pubDate>Mon, 03 Aug 2026 09:44:14 +0000</pubDate>
             <sparkle:version>45</sparkle:version>
