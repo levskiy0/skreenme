@@ -46,14 +46,6 @@
   const heroEditor = document.querySelector('.hero-editor');
   const heroDevice = document.querySelector('.hero-device');
   if (heroEditor && heroDevice) {
-    const emptyImage = heroEditor.querySelector('.hero-editor-empty');
-    const captureImage = heroEditor.querySelector('.hero-editor-capture');
-    const setEditorView = (view) => {
-      heroEditor.dataset.editorView = view;
-      emptyImage.setAttribute('aria-hidden', String(view !== 'empty'));
-      captureImage.setAttribute('aria-hidden', String(view !== 'capture'));
-    };
-
     if (!reducedMotion.matches) {
       const sticky = heroDevice.querySelector('.hero-story-sticky');
       const stage = heroDevice.querySelector('.hero-story-stage');
@@ -62,26 +54,47 @@
       const ramp = (value, start, end) => clamp((value - start) / (end - start));
       const keyReveals = [[0, .035], [.045, .08], [.09, .125]];
       const keyPresses = [.18, .25, .32];
+      const progressPerSecond = .55;
+      const introMovePerSecond = 1.25;
+      const smooth = (value) => value * value * (3 - 2 * value);
+      // Bounds of the product card inside the white screenshot frame (2414 × 1650).
+      const capturedCard = { left: 548, top: 444, width: 1300, height: 752 };
       let keyWidths = [0, 0, 0];
       let frame = 0;
-      let currentView = '';
+      let previousFrameTime = 0;
+      let displayedProgress = null;
+      let displayedMove = null;
+      const approach = (current, target, distance) => current + Math.sign(target - current) * Math.min(Math.abs(target - current), distance);
 
-      const updateStory = () => {
+      const updateStory = (timestamp = performance.now()) => {
         frame = 0;
         const bounds = heroDevice.getBoundingClientRect();
         const stickyTop = parseFloat(getComputedStyle(sticky).top) || 0;
         const scrollable = Math.max(1, bounds.height - sticky.offsetHeight);
         const rawProgress = clamp((stickyTop - bounds.top) / scrollable);
         const sequenceEnd = window.matchMedia('(max-width: 620px)').matches ? .57 : .55;
-        const progress = clamp(rawProgress / sequenceEnd);
-        const move = clamp(window.scrollY / Math.max(1, bounds.top + window.scrollY - stickyTop));
+        const targetProgress = clamp(rawProgress / sequenceEnd);
+        const targetMove = clamp(window.scrollY / Math.max(1, bounds.top + window.scrollY - stickyTop));
+        const offscreen = bounds.bottom < 0 || bounds.top > window.innerHeight || document.hidden;
+        if (displayedProgress === null || offscreen) {
+          displayedProgress = targetProgress;
+          displayedMove = targetMove;
+        } else {
+          const elapsed = Math.max(0, Math.min((timestamp - previousFrameTime) / 1000, .1));
+          displayedProgress = approach(displayedProgress, targetProgress, progressPerSecond * elapsed);
+          displayedMove = approach(displayedMove, targetMove, introMovePerSecond * elapsed);
+        }
+        previousFrameTime = timestamp;
+        const progress = displayedProgress;
+        const move = displayedMove;
         const introOpacity = 1 - clamp((move - .30) / .60);
         const introOffset = move * Math.min(window.innerHeight * 1.3, 1200);
-        const selectionProgress = ramp(progress, .51, .70);
-        const selectionOpacity = ramp(progress, .50, .53) * (1 - ramp(progress, .75, .80));
-        const productOpacity = ramp(progress, .40, .47) * (1 - ramp(progress, .77, .84));
-        const editorProgress = ramp(progress, .77, .85);
-        const captureProgress = ramp(progress, .88, .95);
+        const selectionProgress = ramp(progress, .49, .66);
+        const captureFlash = ramp(progress, .675, .72) * (1 - ramp(progress, .72, .78));
+        const selectionOpacity = ramp(progress, .48, .51) * (1 - ramp(progress, .68, .71));
+        const productOpacity = ramp(progress, .39, .46) * (1 - ramp(progress, .70, .79));
+        const editorPop = smooth(ramp(progress, .71, .84));
+        const resultOpacity = smooth(ramp(progress, .88, .99));
 
         keys.forEach((key, index) => {
           const visible = ramp(progress, ...keyReveals[index]);
@@ -96,19 +109,17 @@
         });
 
         heroDevice.style.setProperty('--keys-opacity', (1 - ramp(progress, .36, .41)).toFixed(3));
-        heroDevice.style.setProperty('--hint-opacity', ramp(progress, .12, .18).toFixed(3));
+        heroDevice.style.setProperty('--capture-flash-opacity', captureFlash.toFixed(3));
         heroDevice.style.setProperty('--intro-opacity', introOpacity.toFixed(3));
         heroDevice.style.setProperty('--intro-offset', `${introOffset.toFixed(1)}px`);
         heroDevice.style.setProperty('--selection-progress', selectionProgress.toFixed(3));
         heroDevice.style.setProperty('--selection-opacity', selectionOpacity.toFixed(3));
         heroDevice.style.setProperty('--product-opacity', productOpacity.toFixed(3));
-        heroDevice.style.setProperty('--editor-progress', editorProgress.toFixed(3));
-        heroDevice.style.setProperty('--capture-progress', captureProgress.toFixed(3));
-        const view = progress < .77 ? 'none' : progress < .88 ? 'empty' : 'capture';
-        if (view !== currentView) {
-          currentView = view;
-          setEditorView(view);
-        }
+        heroDevice.style.setProperty('--editor-opacity', editorPop.toFixed(3));
+        heroDevice.style.setProperty('--editor-rise', `${(48 * (1 - editorPop)).toFixed(1)}px`);
+        heroDevice.style.setProperty('--editor-scale', (.94 + .06 * editorPop).toFixed(3));
+        heroDevice.style.setProperty('--result-opacity', resultOpacity.toFixed(3));
+        if (!offscreen && (Math.abs(targetProgress - progress) > .001 || Math.abs(targetMove - move) > .001)) queueStoryUpdate();
       };
       const queueStoryUpdate = () => {
         if (!frame) frame = requestAnimationFrame(updateStory);
@@ -117,7 +128,13 @@
         const top = Math.max(0, (window.innerHeight - sticky.offsetHeight) / 2);
         heroDevice.style.setProperty('--story-center-top', `${top.toFixed(1)}px`);
         const stageBounds = stage.getBoundingClientRect();
-        const productScale = Math.min(1.16, stageBounds.width * .84 / 620, stageBounds.height * .79 / 360);
+        const screenshotScale = stageBounds.width * 1.1 / 2414;
+        const cardWidth = capturedCard.width * screenshotScale;
+        const cardCenterX = -stageBounds.width * .05 + (capturedCard.left + capturedCard.width / 2) * screenshotScale;
+        const cardCenterY = -stageBounds.height * .05 + (capturedCard.top + capturedCard.height / 2) * screenshotScale;
+        const productScale = cardWidth / 620;
+        heroDevice.style.setProperty('--product-left', `${cardCenterX.toFixed(2)}px`);
+        heroDevice.style.setProperty('--product-top', `${cardCenterY.toFixed(2)}px`);
         heroDevice.style.setProperty('--product-scale', productScale.toFixed(3));
         heroDevice.style.setProperty('--selection-outset', `${(20 / productScale).toFixed(2)}px`);
         heroDevice.style.setProperty('--selection-padding', `${(40 / productScale).toFixed(2)}px`);
@@ -125,6 +142,7 @@
       };
       const resizeStory = () => {
         centerStory();
+        displayedProgress = null;
         queueStoryUpdate();
       };
 
