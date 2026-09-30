@@ -54,17 +54,52 @@
       const ramp = (value, start, end) => clamp((value - start) / (end - start));
       const keyReveals = [[0, .035], [.045, .08], [.09, .125]];
       const keyPresses = [.18, .25, .32];
-      const progressPerSecond = .55;
       const introMovePerSecond = 1.25;
+      const chapters = [
+        { trigger: .015, end: .35, duration: 1400 },
+        { trigger: .15, end: .70, duration: 1400 },
+        { trigger: .32, end: 1, duration: 1500 },
+      ];
       const smooth = (value) => value * value * (3 - 2 * value);
       // Bounds of the product card inside the white screenshot frame (2414 × 1650).
       const capturedCard = { left: 548, top: 444, width: 1300, height: 752 };
       let keyWidths = [0, 0, 0];
       let frame = 0;
       let previousFrameTime = 0;
+      let previousScrollY = window.scrollY;
+      let storyExtraHeight = 0;
       let displayedProgress = null;
       let displayedMove = null;
+      let requestedProgress = 0;
       const approach = (current, target, distance) => current + Math.sign(target - current) * Math.min(Math.abs(target - current), distance);
+      const scrollChapter = (rawProgress) => {
+        let chapter = 0;
+        for (const step of chapters) {
+          if (rawProgress < step.trigger) break;
+          chapter = step.end;
+        }
+        return chapter;
+      };
+      const playChapters = (from, to, elapsedMs) => {
+        let progress = from;
+        let remaining = elapsedMs;
+        for (let index = 0; index < chapters.length && progress < to - .001 && remaining > 0; index += 1) {
+          const step = chapters[index];
+          if (progress >= step.end - .001) continue;
+          const start = index ? chapters[index - 1].end : 0;
+          const speed = (step.end - start) / step.duration;
+          const end = Math.min(step.end, to);
+          const needed = (end - progress) / speed;
+          if (remaining >= needed) {
+            progress = end;
+            remaining -= needed;
+          } else {
+            progress += speed * remaining;
+            remaining = 0;
+          }
+        }
+        return Math.min(progress, to);
+      };
 
       const updateStory = (timestamp = performance.now()) => {
         frame = 0;
@@ -72,19 +107,32 @@
         const stickyTop = parseFloat(getComputedStyle(sticky).top) || 0;
         const scrollable = Math.max(1, bounds.height - sticky.offsetHeight);
         const rawProgress = clamp((stickyTop - bounds.top) / scrollable);
-        const sequenceEnd = window.matchMedia('(max-width: 620px)').matches ? .57 : .55;
-        const targetProgress = clamp(rawProgress / sequenceEnd);
+        const chapterProgress = scrollChapter(rawProgress);
         const targetMove = clamp(window.scrollY / Math.max(1, bounds.top + window.scrollY - stickyTop));
-        const offscreen = bounds.bottom < 0 || bounds.top > window.innerHeight || document.hidden;
-        if (displayedProgress === null || offscreen) {
-          displayedProgress = targetProgress;
+        const scrollingBackward = window.scrollY < previousScrollY - 1;
+        const scrollingForward = window.scrollY > previousScrollY + 1;
+        if (displayedProgress === null || document.hidden || scrollingBackward) {
+          displayedProgress = chapterProgress;
           displayedMove = targetMove;
+          requestedProgress = chapterProgress;
         } else {
-          const elapsed = Math.max(0, Math.min((timestamp - previousFrameTime) / 1000, .1));
-          displayedProgress = approach(displayedProgress, targetProgress, progressPerSecond * elapsed);
-          displayedMove = approach(displayedMove, targetMove, introMovePerSecond * elapsed);
+          const elapsed = Math.max(0, Math.min(timestamp - previousFrameTime, 100));
+          if (scrollingForward) requestedProgress = Math.max(requestedProgress, chapterProgress);
+          displayedProgress = playChapters(displayedProgress, requestedProgress, elapsed);
+          displayedMove = approach(displayedMove, targetMove, introMovePerSecond * elapsed / 1000);
         }
         previousFrameTime = timestamp;
+        previousScrollY = window.scrollY;
+        if (scrollingBackward && bounds.top >= stickyTop) {
+          storyExtraHeight = 0;
+          heroDevice.style.removeProperty('--story-extra-height');
+        } else if (!document.hidden && requestedProgress - displayedProgress > .001) {
+          const neededHeight = window.innerHeight + sticky.offsetHeight - bounds.bottom;
+          if (neededHeight > 0) {
+            storyExtraHeight += Math.ceil(neededHeight);
+            heroDevice.style.setProperty('--story-extra-height', `${storyExtraHeight}px`);
+          }
+        }
         const progress = displayedProgress;
         const move = displayedMove;
         const introOpacity = 1 - clamp((move - .30) / .60);
@@ -119,7 +167,7 @@
         heroDevice.style.setProperty('--editor-rise', `${(48 * (1 - editorPop)).toFixed(1)}px`);
         heroDevice.style.setProperty('--editor-scale', (.94 + .06 * editorPop).toFixed(3));
         heroDevice.style.setProperty('--result-opacity', resultOpacity.toFixed(3));
-        if (!offscreen && (Math.abs(targetProgress - progress) > .001 || Math.abs(targetMove - move) > .001)) queueStoryUpdate();
+        if (!document.hidden && (Math.abs(requestedProgress - progress) > .001 || Math.abs(targetMove - move) > .001)) queueStoryUpdate();
       };
       const queueStoryUpdate = () => {
         if (!frame) frame = requestAnimationFrame(updateStory);
@@ -142,7 +190,6 @@
       };
       const resizeStory = () => {
         centerStory();
-        displayedProgress = null;
         queueStoryUpdate();
       };
 
