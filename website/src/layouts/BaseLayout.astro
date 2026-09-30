@@ -1,132 +1,110 @@
 ---
-import '../styles/global.css';
+import { DOWNLOAD_URL } from '../site';
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  article?: boolean;
+  articleModified?: string;
   noindex?: boolean;
-  bodyClass?: string;
-  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+  structuredData?: Record<string, unknown>;
+  active?: 'features' | 'guides' | 'changelog';
 }
 
 const {
   title,
   description,
-  image = '/images/og.jpg',
+  image = '/assets/skreen-mascot.png',
+  article = false,
+  articleModified,
   noindex = false,
-  bodyClass,
   structuredData,
+  active,
 } = Astro.props;
-
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const socialImage = new URL(image, Astro.site);
-const fullTitle = title.includes('Skreen') ? title : `${title} — Skreen`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{fullTitle}</title>
+    <meta name="theme-color" content="#f9faf9" />
+    <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.png" type="image/png" sizes="256x256" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-    <meta name="theme-color" content="#11130f" />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
-
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:site_name" content="Skreen" />
-    <meta property="og:title" content={fullTitle} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content="Skreen screenshot editor for macOS" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={fullTitle} />
+    <meta property="og:image:alt" content="Skreen screenshot app for Mac" />
+    {articleModified && <meta property="article:modified_time" content={articleModified} />}
+    <meta name="twitter:card" content={image === '/assets/skreen-mascot.png' ? 'summary' : 'summary_large_image'} />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
-
-    {structuredData && (
-      <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    )}
-    <!-- Yandex.Metrika counter -->
-    <script is:inline type="text/javascript">
-      (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105348782', 'ym');
-
-      ym(105348782, 'init', {ssr:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <!-- /Yandex.Metrika counter -->
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/skreen-mascot.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/assets/skreen-mascot.png" />
+    <link rel="preload" href="/assets/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="stylesheet" href="/assets/css/interior.css" />
+    <link rel="stylesheet" href="/assets/css/site-shell.css" />
     <slot name="head" />
   </head>
-  <body class={bodyClass}>
-    <noscript>
-      <div><img src="https://mc.yandex.ru/watch/105348782" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
+  <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="shell nav-shell">
-        <a class="brand" href="/" aria-label="Skreen home">
-          <img src="/images/logo.png" width="160" height="36" alt="Skreen" />
-        </a>
-
-        <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="/#features">Features</a>
-          <a href="/changelog/">Changelog</a>
-        </nav>
-
-        <div class="nav-actions">
-          <a class="github-link" href="https://github.com/levskiy0/skreenme" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button button-small" href="/download/">Download <span aria-hidden="true">↘</span></a>
-        </div>
-
-        <details class="mobile-menu">
-          <summary aria-label="Open navigation"><span></span><span></span></summary>
-          <nav aria-label="Mobile navigation">
-            <a href="/#features">Features</a>
-            <a href="/changelog/">Changelog</a>
-            <a href="/download/">Download Skreen</a>
+    <header class="site-header" id="top">
+      <div class="island-shell">
+        <div class="header-inner">
+          <a class="brand" href="/" aria-label="Skreen home"><span class="brand-icon"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
+          <nav class="nav" id="site-primary-navigation" aria-label="Main navigation">
+            <a href="/features" aria-current={active === 'features' ? 'page' : undefined}>Features</a>
+            <a href="/guides/how-to-screenshot-on-mac" aria-current={active === 'guides' ? 'page' : undefined}>Mac guide</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/changelog" aria-current={active === 'changelog' ? 'page' : undefined}>Releases</a>
           </nav>
-        </details>
+          <div class="island-actions">
+            <a class="header-download" href={DOWNLOAD_URL} aria-label="Download Skreen for Mac" data-download-cta>Download</a>
+            <button class="island-menu-button" type="button" aria-label="Open navigation" aria-controls="site-primary-navigation" aria-expanded="false"><span class="island-menu-lines" aria-hidden="true"></span></button>
+          </div>
+        </div>
       </div>
     </header>
-
-    <main id="main">
-      <slot />
-    </main>
-
-    <footer class="site-footer simple-footer">
-      <div class="shell">
-        <span>© {new Date().getFullYear()} Skreen</span>
-        <nav aria-label="Footer navigation">
-          <a href="/changelog/">Changelog</a>
-          <a href="https://github.com/levskiy0/skreenme">GitHub</a>
+    <slot />
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-intro">
+          <a class="brand" href="/" aria-label="Skreen home"><span class="brand-icon"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
+          <p>From the first capture to the final detail.<br />Make every screenshot worth sharing.</p>
+          <a class="footer-contact" href="https://github.com/levskiy0/skreenme/issues">Have an idea? Tell us ↗</a>
+        </div>
+        <nav class="footer-sitemap" aria-label="Footer navigation">
+          <div class="footer-column"><h2>Product</h2><a href="/features">Features</a><a href={DOWNLOAD_URL} data-download-cta>Download for Mac</a></div>
+          <div class="footer-column"><h2>Explore</h2><a href="/guides/how-to-screenshot-on-mac">Mac guide</a><a href="/#faq">FAQ</a><a href="/changelog">Releases</a></div>
+          <div class="footer-column"><h2>Elsewhere</h2><a href="https://github.com/levskiy0/skreenme">GitHub</a><a href="https://github.com/levskiy0/skreenme/issues">Feedback</a></div>
         </nav>
       </div>
+      <div class="container footer-bottom"><span>© {new Date().getFullYear()} Skreen</span><span>Made for macOS.</span><a href="#top">Back to top</a></div>
+      <a class="footer-wordmark" href="/" aria-label="Skreen home">skreen</a>
     </footer>
-
-    <script>
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!reducedMotion && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          }
-        }, { threshold: 0.12 });
-        document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-      } else {
-        document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+    <script is:inline src="/assets/js/site-shell.js" defer></script>
+    <script is:inline src="/assets/js/reveal.js" defer></script>
+    <script is:inline>
+      if (location.hostname === 'skreenme.com' || location.hostname === 'www.skreenme.com') {
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();for(var j=0;j<e.scripts.length;j++){if(e.scripts[j].src===r){return;}}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+        })(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+        ym(105348782, 'init', {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+        document.querySelectorAll('[data-download-cta]').forEach(function(link) {
+          link.addEventListener('click', function() { ym(105348782, 'reachGoal', 'download_click'); });
+        });
       }
     </script>
   </body>

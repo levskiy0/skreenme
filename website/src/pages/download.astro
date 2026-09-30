@@ -1,21 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const releaseUrl = 'https://github.com/levskiy0/skreenme/releases/latest';
+import { DOWNLOAD_URL, VERSION } from '../site';
 ---
-
-<BaseLayout
-  title="Download Skreen for macOS"
-  description="Download the latest free public beta of Skreen, a native private screenshot app for macOS 14 Sonoma or later."
-  noindex={true}
->
-  <meta slot="head" http-equiv="refresh" content={`1;url=${releaseUrl}`} />
-  <section class="download-page section">
-    <div class="shell">
-      <p class="eyebrow">Latest release · macOS 14+</p>
-      <h1 class="display">Your download is opening.</h1>
-      <p>Skreen is distributed as a notarized DMG through GitHub Releases.</p>
-      <p><a class="button" href={releaseUrl}>Continue to download ↘</a></p>
-    </div>
-  </section>
-  <script is:inline define:vars={{ releaseUrl }}>window.setTimeout(() => window.location.replace(releaseUrl), 350);</script>
+<BaseLayout title="Download Skreen for Mac" description={`Download Skreen ${VERSION} for macOS 14 or later.`} noindex>
+  <meta slot="head" http-equiv="refresh" content={`0;url=${DOWNLOAD_URL}`} />
+  <main id="main" class="article-main"><section class="page-hero index-hero"><div class="container index-hero-inner"><h1>Download Skreen for Mac.</h1><p>If the download did not start, use the link below.</p><a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>Download Skreen {VERSION}</a></div></section></main>
 </BaseLayout>

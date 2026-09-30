@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageCta from './PageCta.astro';
+import { DOWNLOAD_URL, VERSION } from '../site';
+import type { ArticlePageData } from '../types';
+
+interface Props { article: ArticlePageData; slug: string }
+const { article: h, slug } = Astro.props;
+const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const modifiedDate = h.updatedIso;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: h.h1,
+  description: h.description,
+  url: articleUrl,
+  dateModified: modifiedDate,
+  publisher: { '@type': 'Organization', name: 'Skreen', url: 'https://skreenme.com/' },
+};
+---
+
+<BaseLayout title={h.title} description={h.description} image={h.image} article articleModified={modifiedDate} active={h.section === 'guides' ? 'guides' : 'features'} structuredData={structuredData}>
+  <main id="main" class="article-main">
+    <section class="page-hero article-hero" aria-labelledby="article-title">
+      <div class:list={['container', 'article-hero-inner', h.icon && !h.image && 'article-hero-inner--icon']}>
+        <div class="article-hero-copy">
+          <a class="back-link" href={h.parent_url ?? '/features'}>{h.parent_label ?? 'All features'}</a>
+          <h1 id="article-title">{h.h1}</h1>
+          <p class="article-lead">{h.lead}</p>
+          <p class="article-updated">Updated {h.updated} <span aria-hidden="true">·</span> Skreen for macOS 14+</p>
+        </div>
+        {h.icon && !h.image && <img class="article-hero-icon" src={h.icon} width="512" height="512" alt="" aria-hidden="true" />}
+      </div>
+    </section>
+    {h.image && <figure class:list={['article-figure', `article-figure--${slug}`]}><div class="container"><div class="article-figure-stage"><img src={h.image} alt={h.image_alt ?? ''} fetchpriority="high" /></div><figcaption>{h.image_caption}</figcaption></div></figure>}
+    <div class="container article-layout">
+      <article class="article-content" set:html={h.bodyHtml} />
+      <aside class="article-aside" aria-label="Download Skreen">
+        <div class="article-aside-inner">
+          <div class="article-banner-art" aria-hidden="true">
+            <div class="article-banner-particles"><span class="particle-dot"></span><span class="particle-ring"></span><span class="particle-plus"></span><span class="particle-diamond"></span><span class="particle-dot"></span><span class="particle-ring"></span><span class="particle-plus"></span><span class="particle-dot"></span></div>
+            <img src="/assets/skreen-mascot.png" width="512" height="512" alt="" loading="lazy" />
+          </div>
+          <div class="article-banner-copy"><h2>Finish it in Skreen.</h2><p>Download Skreen {VERSION} for macOS 14 or later.</p><a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>Download for Mac</a></div>
+        </div>
+      </aside>
+    </div>
+    {h.related && <section class="related-section container" aria-labelledby="related-title"><h2 id="related-title">Keep exploring.</h2><div class="related-grid">{h.related.map((item) => <a href={item.url}><span><strong>{item.title}</strong><small>{item.body}</small></span></a>)}</div></section>}
+    <PageCta titleId="article-cta-title" />
+  </main>
+</BaseLayout>

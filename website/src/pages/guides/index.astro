@@ -1,0 +1,6 @@
+---
+import IndexPage from '../../components/IndexPage.astro';
+import type { IndexData } from '../../types';
+import pages from '../../data/pages.json';
+---
+<IndexPage data={pages.guides as IndexData} />

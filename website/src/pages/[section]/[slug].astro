@@ -1,0 +1,14 @@
+---
+import ArticlePage from '../../components/ArticlePage.astro';
+import pages from '../../data/pages.json';
+import type { ArticlePageData } from '../../types';
+
+export function getStaticPaths() {
+  return Object.entries(pages.articles).map(([id, article]) => {
+    const [section, slug] = id.split('/');
+    return { params: { section, slug }, props: { article: article as ArticlePageData, slug } };
+  });
+}
+const { article, slug } = Astro.props;
+---
+<ArticlePage article={article} slug={slug} />

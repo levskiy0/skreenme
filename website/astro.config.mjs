@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://skreenme.com',
   output: 'static',
   integrations: [sitemap({
-    filter: (page) => page !== 'https://skreenme.com/download/',
+    filter: (page) => !['https://skreenme.com/download/', 'https://skreenme.com/releases/'].includes(page),
   })],
   build: {
     format: 'directory',

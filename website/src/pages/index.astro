@@ -1,109 +1,85 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { DOWNLOAD_URL, VERSION } from '../site';
+import pages from '../data/pages.json';
 
-const downloadUrl = 'https://github.com/levskiy0/skreenme/releases/latest';
+interface HomeData {
+  title: string;
+  description: string;
+  hero_title: string;
+  hero_title_accent: string;
+  hero_description: string;
+  download_label: string;
+  hero_note: string;
+  features: { title: string; body: string; url: string; icon: string; label: string }[];
+  workflow: { title: string; body: string }[];
+  faq: { question: string; answer: string }[];
+}
 
-const features = [
-  {
-    icon: '↕',
-    title: 'Scrolling screenshots',
-    text: 'Capture long pages, conversations, and any scrollable area as one image.',
-  },
-  {
-    icon: '✎',
-    title: 'Annotations',
-    text: 'Add arrows, shapes, text, highlights, counters, and freehand drawings.',
-  },
-  {
-    icon: '▧',
-    title: 'Beautiful backgrounds',
-    text: 'Add padding, gradients, patterns, shadows, rounded corners, and presets.',
-  },
-  {
-    icon: '●',
-    title: 'Private redaction',
-    text: 'Find sensitive data on-device and hide it before the screenshot leaves your Mac.',
-  },
-  {
-    icon: 'Aa',
-    title: 'Text recognition & QR',
-    text: 'Select any area to copy its text or decode a QR code with Apple Vision.',
-  },
-  {
-    icon: '⊞',
-    title: 'Combine screenshots',
-    text: 'Arrange multiple captures in a Grid or on a flexible Free Canvas.',
-  },
-];
-
+const h = pages.home as HomeData;
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'Skreen',
+  url: 'https://skreenme.com/',
+  description: h.description,
   applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'macOS 14 Sonoma or later',
-  softwareVersion: '1.2.2',
-  description: 'A native macOS screenshot app for capture, editing, OCR, beautification, redaction, and combining images.',
-  downloadUrl,
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free public beta' },
+  operatingSystem: 'macOS 14 or later',
+  softwareVersion: VERSION,
+  downloadUrl: DOWNLOAD_URL,
 };
 ---
 
-<BaseLayout
-  title="Skreen — Screenshot Tool for Mac"
-  description="A native macOS screenshot tool with scrolling capture, annotations, beautiful backgrounds, text recognition, and private redaction."
-  structuredData={structuredData}
-  bodyClass="home-light"
->
-  <section class="simple-hero">
-    <div class="shell simple-hero-grid">
-      <div class="simple-hero-copy">
-        <p class="simple-kicker">Screenshot app for Mac</p>
-        <h1>Take the shot.<br /><span>Finish it here.</span></h1>
-        <p class="simple-lead">Capture, annotate, beautify, and safely share — in one native Mac app.</p>
-        <a class="simple-download" href="/download/">
-          <strong>Download Skreen</strong>
-          <span>Free beta · macOS 14+</span>
-        </a>
-        <p class="simple-trust">Native Swift · Everything stays on your Mac</p>
+<BaseLayout title={h.title} description={h.description} image="/assets/skreen-editor-styled.png" structuredData={structuredData}>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">A screenshot app made for Mac</p>
+          <img class="hero-app-mark" src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" />
+          <h1 id="hero-title">{h.hero_title} <span>{h.hero_title_accent}</span></h1>
+          <p class="hero-description">{h.hero_description}</p>
+          <div class="hero-shortcut"><span class="hero-shortcut-keys" aria-label="Shift plus Command plus 0"><kbd>Shift</kbd><span>+</span><kbd>⌘</kbd><span>+</span><kbd>0</kbd></span><span aria-hidden="true">=</span><strong>A screenshot you can quickly annotate and style.</strong></div>
+          <div class="hero-actions"><a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>{h.download_label}</a><a class="button button-secondary" href="#see-it">See how it works</a></div>
+          <p class="hero-note">{h.hero_note}</p>
+        </div>
+        <figure class="hero-device">
+          <div class="hero-editor" data-editor-view="styled">
+            <img class="hero-editor-capture" src="/assets/skreen-editor-capture.png" width="2414" height="1650" alt="Skreen editor with a newly captured screenshot" aria-hidden="true" decoding="async" />
+            <img class="hero-editor-styled" src="/assets/skreen-editor-styled.png" width="2414" height="1650" alt="Skreen editor with a styled screenshot ready to share" fetchpriority="high" decoding="async" />
+          </div>
+          <div class="hero-editor-switch" role="group" aria-label="Editor preview"><button type="button" data-editor-view-button="capture" aria-pressed="false">Captured</button><button type="button" data-editor-view-button="styled" aria-pressed="true">Styled</button></div>
+        </figure>
       </div>
-      <div class="simple-hero-visual" aria-label="Skreen application preview">
-        <img
-          src="/images/skreen-editor-annotated.png"
-          width="2306"
-          height="1750"
-          alt="Skreen editor annotating a screenshot"
-          fetchpriority="high"
-        />
+    </section>
+    <section class="proof-strip" aria-label="Why Skreen"><div class="container proof-grid">
+      <div class="proof-item"><img class="proof-icon" src="/assets/icon-scrolling-capture.png" width="512" height="512" alt="" aria-hidden="true" loading="lazy" /><h2>A whole page, one image.</h2><p>Keep scrolling. You decide where the capture stops.</p></div>
+      <div class="proof-item"><img class="proof-icon" src="/assets/icon-annotations.png" width="512" height="512" alt="" aria-hidden="true" loading="lazy" /><h2>Point to what matters.</h2><p>Add an arrow, a note, or a frame before you send it.</p></div>
+      <div class="proof-item"><img class="proof-icon" src="/assets/icon-redaction.png" width="512" height="512" alt="" aria-hidden="true" loading="lazy" /><h2>Cover private details.</h2><p>Review local detection and hide sensitive parts before export.</p></div>
+    </div></section>
+    <section class="showcase" id="features" aria-labelledby="showcase-title"><div class="container">
+      <div class="showcase-heading"><div><p class="eyebrow">The editor</p><h2 id="showcase-title">One place for the<br /><em>whole screenshot.</em></h2></div><p>Capture what matters, make it clear, and finish the image in the editor.</p></div>
+      <div class="showcase-feature-list">{h.features.map((feature) => <article class="showcase-feature"><img class="showcase-feature-icon" src={feature.icon} width="512" height="512" alt="" aria-hidden="true" loading="lazy" /><div class="showcase-feature-copy"><h3>{feature.title}</h3><p>{feature.body}</p><a class="text-link" href={feature.url}>Explore {feature.label.toLowerCase()}</a></div></article>)}</div>
+    </div></section>
+    <section class="workflow" id="see-it" aria-labelledby="workflow-title"><div class="container">
+      <div class="workflow-heading"><p class="eyebrow">The workflow</p><h2 id="workflow-title">From keyboard shortcut<br /><em>to finished image.</em></h2><p>Capture an area, window, or scrolling view. Make the changes you need, then export the result.</p><img class="workflow-icon" src="/assets/icon-editor.png" width="512" height="512" alt="" aria-hidden="true" loading="lazy" /></div>
+      <div class="workflow-steps workflow-steps--full">{h.workflow.map((step, index) => <article class="workflow-step"><span>0{index + 1}</span><div><h3>{step.title}</h3><p>{step.body}</p></div></article>)}</div>
+      <nav class="more-features" aria-label="More Skreen features"><span>And there is more to explore</span><a href="/features/ocr-and-qr">Text and QR recognition</a><a href="/features/combine-screenshots">Combine screenshots</a><a href="/features">All features</a></nav>
+    </div></section>
+    <section class="faq" id="faq" aria-labelledby="faq-title"><div class="container"><div class="faq-heading"><p class="eyebrow">Good to know</p><h2 id="faq-title">A few useful <em>answers.</em></h2></div><div class="faq-list">{h.faq.map((item, index) => <details open={index === 0}><summary>{item.question}<span aria-hidden="true"></span></summary><p>{item.answer}</p></details>)}</div></div></section>
+    <section class="download-close" aria-labelledby="download-close-title">
+      <div class="download-close-scene">
+        <div class="download-close-landscape" aria-hidden="true"></div>
+        <div class="container download-close-inner">
+          <div class="download-close-copy">
+            <p class="eyebrow">Ready when you are</p>
+            <h2 id="download-close-title">Your next screenshot,<br /><em>finished in Skreen.</em></h2>
+            <p>Capture, edit, and export in one native Mac app.</p>
+            <div class="download-close-action"><a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>{h.download_label}</a><span>{h.hero_note}</span></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class="simple-features" id="features">
-    <div class="shell">
-      <div class="simple-features-head">
-        <p class="simple-kicker">One app, end to end</p>
-        <h2>Everything a screenshot needs.</h2>
-      </div>
-      <div class="simple-grid">
-        {features.map((feature) => (
-          <article class="simple-card">
-            <span class="simple-icon" aria-hidden="true">{feature.icon}</span>
-            <h2>{feature.title}</h2>
-            <p>{feature.text}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="simple-cta">
-    <div class="shell">
-      <h2>Ready for a better screenshot?</h2>
-      <a class="simple-download" href="/download/">
-        <strong>Download Skreen</strong>
-        <span>Free beta · macOS 14+</span>
-      </a>
-    </div>
-  </section>
+    </section>
+  </main>
+  <script is:inline src="/assets/js/home.js" defer></script>
 </BaseLayout>
