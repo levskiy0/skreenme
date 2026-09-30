@@ -30,7 +30,7 @@ const structuredData = {
 };
 ---
 
-<BaseLayout title={h.title} description={h.description} image="/assets/skreen-editor-styled.png" structuredData={structuredData}>
+<BaseLayout title={h.title} description={h.description} image="/assets/skreen-editor-chameleon-food.png" structuredData={structuredData}>
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-layout">
@@ -39,16 +39,45 @@ const structuredData = {
           <img class="hero-app-mark" src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" />
           <h1 id="hero-title">{h.hero_title} <span>{h.hero_title_accent}</span></h1>
           <p class="hero-description">{h.hero_description}</p>
-          <div class="hero-shortcut"><span class="hero-shortcut-keys" aria-label="Shift plus Command plus 0"><kbd>Shift</kbd><span>+</span><kbd>⌘</kbd><span>+</span><kbd>0</kbd></span><span aria-hidden="true">=</span><strong>A screenshot you can quickly annotate and style.</strong></div>
+          <p class="sr-only">Press Shift, Command, and 0 to capture an area, then annotate and style it in Skreen.</p>
           <div class="hero-actions"><a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>{h.download_label}</a><a class="button button-secondary" href="#see-it">See how it works</a></div>
           <p class="hero-note">{h.hero_note}</p>
         </div>
         <figure class="hero-device">
-          <div class="hero-editor" data-editor-view="styled">
-            <img class="hero-editor-capture" src="/assets/skreen-editor-capture.png" width="2414" height="1650" alt="Skreen editor with a newly captured screenshot" aria-hidden="true" decoding="async" />
-            <img class="hero-editor-styled" src="/assets/skreen-editor-styled.png" width="2414" height="1650" alt="Skreen editor with a styled screenshot ready to share" fetchpriority="high" decoding="async" />
+          <div class="hero-story-sticky">
+            <div class="hero-story-stage">
+              <div class="hero-story-intro" aria-hidden="true"><img src="/assets/skreen-editor-empty.png" width="2414" height="1650" alt="" fetchpriority="high" decoding="async" /></div>
+              <div class="hero-story-keys" aria-hidden="true">
+                <div class="hero-story-key-row">
+                  <span class="hero-story-key" data-story-key="0"><kbd>Shift</kbd></span>
+                  <span class="hero-story-key" data-story-key="1"><kbd>⌘</kbd></span>
+                  <span class="hero-story-key" data-story-key="2"><kbd>0</kbd></span>
+                </div>
+                <div class="hero-shortcut-hint">
+                  <svg class="hero-shortcut-arrow" viewBox="0 0 96 64" fill="none" aria-hidden="true"><path d="M6 58c31 5 46-8 40-24-5-13-20-14-20-1 0 13 22 13 36 4 10-6 16-15 24-29M69 9l17-1-3 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <p><strong>Press the shortcut.</strong><span>Get a screenshot ready to edit in Skreen.</span></p>
+                </div>
+              </div>
+              <div class="hero-story-product" aria-hidden="true">
+                <div class="hero-product-card">
+                  <div class="hero-product-photo">
+                    <span class="hero-product-photo-label">FOR CURIOUS CHAMELEONS</span>
+                    <img class="hero-product-art" src="/assets/chameleon-food-pouch.webp" width="800" height="1200" alt="" decoding="async" />
+                  </div>
+                  <div class="hero-product-info">
+                    <div class="hero-product-brand"><span>LITTLE WILD</span><span>EST. 2026</span></div>
+                    <div class="hero-product-details"><span>CHAMELEON TREATS</span><h3>Cricket Mix</h3><p>A crunchy little treat for your favorite color changer.</p><div class="hero-product-meta">Dried crickets · Botanical blend</div></div>
+                    <div class="hero-product-bottom"><strong>$18</strong><span>Add to bag ↗</span></div>
+                  </div>
+                </div>
+                <div class="hero-product-selection"><svg class="hero-selection-cursor" viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M28 3v18m0 14v18M3 28h18m14 0h18" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M28 3v18m0 14v18M3 28h18m14 0h18" stroke="#1d1d1d" stroke-width="3" stroke-linecap="round"/></svg></div>
+              </div>
+              <div class="hero-editor" data-editor-view="capture">
+                <img class="hero-editor-empty" src="/assets/skreen-editor-empty.png" width="2414" height="1650" alt="Empty Skreen editor, ready for a screenshot" aria-hidden="true" decoding="async" />
+                <img class="hero-editor-capture" src="/assets/skreen-editor-chameleon-food.png" width="2414" height="1650" alt="Skreen editor with the captured chameleon food product card" aria-hidden="false" decoding="async" />
+              </div>
+            </div>
           </div>
-          <div class="hero-editor-switch" role="group" aria-label="Editor preview"><button type="button" data-editor-view-button="capture" aria-pressed="false">Captured</button><button type="button" data-editor-view-button="styled" aria-pressed="true">Styled</button></div>
         </figure>
       </div>
     </section>
