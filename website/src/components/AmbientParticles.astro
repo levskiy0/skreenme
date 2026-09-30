@@ -1,0 +1,21 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+const particles = [
+  ['dot', 4, 18, 5], ['plus', 13, 7, 11], ['ring', 21, 39, 8],
+  ['diamond', 7, 67, 8], ['dot', 16, 88, 4], ['plus', 27, 76, 8],
+  ['ring', 31, 17, 6], ['dot', 38, 91, 4], ['diamond', 45, 6, 7],
+  ['ring', 58, 88, 5], ['dot', 65, 13, 4], ['plus', 74, 79, 10],
+  ['diamond', 81, 24, 8], ['ring', 91, 11, 9], ['dot', 96, 43, 4],
+  ['plus', 88, 59, 12], ['ring', 95, 83, 7], ['diamond', 73, 94, 6],
+  ['dot', 3, 47, 4], ['plus', 24, 56, 7], ['ring', 78, 48, 5],
+  ['dot', 53, 72, 3], ['diamond', 37, 54, 5], ['plus', 61, 34, 6],
+] as const;
+---
+
+<div class:list={['ambient-particles', className]} aria-hidden="true">
+  {particles.map(([shape, x, y, size]) => <span class={`ambient-particle ambient-particle--${shape}`} style={`--x:${x}%;--y:${y}%;--size:${size}px`}></span>)}
+</div>

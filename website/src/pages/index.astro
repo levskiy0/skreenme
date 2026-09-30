@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AmbientParticles from '../components/AmbientParticles.astro';
 import { DOWNLOAD_URL, VERSION } from '../site';
 import pages from '../data/pages.json';
 
@@ -39,21 +40,14 @@ const structuredData = {
           <img class="hero-app-mark" src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" />
           <h1 id="hero-title">{h.hero_title} <span>{h.hero_title_accent}</span></h1>
           <p class="hero-description">{h.hero_description}</p>
-          <p class="sr-only">Press Shift, Command, and 0 to capture an area, then annotate and style it in Skreen.</p>
           <div class="hero-actions"><a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>{h.download_label}</a><a class="button button-secondary" href="#see-it">See how it works</a></div>
           <p class="hero-note">{h.hero_note}</p>
         </div>
         <figure class="hero-device">
           <div class="hero-story-sticky">
+            <AmbientParticles className="hero-story-particles" />
             <div class="hero-story-stage">
               <div class="hero-story-intro" aria-hidden="true"><img src="/assets/skreen-editor-clouds.png" width="2414" height="1650" alt="" fetchpriority="high" decoding="async" /></div>
-              <div class="hero-story-keys" aria-hidden="true">
-                <div class="hero-story-key-row">
-                  <span class="hero-story-key" data-story-key="0"><kbd>Shift</kbd></span>
-                  <span class="hero-story-key" data-story-key="1"><kbd>⌘</kbd></span>
-                  <span class="hero-story-key" data-story-key="2"><kbd>0</kbd></span>
-                </div>
-              </div>
               <div class="hero-story-product" aria-hidden="true">
                 <div class="hero-product-card">
                   <div class="hero-product-photo">
@@ -77,6 +71,12 @@ const structuredData = {
           </div>
         </figure>
       </div>
+      <div class="hero-scroll-cue" role="img" aria-label="Scroll to continue">
+        <svg viewBox="0 0 24 32" fill="none" aria-hidden="true">
+          <rect x="3.5" y="1.5" width="17" height="29" rx="8.5" stroke="currentColor" stroke-width="1.5" />
+          <rect class="hero-scroll-wheel" x="11" y="7" width="2" height="6" rx="1" fill="currentColor" />
+        </svg>
+      </div>
     </section>
     <section class="proof-strip" aria-label="Why Skreen"><div class="container proof-grid">
       <div class="proof-item"><img class="proof-icon" src="/assets/icon-scrolling-capture.png" width="512" height="512" alt="" aria-hidden="true" loading="lazy" /><h2>A whole page, one image.</h2><p>Keep scrolling. You decide where the capture stops.</p></div>
@@ -92,7 +92,7 @@ const structuredData = {
       <div class="workflow-steps workflow-steps--full">{h.workflow.map((step, index) => <article class="workflow-step"><span>0{index + 1}</span><div><h3>{step.title}</h3><p>{step.body}</p></div></article>)}</div>
       <nav class="more-features" aria-label="More Skreen features"><span>And there is more to explore</span><a href="/features/ocr-and-qr">Text and QR recognition</a><a href="/features/combine-screenshots">Combine screenshots</a><a href="/features">All features</a></nav>
     </div></section>
-    <section class="faq" id="faq" aria-labelledby="faq-title"><div class="container"><div class="faq-heading"><p class="eyebrow">Good to know</p><h2 id="faq-title">A few useful <em>answers.</em></h2></div><div class="faq-list">{h.faq.map((item, index) => <details open={index === 0}><summary>{item.question}<span aria-hidden="true"></span></summary><p>{item.answer}</p></details>)}</div></div></section>
+    <section class="faq" id="faq" aria-labelledby="faq-title"><AmbientParticles className="faq-particles" /><div class="container"><div class="faq-heading"><p class="eyebrow">Good to know</p><h2 id="faq-title">A few useful <em>answers.</em></h2></div><div class="faq-list">{h.faq.map((item, index) => <details open={index === 0}><summary>{item.question}<span aria-hidden="true"></span></summary><p>{item.answer}</p></details>)}</div></div></section>
     <section class="download-close" aria-labelledby="download-close-title">
       <div class="download-close-scene">
         <div class="download-close-landscape" aria-hidden="true"></div>
