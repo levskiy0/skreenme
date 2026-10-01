@@ -7,6 +7,12 @@
     "macGuide": "Снимки экрана на Mac",
     "faq": "Вопросы",
     "releases": "Обновления",
+    "headerNav": {
+      "features": "Функции",
+      "macGuide": "Гид по Mac",
+      "faq": "Вопросы",
+      "releases": "Версии"
+    },
     "download": "Скачать",
     "downloadForMac": "Скачать для Mac",
     "openNavigation": "Открыть меню",

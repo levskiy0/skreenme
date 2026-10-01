@@ -55,6 +55,16 @@ export function getUi(locale: Locale): typeof englishUi {
   return locale === 'en' ? englishUi : translations[locale].ui;
 }
 
+export function getHeaderNav(locale: Locale) {
+  const ui = getUi(locale);
+  return locale === 'ru' ? ru.ui.headerNav : {
+    features: ui.features,
+    macGuide: ui.macGuide,
+    faq: ui.faq,
+    releases: ui.releases,
+  };
+}
+
 export function withLocale(locale: Locale, path: string): string {
   if (/^(?:https?:|mailto:|#)/.test(path)) return path;
   const normalized = path.startsWith('/') ? path : `/${path}`;

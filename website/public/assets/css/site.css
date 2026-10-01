@@ -63,7 +63,7 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-description { max-width: 610px; margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.58; }
 .hero-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 .hero-note { margin-top: 10px; color: #777; font-size: 12px; }
-.hero-device { position: relative; overflow: hidden; width: min(100%, 1130px); aspect-ratio: 1.54; margin-top: 24px; border-radius: 24px; background: #222; box-shadow: 0 28px 75px rgba(0, 0, 0, .16); }
+.hero-device { position: relative; overflow: hidden; width: min(100%, 1130px); aspect-ratio: 1.54; margin-top: 24px; background: #222; box-shadow: 0 28px 75px rgba(0, 0, 0, .16); }
 .hero-device img { position: absolute; top: -5%; left: -5%; width: 110%; max-width: none; height: auto; }
 
 /* A short proof strip separates the opening scene from the product tour. */
@@ -176,7 +176,7 @@ h1, h2, h3 { text-wrap: balance; }
   .hero-actions { gap: 8px; margin-top: 12px; }
   .hero-actions .button { min-height: 43px; padding: 0 17px; font-size: 12px; }
   .hero-note { margin-top: 10px; font-size: 11px; }
-  .hero-device { width: calc(100% + 32px); margin: 24px -16px 0; border-radius: 16px 16px 0 0; }
+  .hero-device { width: 100%; margin: 24px 0 0; }
   .proof-grid { grid-template-columns: 1fr; gap: 0; padding-top: 15px; padding-bottom: 15px; }
   .proof-item, .proof-item + .proof-item { display: grid; grid-template-columns: 38px 1fr; column-gap: 14px; padding: 23px 0; border: 0; border-bottom: 1px solid var(--line); }
   .proof-item:last-child { border-bottom: 0; }
