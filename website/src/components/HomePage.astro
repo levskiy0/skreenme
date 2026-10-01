@@ -72,11 +72,7 @@ const structuredData = {
     <section class="faq" id="faq" aria-labelledby="faq-title"><AmbientParticles className="faq-particles" /><div class="container"><div class="faq-heading"><p class="eyebrow">{ui.goodToKnow}</p><h2 id="faq-title">{ui.faqTitle} <em>{ui.faqAccent}</em></h2></div><div class="faq-list">{h.faq.map((item, index) => <details open={index === 0}><summary>{item.question}<span aria-hidden="true"></span></summary><p>{item.answer}</p></details>)}</div></div></section>
     <section class="download-close" aria-labelledby="download-close-title">
       <div class="download-close-scene">
-        <div class="download-close-landscape" aria-hidden="true"><picture>
-          <source type="image/avif" srcset="/assets/macos-wallpaper.avif" />
-          <source type="image/webp" srcset="/assets/macos-wallpaper.webp" />
-          <img src="/assets/macos-wallpaper.png" width="1586" height="992" alt="" loading="lazy" decoding="async" />
-        </picture></div>
+        <div class="download-close-landscape" aria-hidden="true"></div>
         <div class="container download-close-inner">
           <div class="download-close-copy">
             <p class="eyebrow">{ui.ready}</p>

@@ -130,10 +130,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 .download-close { position: relative; height: 165svh; min-height: 900px; background: #fff; }
 .download-close-scene { position: sticky; top: 0; display: grid; place-items: center; isolation: isolate; overflow: hidden; height: 100svh; min-height: 600px; background: #fff; }
-.download-close-landscape { position: absolute; z-index: -1; inset: 0; opacity: var(--landscape-reveal, 1); transform: scale(calc(1.045 - var(--landscape-reveal, 1) * .045)); will-change: opacity, transform; }
-.download-close-landscape picture, .download-close-landscape img { display: block; width: 100%; height: 100%; }
-.download-close-landscape img { object-fit: cover; object-position: center 52%; }
-.download-close-landscape::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.52) 0%, rgba(255,255,255,.25) 47%, rgba(255,255,255,0) 73%, #050709 100%); pointer-events: none; }
+.download-close-landscape { position: absolute; z-index: -1; inset: 0; background-image: linear-gradient(180deg, rgba(255,255,255,.52) 0%, rgba(255,255,255,.25) 47%, rgba(255,255,255,0) 73%, #050709 100%), url('/assets/macos-wallpaper.png'); background-image: linear-gradient(180deg, rgba(255,255,255,.52) 0%, rgba(255,255,255,.25) 47%, rgba(255,255,255,0) 73%, #050709 100%), image-set(url('/assets/macos-wallpaper.avif') type('image/avif'), url('/assets/macos-wallpaper.webp') type('image/webp')); background-position: center 52%; background-size: cover; background-repeat: no-repeat; opacity: var(--landscape-reveal, 1); transform: scale(calc(1.045 - var(--landscape-reveal, 1) * .045)); will-change: opacity, transform; }
 .download-close-inner { position: relative; z-index: 1; display: grid; place-items: center; min-height: 100%; padding: 125px 0 160px; }
 .download-close-copy { max-width: 850px; text-align: center; opacity: var(--landscape-reveal, 1); transform: translateY(calc((1 - var(--landscape-reveal, 1)) * 24px)); }
 .download-close .eyebrow { color: #353b41; }
@@ -217,7 +214,7 @@ h1, h2, h3 { text-wrap: balance; }
   .faq-list details p { margin-right: 0; font-size: 14px; }
   .download-close { height: 150svh; min-height: 760px; }
   .download-close-scene { min-height: 520px; }
-  .download-close-landscape img { object-position: 52% center; }
+  .download-close-landscape { background-position: 52% center; }
   .download-close-inner { padding: 105px 0 130px; }
   .download-close h2 { font-size: clamp(46px, 11.5vw, 64px); }
   .download-close p:not(.eyebrow) { margin-top: 20px; font-size: 14px; line-height: 1.5; }
