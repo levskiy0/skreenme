@@ -166,14 +166,15 @@
       const progress = displayedProgress;
       const move = displayedIntroMove;
       const introBase = Math.max(0, Math.min(window.scrollY, pinStart));
-      const introExit = Math.min(window.innerHeight * 1.3, 1200);
+      const introExit = Math.min(window.innerHeight * .25, 250);
       const introOffset = introBase + move * introExit;
       const introOpacity = 1 - smooth(ramp(move, .72, 1));
-      const productEnter = (1 - smooth(ramp(move, .02, .34))) * Math.min(window.innerHeight * .9, 850);
+      const productArrival = smooth(ramp(move, .15, .85));
+      const productEnter = (1 - productArrival) * Math.min(window.innerHeight * .9, 850);
       const selectionProgress = smooth(ramp(progress, .27, .49));
       const captureFlash = smooth(ramp(progress, .59, .66)) * (1 - smooth(ramp(progress, .66, .72)));
       const selectionOpacity = smooth(ramp(progress, .26, .29)) * (1 - smooth(ramp(progress, .55, .60)));
-      const productOpacity = smooth(ramp(move, .07, .30)) * (1 - smooth(ramp(progress, .62, .71)));
+      const productOpacity = smooth(ramp(move, .15, .55)) * (1 - smooth(ramp(progress, .62, .71)));
       const editorPop = smooth(ramp(progress, .62, .75));
       const resultOpacity = smooth(ramp(progress, .80, .99));
 
@@ -184,6 +185,7 @@
       heroDevice.style.setProperty('--selection-opacity', selectionOpacity.toFixed(3));
       heroDevice.style.setProperty('--product-opacity', productOpacity.toFixed(3));
       heroDevice.style.setProperty('--product-enter-y', `${productEnter.toFixed(1)}px`);
+      heroDevice.style.setProperty('--product-enter-scale', (.88 + .12 * productArrival).toFixed(3));
       heroDevice.style.setProperty('--editor-opacity', editorPop.toFixed(3));
       heroDevice.style.setProperty('--editor-rise', `${(48 * (1 - editorPop)).toFixed(1)}px`);
       heroDevice.style.setProperty('--editor-scale', (.94 + .06 * editorPop).toFixed(3));

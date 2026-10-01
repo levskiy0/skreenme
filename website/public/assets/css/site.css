@@ -81,10 +81,10 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-editor-capture { opacity: 1; }
 .hero-device.is-story-ready { height: 220svh; }
 .hero-device.is-story-ready .hero-story-sticky { position: sticky; top: var(--story-center-top, 0px); width: min(100%, calc((100svh - 190px) * 1.54)); margin-inline: auto; }
-.hero-device.is-story-ready .hero-story-intro { position: absolute; inset: 0; display: block; overflow: hidden; border-radius: 24px; opacity: var(--intro-opacity, 1); transform: translateY(var(--intro-offset, 0px)); box-shadow: 0 28px 75px rgba(0, 0, 0, .16); will-change: transform, opacity; pointer-events: none; }
+.hero-device.is-story-ready .hero-story-intro { position: absolute; z-index: 3; inset: 0; display: block; overflow: hidden; border-radius: 24px; opacity: var(--intro-opacity, 1); transform: translateY(var(--intro-offset, 0px)); box-shadow: 0 28px 75px rgba(0, 0, 0, .16); will-change: transform, opacity; pointer-events: none; }
 .hero-story-intro img { position: absolute; top: -5%; left: -5%; width: 110%; max-width: none; height: auto; }
 .hero-device.is-story-ready .hero-capture-flash { position: absolute; z-index: 8; inset: -10px; display: block; border-radius: 26px; background: #fff; opacity: var(--capture-flash-opacity, 0); box-shadow: 0 0 70px 22px rgba(255, 255, 255, .9); pointer-events: none; }
-.hero-device.is-story-ready .hero-story-product { position: absolute; z-index: 3; top: var(--product-top, 50%); left: var(--product-left, 50%); display: block; width: 620px; height: 359px; opacity: var(--product-opacity, 0); transform: translate(-50%, calc(-50% + var(--product-enter-y, 0px))) scale(var(--product-scale, 1)); transform-origin: center; will-change: transform, opacity; pointer-events: none; }
+.hero-device.is-story-ready .hero-story-product { position: absolute; z-index: 2; top: var(--product-top, 50%); left: var(--product-left, 50%); display: block; width: 620px; height: 359px; opacity: var(--product-opacity, 0); transform: translate(-50%, calc(-50% + var(--product-enter-y, 0px))) scale(calc(var(--product-scale, 1) * var(--product-enter-scale, 1))); transform-origin: center; will-change: transform, opacity; pointer-events: none; }
 .hero-product-card { display: grid; grid-template-columns: 52% 48%; width: 100%; height: 100%; overflow: hidden; border: 1px solid #dedede; border-radius: 16px; background: #fff; box-shadow: 0 24px 58px rgba(0, 0, 0, .13); text-align: left; }
 .hero-product-photo { position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 37%, #f3f0e9 0, #e7e2d9 70%, #d9d3c9 100%); }
 .hero-product-photo-label { position: absolute; z-index: 1; top: 23px; left: 22px; color: #565951; font-size: 10px; font-weight: 760; letter-spacing: .12em; }
@@ -101,7 +101,7 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-product-bottom span { padding: 12px 15px; border-radius: 999px; background: #202020; color: #fff; font-size: 11px; font-weight: 710; }
 .hero-product-selection { position: absolute; top: calc(-1 * var(--selection-outset, 20px)); left: calc(-1 * var(--selection-outset, 20px)); width: calc((100% + var(--selection-padding, 40px)) * var(--selection-progress, 0)); height: calc((100% + var(--selection-padding, 40px)) * var(--selection-progress, 0)); border: 1px dashed #232323; border-radius: 2px; background: rgba(65, 65, 65, .07); opacity: var(--selection-opacity, 0); }
 .hero-selection-cursor { position: absolute; right: -29px; bottom: -29px; width: 56px; height: 56px; overflow: visible; filter: drop-shadow(0 1px 1px rgba(255, 255, 255, .9)); }
-.hero-device.is-story-ready .hero-editor { opacity: var(--editor-opacity, 0); transform: translateY(var(--editor-rise, 48px)) scale(var(--editor-scale, .94)); will-change: transform, opacity; }
+.hero-device.is-story-ready .hero-editor { z-index: 4; opacity: var(--editor-opacity, 0); transform: translateY(var(--editor-rise, 48px)) scale(var(--editor-scale, .94)); will-change: transform, opacity; }
 .hero-device.is-story-ready .hero-editor-empty { opacity: 1; }
 .hero-device.is-story-ready .hero-editor-capture { opacity: var(--result-opacity, 0); }
 
