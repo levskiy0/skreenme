@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageCta from './PageCta.astro';
 import type { IndexData } from '../types';
+import { iconWebp } from '../images';
 import { canonicalInternalPath, getUi, withLocale, type Locale } from '../i18n';
 
 interface Props { data: IndexData; locale?: Locale }
@@ -20,7 +21,7 @@ const isGuides = h.section === 'guides';
         {h.items.map((item) => <article class:list={['index-guide', item.icon && 'index-guide--icon']}>
           <a href={canonicalInternalPath(item.url)} class="index-guide-link">
             <div class="index-guide-copy"><h2>{item.title}</h2><p>{item.body}</p><span class="index-feature-action">{ui.readGuide}</span></div>
-            {item.icon && <div class="index-guide-icon"><img src={item.icon} width="512" height="512" alt="" aria-hidden="true" loading="lazy" /></div>}
+            {item.icon && <div class="index-guide-icon"><img src={iconWebp(item.icon, 384)} width="384" height="384" alt="" aria-hidden="true" loading="lazy" /></div>}
           </a>
         </article>)}
         <div class="index-extra index-guides-extra">
@@ -34,7 +35,7 @@ const isGuides = h.section === 'guides';
           {h.items.map((item, index) => <article class:list={['index-feature', item.icon && !item.image ? 'index-feature--icon' : item.image ? '' : 'index-feature--text', `index-feature--${index + 1}`]}>
             <a class="index-feature-link" href={canonicalInternalPath(item.url)}>
               <div class="index-feature-copy">
-                {item.icon && !item.image ? <img class="index-feature-icon" src={item.icon} width="512" height="512" alt="" aria-hidden="true" loading="lazy" /> : <span class="index-feature-number" aria-hidden="true">0{index + 1}</span>}
+                {item.icon && !item.image ? <img class="index-feature-icon" src={iconWebp(item.icon, 160)} width="160" height="160" alt="" aria-hidden="true" loading="lazy" /> : <span class="index-feature-number" aria-hidden="true">0{index + 1}</span>}
                 {item.media_label && <span class="index-feature-type">{item.media_label}</span>}
                 <h2>{item.title}</h2><p>{item.body}</p><span class="index-feature-action">{ui.learnMore}</span>
               </div>

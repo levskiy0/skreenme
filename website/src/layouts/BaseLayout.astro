@@ -12,6 +12,7 @@ interface Props {
   structuredData?: Record<string, unknown>;
   active?: 'features' | 'guides' | 'changelog';
   locale?: Locale;
+  interiorStyles?: boolean;
 }
 
 const {
@@ -24,6 +25,7 @@ const {
   structuredData,
   active,
   locale = 'en',
+  interiorStyles = true,
 } = Astro.props;
 const ui = getUi(locale);
 const headerNav = getHeaderNav(locale);
@@ -64,7 +66,7 @@ const alternateUrl = (language: Locale) => new URL(withLocale(language, path), A
     <link rel="apple-touch-icon" sizes="512x512" href="/assets/skreen-favicon.png?v=5" />
     <link rel="preload" href="/assets/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="/assets/css/interior.css" />
+    {interiorStyles && <link rel="stylesheet" href="/assets/css/interior.css" />}
     <link rel="stylesheet" href="/assets/css/site-shell.css" />
     <slot name="head" />
   </head>
@@ -73,7 +75,7 @@ const alternateUrl = (language: Locale) => new URL(withLocale(language, path), A
     <header class="site-header" id="top">
       <div class="island-shell">
         <div class="header-inner">
-          <a class="brand" href={withLocale(locale, '/')} aria-label={ui.homeLabel}><span class="brand-icon"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
+          <a class="brand" href={withLocale(locale, '/')} aria-label={ui.homeLabel}><span class="brand-icon"><img src="/assets/skreen-mascot-256.webp" width="256" height="256" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
           <nav class="nav" id="site-primary-navigation" aria-label={ui.mainNavigation}>
             <a href={withLocale(locale, '/features')} aria-current={active === 'features' ? 'page' : undefined}>{headerNav.features}</a>
             <a href={withLocale(locale, '/guides/how-to-screenshot-on-mac')} aria-current={active === 'guides' ? 'page' : undefined}>{headerNav.macGuide}</a>
@@ -92,7 +94,7 @@ const alternateUrl = (language: Locale) => new URL(withLocale(language, path), A
     <footer class="site-footer">
       <div class="container footer-main">
         <div class="footer-intro">
-          <a class="brand" href={withLocale(locale, '/')} aria-label={ui.homeLabel}><span class="brand-icon"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
+          <a class="brand" href={withLocale(locale, '/')} aria-label={ui.homeLabel}><span class="brand-icon"><img src="/assets/skreen-mascot-256.webp" width="256" height="256" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
           <p>{ui.footerTagline}</p>
           <a class="footer-contact" href="https://github.com/levskiy0/skreenme/issues">{ui.haveIdea}</a>
         </div>

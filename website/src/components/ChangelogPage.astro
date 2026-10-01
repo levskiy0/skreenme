@@ -22,7 +22,7 @@ const shownDate = (index: number, date: string) => locale === 'en' ? date : form
   <main id="main" class="releases-main">
     <section class="page-hero releases-hero" aria-labelledby="releases-title"><div class="container releases-hero-inner">
       <div class="releases-heading"><a class="back-link" href={withLocale(locale, '/')}>{ui.backToSkreen}</a><h1 id="releases-title">{ui.releasesTitle}</h1><p>{h.intro}</p></div>
-      <div class="releases-current"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /><p>Skreen {latest.version} <span aria-hidden="true">·</span> {shownDate(0, latest.date)}</p><a class="button button-primary" href={latest.download_url} data-download-cta>{latest.download_label}</a></div>
+      <div class="releases-current"><img src="/assets/skreen-mascot-256.webp" width="256" height="256" alt="" aria-hidden="true" /><p>Skreen {latest.version} <span aria-hidden="true">·</span> {shownDate(0, latest.date)}</p><a class="button button-primary" href={latest.download_url} data-download-cta>{latest.download_label}</a></div>
     </div></section>
     <section class="container release-list" aria-label={ui.releasesTitle}>
       {h.releases.map((release, index) => <article class:list={['release-entry', release.latest && 'release-entry--latest']} aria-labelledby={`release-${index + 1}`}>

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageCta from './PageCta.astro';
 import { DOWNLOAD_URL, VERSION } from '../site';
+import { iconWebp } from '../images';
 import type { ArticlePageData } from '../types';
 import { canonicalInternalPath, formatDate, getUi, normalizeHtmlLinks, withLocale, type Locale } from '../i18n';
 
@@ -31,7 +32,7 @@ const structuredData = {
           <p class="article-lead">{h.lead}</p>
           <p class="article-updated">{ui.updated} {locale === 'en' ? h.updated : formatDate(h.updatedIso, locale)} <span aria-hidden="true">·</span> {ui.forMac}</p>
         </div>
-        {h.icon && !h.image && <img class="article-hero-icon" src={h.icon} width="512" height="512" alt="" aria-hidden="true" />}
+        {h.icon && !h.image && <img class="article-hero-icon" src={iconWebp(h.icon, 384)} width="384" height="384" alt="" aria-hidden="true" />}
       </div>
     </section>
     {h.image && <figure class:list={['article-figure', `article-figure--${slug}`]}><div class="container"><div class="article-figure-stage"><img src={h.image} alt={h.image_alt ?? ''} fetchpriority="high" /></div><figcaption>{h.image_caption}</figcaption></div></figure>}
@@ -41,7 +42,7 @@ const structuredData = {
         <div class="article-aside-inner">
           <div class="article-banner-art" aria-hidden="true">
             <div class="article-banner-particles"><span class="particle-dot"></span><span class="particle-ring"></span><span class="particle-plus"></span><span class="particle-diamond"></span><span class="particle-dot"></span><span class="particle-ring"></span><span class="particle-plus"></span><span class="particle-dot"></span></div>
-            <img src="/assets/skreen-mascot.png" width="512" height="512" alt="" loading="lazy" />
+            <img src="/assets/skreen-mascot-384.webp" width="384" height="384" alt="" loading="lazy" />
           </div>
           <div class="article-banner-copy"><h2>{ui.finishIt}</h2><p>{ui.articleDownloadLead.replace('{version}', VERSION)}</p><a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>{ui.downloadForMac}</a></div>
         </div>
