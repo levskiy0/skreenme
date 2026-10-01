@@ -27,9 +27,11 @@
     frame = 0;
     const condensed = narrowScreen.matches || window.scrollY > 180;
     header.classList.toggle('is-condensed', condensed);
-    header.classList.toggle('is-minimal', window.scrollY > 900);
-    header.classList.toggle('is-language-open', Boolean(languageSwitcher?.open && narrowScreen.matches));
-    if (!condensed) closeMenu();
+    header.classList.toggle('is-language-open', Boolean(languageSwitcher?.open && condensed));
+    if (!condensed) {
+      closeMenu();
+      closeLanguage();
+    }
   }
 
   function queueSync() {
@@ -49,7 +51,7 @@
   });
 
   languageSwitcher?.addEventListener('toggle', () => {
-    header.classList.toggle('is-language-open', languageSwitcher.open && narrowScreen.matches);
+    header.classList.toggle('is-language-open', languageSwitcher.open && header.classList.contains('is-condensed'));
     if (languageSwitcher.open) closeMenu();
   });
 
