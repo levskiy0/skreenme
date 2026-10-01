@@ -57,7 +57,7 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-layout { display: flex; flex-direction: column; align-items: center; padding-top: clamp(78px, 7.8svh, 110px); text-align: center; }
 .hero-copy { width: 100%; max-width: 980px; padding-bottom: clamp(42px, 4.8svh, 64px); }
 .hero-eyebrow { margin-bottom: 13px; }
-.hero-app-mark { width: 112px; height: auto; margin: 0 auto 7px; }
+.hero-app-mark { width: 112px; height: 112px; margin: 0 auto 7px; }
 .hero h1 { max-width: 980px; margin: 0 auto 17px; font-family: var(--display); font-size: clamp(50px, 6.15vw, 78px); font-weight: 745; line-height: 1.025; letter-spacing: -.047em; }
 .hero h1 span { display: block; font-family: var(--serif); font-size: 1.07em; font-style: italic; font-weight: 400; letter-spacing: -.052em; line-height: 1.05; }
 .hero-description { max-width: 610px; margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.58; }
@@ -172,7 +172,7 @@ h1, h2, h3 { text-wrap: balance; }
   .hero-layout { padding-top: 44px; }
   .hero-copy { padding-bottom: 30px; }
   .hero-eyebrow { margin-bottom: 12px; }
-  .hero-app-mark { width: 96px; margin-bottom: 6px; }
+  .hero-app-mark { width: 96px; height: 96px; margin-bottom: 6px; }
   .hero h1 { max-width: 480px; margin-bottom: 13px; font-size: clamp(42px, 9.4vw, 55px); line-height: 1.03; }
   .hero h1 span { font-size: 1.01em; }
   .hero-description { font-size: 15px; line-height: 1.55; }
