@@ -10,7 +10,7 @@
 
 .site-header .island-shell {
   position: relative;
-  width: min(calc(100% - 76px), 620px);
+  width: min(calc(100% - 76px), 760px);
   height: 60px;
   margin-inline: auto;
   border-radius: 0 0 22px 22px;
@@ -69,7 +69,7 @@
   display: flex;
   align-items: center;
   justify-self: center;
-  gap: 16px;
+  gap: 13px;
   width: auto;
   padding: 0;
   overflow: visible;
@@ -77,9 +77,19 @@
 .site-header .nav a { color: #bdbdbd; font-size: 13px; font-weight: 650; white-space: nowrap; }
 .site-header .nav a:hover,
 .site-header .nav a[aria-current="page"] { color: #fff; }
+.site-header .language-switcher { position: relative; z-index: 3; flex: none; color: #fff; font-size: 11px; font-weight: 750; }
+.site-header .language-switcher summary { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgb(255 255 255 / 28%); border-radius: 50%; cursor: pointer; list-style: none; }
+.site-header .language-switcher summary::-webkit-details-marker { display: none; }
+.site-header .language-switcher summary:hover,
+.site-header .language-switcher[open] summary { background: rgb(255 255 255 / 14%); }
+.site-header .language-options { position: absolute; z-index: 8; top: calc(100% + 10px); right: 0; display: grid; gap: 1px; width: 150px; padding: 6px; border: 1px solid #353535; border-radius: 13px; background: #111; box-shadow: 0 14px 30px rgb(0 0 0 / 22%); }
+.site-header .language-options a { display: block; padding: 9px 10px; border-radius: 8px; color: #d2d2d2; font-size: 12px; }
+.site-header .language-options a:hover,
+.site-header .language-options a[aria-current="page"] { background: #292929; color: #fff; }
 .site-header .nav a:focus-visible,
 .site-header .header-download:focus-visible,
-.site-header .island-menu-button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.site-header .island-menu-button:focus-visible,
+.site-header .language-switcher summary:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
 .site-header .island-actions { display: flex; align-items: center; justify-self: end; gap: 7px; }
 .site-header .header-download {
@@ -99,8 +109,8 @@
   width: 34px;
   height: 34px;
   padding: 0;
-  border: 0;
-  border-radius: 10px;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 50%;
   background: transparent;
   color: #fff;
   cursor: pointer;
@@ -126,7 +136,7 @@
 .site-header.is-menu-open .island-menu-lines::before { transform: rotate(45deg); }
 .site-header.is-menu-open .island-menu-lines::after { transform: rotate(-45deg); }
 
-.site-header.is-condensed .island-shell { width: min(calc(100% - 76px), 330px); height: 58px; border-radius: 0 0 23px 23px; }
+.site-header.is-condensed .island-shell { width: min(calc(100% - 76px), 350px); height: 58px; border-radius: 0 0 23px 23px; }
 .site-header.is-condensed .header-inner { grid-template-columns: 1fr auto; gap: 8px; height: 58px; padding-left: 17px; padding-right: 11px; }
 .site-header.is-condensed .brand-icon { width: 28px; height: 28px; }
 .site-header.is-condensed .brand-name { font-size: 23px; }
@@ -141,22 +151,23 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  justify-self: stretch;
   gap: 1px;
-  width: auto;
+  width: calc(100% - 26px);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-8px);
   transition: opacity .2s ease, transform .32s cubic-bezier(.22, 1, .36, 1), visibility .2s;
 }
-.site-header.is-condensed .nav a { display: block; padding: 11px 14px; border-radius: 10px; color: #d3d3d3; font-size: 13px; }
+.site-header.is-condensed .nav a { display: block; width: 100%; padding: 11px 14px; border-radius: 10px; color: #d3d3d3; font-size: 13px; }
 .site-header.is-condensed .nav a:hover,
 .site-header.is-condensed .nav a:focus-visible,
 .site-header.is-condensed .nav a[aria-current="page"] { background: rgb(255 255 255 / 10%); color: #fff; }
 .site-header.is-menu-open .island-shell { height: 247px; border-radius: 0 0 27px 27px; }
 .site-header.is-menu-open .nav { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
 
-.site-header.is-minimal:not(.is-menu-open) .island-shell { width: min(calc(100% - 76px), 270px); }
+.site-header.is-minimal:not(.is-menu-open) .island-shell { width: min(calc(100% - 76px), 350px); }
 .site-header.is-minimal:not(.is-menu-open) .header-inner { padding-left: 14px; padding-right: 8px; }
 .site-header.is-minimal:not(.is-menu-open) .brand-icon { width: 26px; height: 26px; }
 .site-header.is-minimal:not(.is-menu-open) .brand-name { font-size: 22px; }
@@ -209,12 +220,29 @@
   .site-header.shell-js .island-shell,
   .site-header.shell-js.is-condensed .island-shell,
   .site-header.shell-js.is-minimal:not(.is-menu-open) .island-shell { width: min(calc(100% - 54px), 330px); }
-  .site-header.shell-js.is-minimal:not(.is-menu-open) .island-shell { width: min(calc(100% - 54px), 270px); }
+  .site-header.is-language-open .island-shell { height: 314px; border-radius: 0 0 27px 27px; }
+  .site-header .language-switcher { position: static; }
+  .site-header .language-options {
+    top: 65px;
+    left: 13px;
+    right: 13px;
+    width: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .site-header .language-options a { padding: 11px 14px; border-radius: 10px; font-size: 13px; }
   .site-header:not(.shell-js) { height: auto; }
   .site-header:not(.shell-js) .island-shell { width: min(calc(100% - 54px), 620px); height: auto; }
   .site-header:not(.shell-js) .header-inner { display: flex; flex-wrap: wrap; height: auto; min-height: 62px; padding: 11px 15px; }
   .site-header:not(.shell-js) .nav { order: 3; flex-wrap: wrap; justify-content: flex-start; width: 100%; padding-top: 7px; }
   .site-header:not(.shell-js) .island-actions { margin-left: auto; }
+}
+
+@media (max-width: 380px) {
+  .site-header .brand-name { display: none; }
 }
 
 @media (max-width: 620px) {

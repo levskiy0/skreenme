@@ -1,0 +1,352 @@
+{
+  "ui": {
+    "skip": "Ir al contenido",
+    "homeLabel": "Inicio de Skreen",
+    "mainNavigation": "Navegación principal",
+    "features": "Funciones",
+    "macGuide": "Guía para Mac",
+    "faq": "Preguntas",
+    "releases": "Novedades",
+    "download": "Descargar",
+    "downloadForMac": "Descargar para Mac",
+    "openNavigation": "Abrir menú",
+    "closeNavigation": "Cerrar menú",
+    "footerTagline": "Captura páginas largas, señala lo importante y oculta datos privados antes de compartir.",
+    "haveIdea": "¿Tienes una idea? Cuéntanos ↗",
+    "product": "Producto",
+    "explore": "Explorar",
+    "elsewhere": "Enlaces",
+    "feedback": "Comentarios",
+    "madeForMac": "Hecho para macOS.",
+    "backToTop": "Volver arriba",
+    "footerNavigation": "Navegación del pie de página",
+    "heroEyebrow": "Una app de capturas para Mac",
+    "seeHow": "Descubre cómo funciona",
+    "editorImageAlt": "Editor de capturas de Skreen con una imagen de nubes",
+    "socialImageAlt": "Skreen para Mac",
+    "proofLabel": "Qué puedes hacer",
+    "proof": [
+      {
+        "title": "Una página, una imagen.",
+        "body": "Sigue desplazándote y decide cuándo terminar la captura."
+      },
+      {
+        "title": "Señala lo importante.",
+        "body": "Añade una flecha, una nota o un marco antes de compartir."
+      },
+      {
+        "title": "Oculta los datos privados.",
+        "body": "Revisa lo detectado en tu Mac y tapa lo sensible antes de exportar."
+      }
+    ],
+    "editor": "El editor",
+    "editorTitle": "Haz que tu captura",
+    "editorAccent": "se entienda mejor.",
+    "editorLead": "Recorta lo que sobra, añade una nota u oculta un detalle antes de enviarla.",
+    "exploreFeature": "Explorar",
+    "workflow": "Cómo funciona",
+    "workflowTitle": "Haz la captura.",
+    "workflowAccent": "Aclara los detalles.",
+    "workflowLead": "Selecciona un área con Shift + ⌘ + 0, edita la imagen en Skreen y expórtala.",
+    "moreFeatures": "Más funciones de Skreen",
+    "moreToExplore": "También en Skreen",
+    "textQr": "Texto y códigos QR",
+    "combineScreenshots": "Combinar capturas",
+    "allFeatures": "Todas las funciones",
+    "goodToKnow": "Preguntas frecuentes",
+    "faqTitle": "Preguntas sobre",
+    "faqAccent": "Skreen.",
+    "ready": "Para tu próxima captura",
+    "finalTitle": "Captura lo necesario.",
+    "finalAccent": "Muestra solo lo necesario.",
+    "finalLead": "Añade una nota y oculta los datos privados antes de compartir.",
+    "readGuide": "Leer la guía",
+    "finishImage": "Edita esta captura en Skreen.",
+    "scrollingPage": "Capturar una página larga",
+    "annotateScreenshot": "Añadir anotaciones",
+    "hidePrivate": "Ocultar datos privados",
+    "exploreFeatures": "Explorar las funciones de Skreen",
+    "learnMore": "Más información",
+    "updated": "Actualizado",
+    "forMac": "Skreen para macOS 14+",
+    "finishIt": "Pruébalo en Skreen.",
+    "articleDownloadLead": "Skreen {version} funciona en macOS 14 o posterior.",
+    "downloadSkreen": "Descargar Skreen para Mac",
+    "keepExploring": "Guías relacionadas",
+    "ctaTitle": "¿Necesitas una captura más clara?",
+    "ctaLead": "Hazla en Skreen, añade notas y oculta los datos privados antes de enviarla.",
+    "backToSkreen": "Volver a Skreen",
+    "releasesTitle": "Novedades de Skreen.",
+    "latestRelease": "Última versión",
+    "version": "Versión",
+    "olderBuild": "¿Necesitas una versión anterior o quieres informar de un problema?",
+    "allGithub": "Todas las versiones en GitHub",
+    "sendFeedback": "Enviar comentarios"
+  },
+  "home": {
+    "title": "Skreen — Capturas de pantalla para Mac",
+    "description": "Captura páginas largas en Mac, añade anotaciones y fondos, reconoce texto y oculta datos privados con Skreen.",
+    "hero_title": "Capturas de pantalla en Mac,",
+    "hero_title_accent": "listas para enviar.",
+    "hero_description": "Captura lo que necesitas. Añade una nota, oculta datos privados y exporta la imagen.",
+    "download_label": "Descargar para Mac",
+    "hero_note": "Versión 1.2.3 · macOS 14 o posterior",
+    "features": [
+      {
+        "title": "Captura más de una pantalla.",
+        "body": "Guarda una página larga en una imagen. Puedes pausar o cambiar de dirección mientras capturas.",
+        "label": "Captura con desplazamiento"
+      },
+      {
+        "title": "Revisa lo que aparece en la captura.",
+        "body": "Skreen busca rostros, correos, números de tarjeta y claves de API en tu Mac. Comprueba los resultados y oculta lo necesario.",
+        "label": "Privacidad"
+      },
+      {
+        "title": "Elige un fondo para la imagen.",
+        "body": "Usa un fondo de macOS o un color de la captura. Ajusta márgenes, marco y sombra en el editor.",
+        "label": "Fondos"
+      },
+      {
+        "title": "Explica el detalle en la imagen.",
+        "body": "Señala un control, rodea una zona o deja una nota breve en la propia captura.",
+        "label": "Anotaciones"
+      }
+    ],
+    "workflow": [
+      {
+        "title": "Captura",
+        "body": "Pulsa Shift + ⌘ + 0 para seleccionar un área. Configura un atajo para ventanas o inicia una captura con desplazamiento desde la barra de menús."
+      },
+      {
+        "title": "Edita",
+        "body": "Añade un fondo o anotaciones, o combina varias capturas."
+      },
+      {
+        "title": "Comparte",
+        "body": "Revisa la imagen y expórtala para un documento, mensaje o publicación."
+      }
+    ],
+    "faq": [
+      {
+        "question": "¿Puede Skreen capturar una página más larga que mi pantalla?",
+        "answer": "Sí. Selecciona la zona desplazable, recorre el contenido y revisa la imagen unida antes de exportarla."
+      },
+      {
+        "question": "¿Se suben mis capturas a internet?",
+        "answer": "No. La captura, edición, lectura de texto y detección de datos privados se realizan en tu Mac."
+      },
+      {
+        "question": "¿Puedo combinar varias capturas?",
+        "answer": "Sí. Organízalas en una cuadrícula o libremente sobre un lienzo y exporta una sola composición."
+      },
+      {
+        "question": "¿Puedo copiar texto de una captura?",
+        "answer": "Sí. Skreen reconoce texto en tu Mac para que copies las palabras que necesites."
+      },
+      {
+        "question": "¿Puedo cambiar el fondo?",
+        "answer": "Sí. Elige un fondo de macOS, un color sólido o un degradado, y ajusta el espaciado y el marco."
+      },
+      {
+        "question": "¿Qué versión de macOS necesito?",
+        "answer": "Skreen requiere macOS 14 Sonoma o posterior."
+      }
+    ]
+  },
+  "features": {
+    "title": "Funciones de captura de pantalla para Mac — Skreen",
+    "description": "Descubre las capturas largas, anotaciones, fondos, ocultación de datos, OCR, QR y composiciones de Skreen para Mac.",
+    "h1": "Captura y edita imágenes en Mac.",
+    "lead": "Guarda páginas largas, señala un detalle, oculta datos privados o reúne varias capturas en una imagen.",
+    "items": [
+      {
+        "title": "Capturas largas",
+        "body": "Captura una página larga, controla el desplazamiento y obtén una sola imagen."
+      },
+      {
+        "title": "Ocultar datos privados",
+        "body": "Detecta texto sensible y rostros en tu Mac, revisa los resultados y ocúltalos."
+      },
+      {
+        "title": "Anotar capturas",
+        "body": "Usa flechas, etiquetas, formas y otras herramientas para explicar una imagen."
+      },
+      {
+        "title": "Fondos atractivos",
+        "body": "Enmarca una captura con degradados, patrones, fondos de macOS o colores automáticos."
+      },
+      {
+        "title": "Texto y códigos QR",
+        "body": "Copia texto y lee códigos QR con reconocimiento local en tu Mac."
+      },
+      {
+        "title": "Combinar capturas",
+        "body": "Coloca varias capturas en una cuadrícula o libremente en un lienzo."
+      }
+    ]
+  },
+  "guides": {
+    "title": "Guías de capturas de pantalla en Mac — Skreen",
+    "description": "Guías prácticas para hacer y editar capturas de pantalla en Mac.",
+    "h1": "Guías de capturas en Mac.",
+    "lead": "Consulta los atajos de macOS y aprende a capturar páginas largas o editar imágenes en Skreen.",
+    "items": [
+      {
+        "title": "Cómo hacer una captura de pantalla en Mac",
+        "body": "Atajos para pantalla, área y ventana, además de páginas largas y edición."
+      }
+    ]
+  },
+  "changelog": {
+    "title": "Novedades de Skreen",
+    "description": "Descubre las novedades de Skreen para Mac y descarga la última versión: capturas, edición, fondos y páginas largas.",
+    "intro": "Las versiones recientes de Skreen, sus cambios y los enlaces de descarga.",
+    "releases": [
+      {
+        "download_label": "Descargar 1.2.3 para Mac",
+        "notes": [
+          "Usa tu fondo de escritorio actual o uno de los fondos instalados de macOS para tus capturas.",
+          "Exporta con la densidad de píxeles original para obtener imágenes más nítidas.",
+          "Mejoras en la unión y el recorte de capturas largas."
+        ]
+      },
+      {
+        "download_label": "Ver en GitHub",
+        "notes": [
+          "Se añadió la captura de páginas y vistas largas.",
+          "Se corrigieron duplicados y huecos entre fotogramas."
+        ]
+      },
+      {
+        "download_label": "Ver en GitHub",
+        "notes": [
+          "Se añadieron historial, acceso rápido, extracción de texto y QR, y composiciones de varias imágenes.",
+          "Mejoras en cuadrículas, desenfoque y selección."
+        ]
+      }
+    ]
+  },
+  "articles": {
+    "features/annotate-screenshots": {
+      "title": "Anotar capturas de pantalla en Mac — Skreen",
+      "description": "Añade flechas, texto, formas y resaltados a tus capturas en Mac con Skreen. Explica errores e ideas con claridad.",
+      "h1": "Señala el detalle que importa.",
+      "lead": "Añade una flecha, etiqueta o forma en la propia captura. Así no necesitas explicarlo por separado.",
+      "related": [
+        {
+          "title": "Combinar capturas",
+          "body": "Explica una secuencia en un lienzo."
+        },
+        {
+          "title": "Ocultar datos privados",
+          "body": "Protege detalles antes de compartir."
+        }
+      ],
+      "bodyHtml": "<h2>Explica una captura sin un mensaje largo</h2><p>Skreen incluye 13 herramientas de anotación. Usa una flecha para señalar un control, texto para nombrar un estado o una forma para delimitar una zona. Las medidas también ayudan cuando importan la posición y el tamaño exactos.</p><h2>Un proceso sencillo</h2><ol><li>Captura el área, la ventana o una <a href=\"/features/scrolling-screenshots\">página larga</a>.</li><li>Añade una o dos marcas que indiquen dónde mirar y qué cambió.</li><li>Comprueba si hay mensajes o credenciales privadas y <a href=\"/features/redact-screenshots\">ocúltalos</a> antes de exportar.</li></ol><p>Para un informe de error, señala el botón o mensaje problemático. Para un tutorial, reúne varios pasos en una <a href=\"/features/combine-screenshots\">composición</a>. Revisa el resultado al tamaño en que se compartirá.</p><h2>Deja visible la interfaz original</h2><p>Usa etiquetas breves y un color coherente si explicas varios pasos. Recorta primero la captura y coloca las marcas fuera del texto importante siempre que puedas. Revisa la exportación al tamaño al que la verá la otra persona.</p><p>Para informar de un error, muestra el estado defectuoso y señala el control o mensaje que lo provocó. Para un tutorial, reúne capturas numeradas en una <a href=\"/features/combine-screenshots\">composición</a> si una sola imagen no explica todo el proceso.</p>"
+    },
+    "features/beautiful-backgrounds": {
+      "title": "Fondos para capturas de pantalla en Mac — Skreen",
+      "description": "Da un buen acabado a tus capturas en Mac con degradados, patrones, fondos de escritorio y marcos en Skreen.",
+      "h1": "Deja espacio alrededor de tu captura.",
+      "lead": "Elige un fondo y ajusta el espacio, marco y sombra para usar la imagen en un documento o presentación.",
+      "related": [
+        {
+          "title": "Anotar capturas",
+          "body": "Añade una explicación a la imagen."
+        },
+        {
+          "title": "Combinar capturas",
+          "body": "Da unidad a varios fotogramas."
+        }
+      ],
+      "bodyHtml": "<h2>Elige un estilo adecuado</h2><p>Skreen ofrece 48 degradados y 13 patrones. También puedes usar un degradado propio, tu fondo de escritorio o los fondos instalados de macOS. El ajuste automático propone colores según la captura.</p><h2>Ajusta el fondo y el espacio</h2><ol><li>Captura un área o ventana y ábrela en el editor.</li><li>Elige un fondo que mantenga el texto legible. Añade marco o sombra si mejora la separación.</li><li>Ajusta la proporción para una diapositiva o publicación.</li><li>Revisa la exportación al tamaño de destino.</li></ol><p>Una interfaz con mucho texto se beneficia de un fondo discreto y espacio suficiente. Puedes <a href=\"/features/annotate-screenshots\">anotar</a> la misma captura antes de exportarla.</p><h2>Un ejemplo: una imagen para las notas de versión</h2><p>Una captura sin editar muestra la ventana de extremo a extremo. Para presentarla mejor, colócala sobre un fondo discreto, deja espacio alrededor y añade un borde o una sombra suave que separe la ventana de la página. Comprueba la legibilidad en la vista previa.</p><p>Skreen puede exportar con la densidad de píxeles original para conservar la nitidez. Un fondo vistoso puede servir para un anuncio; si la captura contiene mucho texto, usa un color tranquilo. También puedes <a href=\"/features/annotate-screenshots\">añadir anotaciones</a> antes de exportar. Ningún fondo compensa una interfaz reducida hasta volver ilegible su texto.</p>"
+    },
+    "features/combine-screenshots": {
+      "title": "Combinar capturas de pantalla en Mac — Skreen",
+      "description": "Combina varias capturas en una imagen con cuadrículas o un lienzo libre para comparaciones e instrucciones.",
+      "h1": "Pon las capturas relacionadas una junto a otra.",
+      "lead": "Compara dos estados o muestra varios pasos. Usa una cuadrícula o coloca cada imagen libremente.",
+      "related": [
+        {
+          "title": "Anotar capturas",
+          "body": "Marca los cambios de cada imagen."
+        },
+        {
+          "title": "Fondos atractivos",
+          "body": "Da un acabado uniforme al conjunto."
+        }
+      ],
+      "bodyHtml": "<h2>Elige una disposición</h2><p>Usa una cuadrícula cuando todas las imágenes tengan el mismo peso. Usa el lienzo libre para variar tamaños y posiciones. Puedes añadir nuevas capturas a la composición mientras trabajas.</p><h2>Crea una comparación clara</h2><ol><li>Captura el primer estado y añádelo a la composición.</li><li>Captura el siguiente o utiliza una imagen existente.</li><li>Alinea las zonas comparables y añade <a href=\"/features/annotate-screenshots\">etiquetas breves</a>.</li><li>Aplica un <a href=\"/features/beautiful-backgrounds\">fondo y espaciado</a> uniformes y exporta una sola imagen.</li></ol><p>Si el texto queda demasiado pequeño, recorta cada captura a la zona importante y comprueba el resultado al tamaño final.</p><h2>Ejemplo: dos estados de un error</h2><p>Coloca el estado esperado junto al estado defectuoso en una cuadrícula de dos columnas. Recorta ambos alrededor del mismo control y pon una etiqueta breve sobre cada uno. Así se puede comparar el cambio sin abrir dos archivos. Si una imagen necesita más espacio, usa Free Canvas y ajusta sus tamaños por separado.</p><p>Cuando las imágenes originales tienen tamaños distintos, revisa la composición a su tamaño final. El texto pequeño puede resultar ilegible si comprimes varias pantallas completas en un solo lienzo; recorta cada captura hasta dejar solo la zona importante antes de exportar.</p>"
+    },
+    "features/ocr-and-qr": {
+      "title": "Copiar texto y códigos QR de capturas en Mac — Skreen",
+      "description": "Extrae texto y lee códigos QR de capturas en Mac con las herramientas Apple Vision integradas en Skreen.",
+      "h1": "Copia texto sin volver a escribirlo.",
+      "lead": "Skreen reconoce texto y códigos QR en tu Mac. Comprueba el resultado y copia lo que necesitas.",
+      "related": [
+        {
+          "title": "Cómo capturar en Mac",
+          "body": "Empieza con el atajo adecuado."
+        },
+        {
+          "title": "Ocultar datos privados",
+          "body": "Protege la información reconocida."
+        }
+      ],
+      "bodyHtml": "<h2>Copia texto sin volver a escribirlo</h2><p>Utiliza Capturar texto o reconoce el texto de una imagen abierta en el editor. Skreen usa Apple Vision en tu dispositivo. Por ejemplo, puedes copiar un error a un ticket de soporte y conservar la captura como contexto.</p><h2>Comprueba el resultado</h2><ol><li>Captura la línea o abre una imagen existente.</li><li>Inicia el reconocimiento en Skreen.</li><li>Compara signos, números y saltos de línea con la imagen.</li><li>Copia el resultado en tu documento.</li></ol><p>Skreen también detecta códigos QR. Comprueba la dirección antes de abrirla. El texto pequeño o con poco contraste puede causar errores; <a href=\"/features/redact-screenshots\">oculta los datos privados</a> antes de compartir la imagen.</p><h2>Leer un código QR de una captura</h2><p>Skreen puede detectar códigos QR en el contenido capturado. Si el código aparece en una diapositiva, captura esa zona y lee el destino antes de decidir si quieres visitarlo. Comprueba la URL real, en lugar de fiarte del texto que rodea al código.</p><h2>La imagen sigue siendo la referencia</h2><p>Las fuentes poco habituales, el texto diminuto, el bajo contraste y los elementos superpuestos pueden causar errores de reconocimiento. Compara el resultado con la captura antes de usar un comando, una dirección o una cifra importante. Conserva la imagen si el contexto visual ayuda a explicar el problema.</p>"
+    },
+    "features/redact-screenshots": {
+      "title": "Ocultar datos en capturas de Mac — Skreen",
+      "description": "Oculta rostros, correos, claves de API, contraseñas y otros datos privados en capturas de Mac con Skreen.",
+      "h1": "Oculta los datos privados antes de enviar.",
+      "lead": "Skreen busca rostros y datos sensibles en tu Mac. Revisa cada resultado y tapa las zonas necesarias.",
+      "related": [
+        {
+          "title": "Capturas largas",
+          "body": "Captura una vista larga antes de protegerla."
+        },
+        {
+          "title": "Anotar capturas",
+          "body": "Explica las partes seguras de la imagen."
+        }
+      ],
+      "bodyHtml": "<h2>Encuentra datos antes de que salgan de tu Mac</h2><p>Skreen usa Apple Vision en el dispositivo para buscar rostros y texto sensible: correos, teléfonos, tarjetas, direcciones IP, claves de API, contraseñas y patrones personalizados. También puedes seleccionar una zona manualmente.</p><h2>Cómo ocultarlos</h2><ol><li>Haz una captura o abre una en el editor.</li><li>Ejecuta la detección y revisa las zonas propuestas.</li><li>Elige desenfoque, pixelado o un bloque sólido y añade lo que falte.</li><li>Comprueba el archivo exportado antes de enviarlo.</li></ol><p>La detección automática es una ayuda, no una garantía. Revisa toda la imagen, especialmente en una <a href=\"/features/scrolling-screenshots\">captura larga</a>.</p><h2>Qué revisar antes de exportar</h2><p>La detección también contempla números de la Seguridad Social de EE. UU. y patrones personalizados. Si se le escapa algo, selecciona la zona manualmente. Con texto, la tecla <code>Alt</code> puede ajustar una selección a los límites de una palabra para cubrir un dato sin ocultar la explicación cercana. Amplía la imagen y revisa los bordes y el contenido de fondo.</p><h2>Elige cómo cubrir cada dato</h2><p>En un informe de error de un formulario de pago, cubre el número de tarjeta con un bloque sólido y deja visibles las etiquetas del formulario y el error. El desenfoque o la pixelación pueden bastar para un nombre incidental en una revisión de diseño; para contraseñas, claves API y datos de pago, es más claro usar una cobertura sólida. Comprueba el archivo exportado: el dato privado debe ser ilegible y el problema, comprensible.</p>"
+    },
+    "features/scrolling-screenshots": {
+      "title": "Capturas largas de pantalla en Mac — Skreen",
+      "description": "Captura páginas y vistas largas en Mac con Skreen. Aprende a iniciar, pausar y terminar una captura con desplazamiento.",
+      "h1": "Captura páginas que siguen al desplazarte.",
+      "lead": "Selecciona el área desplazable y recorre el contenido. Skreen une los fotogramas en una imagen.",
+      "related": [
+        {
+          "title": "Anotar capturas",
+          "body": "Muestra dónde debe mirar el lector."
+        },
+        {
+          "title": "Cómo capturar en Mac",
+          "body": "Conoce los atajos integrados."
+        }
+      ],
+      "bodyHtml": "<h2>Cómo hacer una captura larga</h2><ol><li>Abre la página y sitúate al principio del contenido necesario.</li><li>Inicia la captura con desplazamiento en Skreen y selecciona el contenido sin incluir las barras fijas del navegador.</li><li>Desplázate. Puedes pausar, cambiar de dirección o cancelar durante la captura.</li><li>Revisa la imagen unida, recorta lo que sobre y <a href=\"/features/redact-screenshots\">oculta datos privados</a> antes de exportar.</li></ol><p>Skreen une las zonas superpuestas e intenta evitar que se repitan los elementos fijos. Si la página tiene animaciones o carga contenido mientras avanzas, revisa la imagen final con atención.</p><h2>Cuándo resulta útil</h2><p>Sirve para artículos, conversaciones, documentos y errores que ocupan más de una pantalla. Si basta con lo visible, una <a href=\"/guides/how-to-screenshot-on-mac\">captura normal de área o ventana</a> es más rápida.</p><h2>Permiso de grabación de pantalla</h2><p>Si macOS solicita acceso durante la primera captura, abre Ajustes del Sistema, concede el permiso a Skreen y vuelve a la app. Es posible que debas reiniciarla para aplicar el cambio. Selecciona solo el contenido necesario: las pestañas del navegador y las conversaciones pueden incluir información privada fuera de la zona visible.</p><h2>Comprueba la unión antes de compartir</h2><p>Los paneles que se expanden, las animaciones y el contenido que se carga durante el desplazamiento pueden cambiar la imagen. Deja que la página se estabilice, desplázate de forma regular y revisa el resultado. La captura funciona mejor cuando el contenido se mueve dentro de una región desplazable bien seleccionada.</p><h2>Preguntas frecuentes</h2><h3>¿Por qué hay una parte repetida o ausente?</h3><p>Un banner móvil, un vídeo automático, un elemento fijo o contenido cargado a mitad del recorrido pueden interrumpir la unión. Prueba una captura más corta dentro de la región que realmente se desplaza y examina el archivo exportado.</p><h3>¿Puedo capturar un chat o documento largo?</h3><p>Sí, si el contenido se desplaza dentro de una zona seleccionable. Prueba primero con un tramo corto. Si la vista no se desplaza de forma consistente, crea varias capturas de área y <a href=\"/features/combine-screenshots\">combínalas</a>.</p>"
+    },
+    "guides/how-to-screenshot-on-mac": {
+      "title": "Cómo hacer una captura de pantalla en Mac | Skreen",
+      "description": "Aprende los atajos de Mac para capturar la pantalla, un área o una ventana, y cuándo usar Skreen para páginas largas.",
+      "h1": "Cómo hacer una captura de pantalla en Mac.",
+      "lead": "Usa los atajos de macOS para capturar la pantalla, un área o una ventana. Para páginas largas y edición, consulta las opciones de Skreen.",
+      "parent_label": "Guías para Mac",
+      "related": [
+        {
+          "title": "Capturas largas",
+          "body": "Guarda contenido que no cabe en pantalla."
+        },
+        {
+          "title": "Ocultar datos privados",
+          "body": "Protege detalles antes de compartir."
+        }
+      ],
+      "bodyHtml": "<h2>Atajos integrados de macOS</h2><table><thead><tr><th>Qué quieres</th><th>Atajo</th><th>Resultado</th></tr></thead><tbody><tr><td>Toda la pantalla</td><td><code>Shift–Command–3</code></td><td>Captura la pantalla completa.</td></tr><tr><td>Un área</td><td><code>Shift–Command–4</code></td><td>Arrastra el cursor sobre la zona.</td></tr><tr><td>Una ventana</td><td><code>Shift–Command–4</code> y <code>Space</code></td><td>Coloca la cámara sobre la ventana y haz clic.</td></tr><tr><td>Controles de captura</td><td><code>Shift–Command–5</code></td><td>Elige un modo de captura o grabación.</td></tr></tbody></table><p>Estos atajos funcionan sin Skreen. La <a href=\"https://support.apple.com/en-us/102646\">guía de Apple</a> explica también dónde se guardan los archivos.</p><h2>Capturar un área con Skreen</h2><p>En Skreen, <code>Shift–Command–0</code> inicia de forma predeterminada la captura de un área. Arrastra para seleccionarla y la captura se abrirá en el editor de Skreen. <code>Shift–Command–4</code> en la tabla anterior es el atajo de macOS.</p><h2>Si la página es más larga que la pantalla</h2><p>Una captura normal solo guarda lo visible. Usa la <a href=\"/features/scrolling-screenshots\">captura con desplazamiento</a> de Skreen para un documento largo y revisa la imagen unida.</p><h2>Prepara la imagen para compartir</h2><p>Añade <a href=\"/features/annotate-screenshots\">anotaciones</a>, elige un <a href=\"/features/beautiful-backgrounds\">fondo</a> u <a href=\"/features/redact-screenshots\">oculta datos privados</a>. Skreen también puede <a href=\"/features/ocr-and-qr\">extraer texto y leer QR</a>.</p>"
+    }
+  }
+}

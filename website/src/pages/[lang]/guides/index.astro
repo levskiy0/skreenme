@@ -1,0 +1,11 @@
+---
+import IndexPage from '../../../components/IndexPage.astro';
+import { getPages, translatedLocales, type Locale } from '../../../i18n';
+import type { IndexData } from '../../../types';
+
+export function getStaticPaths() {
+  return translatedLocales.map((lang) => ({ params: { lang } }));
+}
+const locale = Astro.params.lang as Locale;
+---
+<IndexPage data={getPages(locale).guides as IndexData} locale={locale} />

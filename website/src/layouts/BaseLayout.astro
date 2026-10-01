@@ -1,5 +1,6 @@
 ---
 import { DOWNLOAD_URL } from '../site';
+import { englishPath, getUi, languageNames, languageTags, locales, withLocale, type Locale } from '../i18n';
 
 interface Props {
   title: string;
@@ -10,6 +11,7 @@ interface Props {
   noindex?: boolean;
   structuredData?: Record<string, unknown>;
   active?: 'features' | 'guides' | 'changelog';
+  locale?: Locale;
 }
 
 const {
@@ -21,13 +23,17 @@ const {
   noindex = false,
   structuredData,
   active,
+  locale = 'en',
 } = Astro.props;
+const ui = getUi(locale);
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const socialImage = new URL(image, Astro.site);
+const path = englishPath(Astro.url.pathname);
+const alternateUrl = (language: Locale) => new URL(withLocale(language, path), Astro.site).toString();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={languageTags[locale]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,13 +41,16 @@ const socialImage = new URL(image, Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {!noindex && locales.map((language) => <link rel="alternate" hreflang={languageTags[language]} href={alternateUrl(language)} />)}
+    {!noindex && <link rel="alternate" hreflang="x-default" href={alternateUrl('en')} />}
     <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:site_name" content="Skreen" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content="Skreen screenshot app for Mac" />
+    <meta property="og:image:alt" content={ui.socialImageAlt} />
+    <meta property="og:locale" content={languageTags[locale].replace('-', '_')} />
     {articleModified && <meta property="article:modified_time" content={articleModified} />}
     <meta name="twitter:card" content={image === '/assets/skreen-mascot.png' ? 'summary' : 'summary_large_image'} />
     <meta name="twitter:title" content={title} />
@@ -59,20 +68,21 @@ const socialImage = new URL(image, Astro.site);
     <slot name="head" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">{ui.skip}</a>
     <header class="site-header" id="top">
       <div class="island-shell">
         <div class="header-inner">
-          <a class="brand" href="/" aria-label="Skreen home"><span class="brand-icon"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
-          <nav class="nav" id="site-primary-navigation" aria-label="Main navigation">
-            <a href="/features" aria-current={active === 'features' ? 'page' : undefined}>Features</a>
-            <a href="/guides/how-to-screenshot-on-mac" aria-current={active === 'guides' ? 'page' : undefined}>Mac guide</a>
-            <a href="/#faq">FAQ</a>
-            <a href="/changelog" aria-current={active === 'changelog' ? 'page' : undefined}>Releases</a>
+          <a class="brand" href={withLocale(locale, '/')} aria-label={ui.homeLabel}><span class="brand-icon"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
+          <nav class="nav" id="site-primary-navigation" aria-label={ui.mainNavigation}>
+            <a href={withLocale(locale, '/features')} aria-current={active === 'features' ? 'page' : undefined}>{ui.features}</a>
+            <a href={withLocale(locale, '/guides/how-to-screenshot-on-mac')} aria-current={active === 'guides' ? 'page' : undefined}>{ui.macGuide}</a>
+            <a href={withLocale(locale, '/#faq')}>{ui.faq}</a>
+            <a href={withLocale(locale, '/changelog')} aria-current={active === 'changelog' ? 'page' : undefined}>{ui.releases}</a>
           </nav>
           <div class="island-actions">
-            <a class="header-download" href={DOWNLOAD_URL} aria-label="Download Skreen for Mac" data-download-cta>Download</a>
-            <button class="island-menu-button" type="button" aria-label="Open navigation" aria-controls="site-primary-navigation" aria-expanded="false"><span class="island-menu-lines" aria-hidden="true"></span></button>
+            {!noindex && <details class="language-switcher"><summary aria-label={languageNames[locale]}>{locale.toUpperCase()}</summary><div class="language-options">{locales.map((language) => <a href={withLocale(language, path)} lang={languageTags[language]} aria-current={locale === language ? 'page' : undefined}>{languageNames[language]}</a>)}</div></details>}
+            <a class="header-download" href={DOWNLOAD_URL} aria-label={ui.downloadSkreen} data-download-cta>{ui.download}</a>
+            <button class="island-menu-button" type="button" aria-label={ui.openNavigation} data-open-label={ui.openNavigation} data-close-label={ui.closeNavigation} aria-controls="site-primary-navigation" aria-expanded="false"><span class="island-menu-lines" aria-hidden="true"></span></button>
           </div>
         </div>
       </div>
@@ -81,18 +91,18 @@ const socialImage = new URL(image, Astro.site);
     <footer class="site-footer">
       <div class="container footer-main">
         <div class="footer-intro">
-          <a class="brand" href="/" aria-label="Skreen home"><span class="brand-icon"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
-          <p>From the first capture to the final detail.<br />Make every screenshot worth sharing.</p>
-          <a class="footer-contact" href="https://github.com/levskiy0/skreenme/issues">Have an idea? Tell us ↗</a>
+          <a class="brand" href={withLocale(locale, '/')} aria-label={ui.homeLabel}><span class="brand-icon"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /></span><span class="brand-name">skreen</span></a>
+          <p>{ui.footerTagline}</p>
+          <a class="footer-contact" href="https://github.com/levskiy0/skreenme/issues">{ui.haveIdea}</a>
         </div>
-        <nav class="footer-sitemap" aria-label="Footer navigation">
-          <div class="footer-column"><h2>Product</h2><a href="/features">Features</a><a href={DOWNLOAD_URL} data-download-cta>Download for Mac</a></div>
-          <div class="footer-column"><h2>Explore</h2><a href="/guides/how-to-screenshot-on-mac">Mac guide</a><a href="/#faq">FAQ</a><a href="/changelog">Releases</a></div>
-          <div class="footer-column"><h2>Elsewhere</h2><a href="https://github.com/levskiy0/skreenme">GitHub</a><a href="https://github.com/levskiy0/skreenme/issues">Feedback</a></div>
+        <nav class="footer-sitemap" aria-label={ui.footerNavigation}>
+          <div class="footer-column"><h2>{ui.product}</h2><a href={withLocale(locale, '/features')}>{ui.features}</a><a href={DOWNLOAD_URL} data-download-cta>{ui.downloadForMac}</a></div>
+          <div class="footer-column"><h2>{ui.explore}</h2><a href={withLocale(locale, '/guides/how-to-screenshot-on-mac')}>{ui.macGuide}</a><a href={withLocale(locale, '/#faq')}>{ui.faq}</a><a href={withLocale(locale, '/changelog')}>{ui.releases}</a></div>
+          <div class="footer-column"><h2>{ui.elsewhere}</h2><a href="https://github.com/levskiy0/skreenme">GitHub</a><a href="https://github.com/levskiy0/skreenme/issues">{ui.feedback}</a></div>
         </nav>
       </div>
-      <div class="container footer-bottom"><span>© {new Date().getFullYear()} Skreen</span><span>Made for macOS.</span><a href="#top">Back to top</a></div>
-      <a class="footer-wordmark" href="/" aria-label="Skreen home">skreen</a>
+      <div class="container footer-bottom"><span>© {new Date().getFullYear()} Skreen</span><span>{ui.madeForMac}</span><a href="#top">{ui.backToTop}</a></div>
+      <a class="footer-wordmark" href={withLocale(locale, '/')} aria-label={ui.homeLabel}>skreen</a>
     </footer>
     <script is:inline src="/assets/js/site-shell.js" defer></script>
     <script is:inline src="/assets/js/reveal.js" defer></script>

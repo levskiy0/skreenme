@@ -4,6 +4,7 @@
 
   const button = header.querySelector('.island-menu-button');
   const navigation = header.querySelector('#site-primary-navigation');
+  const languageSwitcher = header.querySelector('.language-switcher');
   const narrowScreen = window.matchMedia('(max-width: 760px)');
   let frame = 0;
 
@@ -11,8 +12,15 @@
     if (!header.classList.contains('is-menu-open')) return;
     header.classList.remove('is-menu-open');
     button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-label', 'Open navigation');
+    button.setAttribute('aria-label', button.dataset.openLabel || 'Open navigation');
     if (restoreFocus) button.focus();
+  }
+
+  function closeLanguage(restoreFocus = false) {
+    if (!languageSwitcher?.open) return;
+    languageSwitcher.open = false;
+    header.classList.remove('is-language-open');
+    if (restoreFocus) languageSwitcher.querySelector('summary')?.focus();
   }
 
   function syncIsland() {
@@ -20,6 +28,7 @@
     const condensed = narrowScreen.matches || window.scrollY > 180;
     header.classList.toggle('is-condensed', condensed);
     header.classList.toggle('is-minimal', window.scrollY > 900);
+    header.classList.toggle('is-language-open', Boolean(languageSwitcher?.open && narrowScreen.matches));
     if (!condensed) closeMenu();
   }
 
@@ -32,17 +41,26 @@
 
   button.addEventListener('click', () => {
     const opening = !header.classList.contains('is-menu-open');
+    if (opening) closeLanguage();
     header.classList.toggle('is-menu-open', opening);
     button.setAttribute('aria-expanded', String(opening));
-    button.setAttribute('aria-label', opening ? 'Close navigation' : 'Open navigation');
+    button.setAttribute('aria-label', opening ? (button.dataset.closeLabel || 'Close navigation') : (button.dataset.openLabel || 'Open navigation'));
     if (opening) navigation.querySelector('a')?.focus();
   });
 
+  languageSwitcher?.addEventListener('toggle', () => {
+    header.classList.toggle('is-language-open', languageSwitcher.open && narrowScreen.matches);
+    if (languageSwitcher.open) closeMenu();
+  });
+
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeMenu(true);
+    if (event.key !== 'Escape') return;
+    if (languageSwitcher?.open) closeLanguage(true);
+    else closeMenu(true);
   });
   document.addEventListener('pointerdown', (event) => {
     if (!header.contains(event.target)) closeMenu();
+    if (!languageSwitcher?.contains(event.target)) closeLanguage();
   });
   navigation.addEventListener('click', (event) => {
     if (event.target.closest('a')) closeMenu();

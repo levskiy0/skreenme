@@ -2,39 +2,41 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageCta from './PageCta.astro';
 import type { IndexData } from '../types';
+import { canonicalInternalPath, getUi, withLocale, type Locale } from '../i18n';
 
-interface Props { data: IndexData }
-const { data: h } = Astro.props;
+interface Props { data: IndexData; locale?: Locale }
+const { data: h, locale = 'en' } = Astro.props;
+const ui = getUi(locale);
 const isGuides = h.section === 'guides';
 ---
 
-<BaseLayout title={h.title} description={h.description} active={isGuides ? 'guides' : 'features'}>
+<BaseLayout title={h.title} description={h.description} active={isGuides ? 'guides' : 'features'} locale={locale}>
   <main id="main" class:list={['index-main', isGuides ? 'index-main--guides' : 'index-main--features']}>
     <section class="page-hero index-hero" aria-labelledby="index-title">
       <div class="container index-hero-inner"><h1 id="index-title">{h.h1}</h1><p>{h.lead}</p></div>
     </section>
     {isGuides ? (
-      <section class="container index-section index-guides" aria-label="Mac screenshot guides">
+      <section class="container index-section index-guides" aria-label={ui.macGuide}>
         {h.items.map((item) => <article class:list={['index-guide', item.icon && 'index-guide--icon']}>
-          <a href={item.url} class="index-guide-link">
-            <div class="index-guide-copy"><h2>{item.title}</h2><p>{item.body}</p><span class="index-feature-action">Read the guide</span></div>
+          <a href={canonicalInternalPath(item.url)} class="index-guide-link">
+            <div class="index-guide-copy"><h2>{item.title}</h2><p>{item.body}</p><span class="index-feature-action">{ui.readGuide}</span></div>
             {item.icon && <div class="index-guide-icon"><img src={item.icon} width="512" height="512" alt="" aria-hidden="true" loading="lazy" /></div>}
           </a>
         </article>)}
         <div class="index-extra index-guides-extra">
-          <h2>Finish the image in Skreen.</h2>
-          <div class="index-extra-links"><a href="/features/scrolling-screenshots"><span>Capture a scrolling page</span></a><a href="/features/annotate-screenshots"><span>Annotate your screenshot</span></a><a href="/features/redact-screenshots"><span>Hide private details</span></a></div>
+          <h2>{ui.finishImage}</h2>
+          <div class="index-extra-links"><a href={withLocale(locale, '/features/scrolling-screenshots')}><span>{ui.scrollingPage}</span></a><a href={withLocale(locale, '/features/annotate-screenshots')}><span>{ui.annotateScreenshot}</span></a><a href={withLocale(locale, '/features/redact-screenshots')}><span>{ui.hidePrivate}</span></a></div>
         </div>
       </section>
     ) : (
-      <section class="container index-section" aria-label="Explore Skreen features">
+      <section class="container index-section" aria-label={ui.exploreFeatures}>
         <div class="index-visual-grid">
           {h.items.map((item, index) => <article class:list={['index-feature', item.icon && !item.image ? 'index-feature--icon' : item.image ? '' : 'index-feature--text', `index-feature--${index + 1}`]}>
-            <a class="index-feature-link" href={item.url}>
+            <a class="index-feature-link" href={canonicalInternalPath(item.url)}>
               <div class="index-feature-copy">
                 {item.icon && !item.image ? <img class="index-feature-icon" src={item.icon} width="512" height="512" alt="" aria-hidden="true" loading="lazy" /> : <span class="index-feature-number" aria-hidden="true">0{index + 1}</span>}
                 {item.media_label && <span class="index-feature-type">{item.media_label}</span>}
-                <h2>{item.title}</h2><p>{item.body}</p><span class="index-feature-action">Learn more</span>
+                <h2>{item.title}</h2><p>{item.body}</p><span class="index-feature-action">{ui.learnMore}</span>
               </div>
               {item.image && <div class="index-feature-art"><img src={item.image} alt={item.image_alt ?? ''} width={item.image_width} height={item.image_height} loading="lazy" /></div>}
             </a>
@@ -42,6 +44,6 @@ const isGuides = h.section === 'guides';
         </div>
       </section>
     )}
-    <PageCta titleId="index-cta-title" />
+    <PageCta titleId="index-cta-title" locale={locale} />
   </main>
 </BaseLayout>

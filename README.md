@@ -4,9 +4,9 @@
   <img src="assets/logo.png" height="64" alt="Skreen[me] — Screenshot Beautifier for macOS">
 </p>
 
-**Native macOS screenshot app. Capture, combine, beautify, annotate, and redact.**
+**Skreen is a screenshot editor for macOS.**
 
-Capture → Recognize → Combine → Style → Annotate → Share. Everything on-device. Pure Swift.
+Capture an area, window, or scrolling page. Edit the image, copy text from it, or cover private details before sharing. Skreen is written in Swift; image processing runs on your Mac.
 
 [![Download](https://img.shields.io/github/v/release/levskiy0/skreenme?label=Download&color=black)](https://github.com/levskiy0/skreenme/releases/latest)
 [![macOS 14+](https://img.shields.io/badge/macOS-14%2B-white)](https://github.com/levskiy0/skreenme/releases)
@@ -20,19 +20,19 @@ Capture → Recognize → Combine → Style → Annotate → Share. Everything o
   <img src="assets/readme-editor.png" alt="Skreen editor showing a styled screenshot of a chameleon food product card">
 </p>
 
-Your screenshot workflow probably looks like this: capture → open Preview to crop → open Figma to add a nice background → open Carbon to make the code pretty → manually blur the API key you almost forgot about → repeat for every single screenshot.
+Most screenshots need a little work after capture. You might crop away a sidebar, point to a button, or hide an email address.
 
-**Skreen collapses that entire chain into one native Mac app that lives in your menu bar.**
+Skreen opens the capture in its editor and keeps the capture tools in your menu bar.
 
-No code uploaded to any server. Everything happens on your machine.
+Text recognition and sensitive-data detection run on your Mac.
 
 ---
 
-## Capture the way the task requires
+## Capture
 
-Skreen is more than a region shortcut. Every capture mode is available from the menu bar, with customizable global hotkeys for the actions you use most:
+Start any capture mode from the menu bar. You can also set global shortcuts for the actions you use most:
 
-- **Capture Area** and **Capture Window**
+- **Capture Area** (`Shift` + `⌘` + `0` by default) and **Capture Window**
 - **Repeat Last Area** without drawing the same selection again
 - **Capture with Timer** after 3, 5, 10, or 15 seconds, with an in-selection countdown
 - **Scrolling Capture** with explicit start, pause, direction, finish, and cancel controls
@@ -42,40 +42,36 @@ Scrolling Capture automatically moves through the selected content and opens the
 
 ---
 
-## Beautiful screenshots without design skills
+## Backgrounds and framing
 
-Use your capture hotkey, draw a region, and Skreen opens with your screenshot ready to style — gradient background, rounded corners, shadow. One more click for **Auto-Beautify**: Skreen analyzes the screenshot's edge colors and picks a matching background and frame treatment.
+After capturing an area, you can add a gradient background, rounded corners, or a shadow. **Auto-Beautify** uses colors from the screenshot's edges to suggest a background and frame.
 
 **48 curated gradient presets** across 8 collections — Vivid, Sunset, Ocean, Cosmic, Neon, Pastel, Dark, Nature.
 
 **13 procedural patterns** — particles, topology, plasma, domain warp, wave lines, and more. Every pattern is unique and regenerates at export resolution.
 
-Or: custom gradient with full color control, solid color, uploaded image, blur overlay, grain texture. It's all there.
+You can also use a custom gradient, solid color, uploaded image, blur overlay, or grain texture.
 
 **Aspect ratio presets**: Square (1:1), Portrait (4:5), Landscape (16:9), Twitter/X header (2:1), LinkedIn, Story (9:16), or fully custom dimensions.
 
 ---
 
-## Code snippets to beautiful images — native, offline, private
+## Code images
 
-Carbon.now.sh hasn't had a meaningful update since late 2024. ray.so requires the Raycast ecosystem. Both are web — your code goes to their servers, you need internet, and you're copy-pasting every time.
-
-Skreen has a native code mode. Paste once, configure once, export anywhere.
+Paste code into Skreen, choose a language and theme, then export the image. Code mode works offline.
 
 - **21 languages**: Swift, JavaScript, TypeScript, Python, Go, Rust, Java, Kotlin, C#, C++, C, Ruby, PHP, HTML, CSS, JSON, YAML, Markdown, SQL, Shell, Plain Text
 - **10 themes**: Dracula, GitHub Dark, Monokai, One Dark, Nord, Tokyo Night, GitHub Light, Solarized, Xcode, One Light
 - Line numbers, custom window title, PNG or **SVG export**
-- Works offline. Your code never leaves the machine.
+- Code stays on your Mac.
 
 ---
 
-## Auto-redact sensitive data — faces, emails, API keys, and more
+## Hide sensitive data
 
-This is the part that saves you from yourself.
+Skreen uses Apple Vision on your Mac to find faces and sensitive text in a screenshot. Review the matches before you export.
 
-Every developer has accidentally shared a screenshot with an API key, token, or email visible. Skreen watches for it automatically, using Apple Vision framework — **entirely on-device, zero network calls.**
-
-**What Skreen detects and redacts automatically:**
+Skreen can detect:
 
 - Faces
 - Email addresses
@@ -87,13 +83,13 @@ Every developer has accidentally shared a screenshot with an API key, token, or 
 - IP addresses
 - Custom patterns (your own regex)
 
-Pick the method: **Blur**, **Pixelate**, or **Solid fill** — at soft, medium, or hard intensity. Toggle each type individually. See what was detected. Enable or disable per category.
+Choose **Blur**, **Pixelate**, or **Solid fill**, and set the intensity. You can turn detection categories on or off and review each match.
 
-And for manual redaction: hold `ALT` while using the Redact or Marker tool to snap precisely to individual words detected by Vision OCR. No dragging blind boxes around text anymore.
+For manual redaction, hold `ALT` with the Redact or Marker tool to snap a selection to words found by Vision OCR.
 
 ---
 
-## Annotations that cover real workflows
+## Annotation tools
 
 13 tools. All keyboard-accessible.
 
@@ -139,7 +135,7 @@ After a capture, optional **Quick Access** gives you immediate actions over the 
 
 ---
 
-## More features worth knowing about
+## Other tools
 
 **Crop**: free-form, re-crop without losing the original, or **Smart Crop** — Vision saliency detection finds the most interesting region automatically.
 
@@ -157,7 +153,7 @@ After a capture, optional **Quick Access** gives you immediate actions over the 
 
 ## Install
 
-Download, drag to Applications, done. Auto-updates via Sparkle — no need to come back here for new versions.
+Download Skreen and drag it to Applications. Sparkle handles updates.
 
 **[→ Download Skreen](https://github.com/levskiy0/skreenme/releases/latest)**
 
@@ -165,7 +161,7 @@ Requires **macOS 14 Sonoma** or later. Screen recording and accessibility permis
 
 ---
 
-## Settings worth configuring once
+## Settings
 
 - **Hotkeys**: remap area, window, text, repeat-last-area, and timed capture shortcuts
 - **Quick Access**: choose whether the post-capture action panel appears

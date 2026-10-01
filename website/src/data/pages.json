@@ -6,8 +6,8 @@
       "description": "Add arrows, text, shapes, and highlights to Mac screenshots in Skreen. Make bug reports, instructions, and design feedback easier to follow.",
       "canonical_url": "https://skreenme.com/features/annotate-screenshots",
       "eyebrow": "Screenshot annotations",
-      "h1": "Make the point clear at a glance.",
-      "lead": "Add an arrow, label, shape, or mark directly where your reader should look. Skreen keeps capture and annotation in one native Mac workflow.",
+      "h1": "Mark the detail people need to see.",
+      "lead": "Add an arrow, label, or shape to the screenshot itself. It saves a separate explanation.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-annotations.png",
       "related": [
@@ -28,11 +28,11 @@
     "features/beautiful-backgrounds": {
       "title": "Beautiful Screenshot Backgrounds for Mac — Skreen",
       "template": "article",
-      "description": "Give Mac screenshots a polished background in Skreen with gradients, patterns, wallpapers, framing, and Auto-Beautify color suggestions.",
+      "description": "Add a wallpaper, gradient, or pattern behind a Mac screenshot. Adjust padding, framing, and shadows in Skreen.",
       "canonical_url": "https://skreenme.com/features/beautiful-backgrounds",
       "eyebrow": "Screenshot styling",
-      "h1": "A little framing goes a long way.",
-      "lead": "Turn a raw capture into an image that is ready for a document, release note, or presentation. Choose a background, frame, shadow, and size without leaving Skreen.",
+      "h1": "Give a screenshot some room.",
+      "lead": "Place your capture on a background, then adjust its padding, frame, and shadow for a document or presentation.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-backgrounds.png",
       "related": [
@@ -47,7 +47,7 @@
           "body": "Give several captures one layout."
         }
       ],
-      "bodyHtml": "<h2 id=\"pick-a-look-that-fits-the-content\">Pick a look that fits the content</h2>\n<p>Skreen offers 48 curated gradient presets and 13 procedural patterns. You can also use a custom gradient or a desktop wallpaper, including your current wallpaper and installed macOS wallpapers. Auto-Beautify can suggest a treatment based on the colors in your screenshot.</p>\n<h2 id=\"from-raw-capture-to-finished-image\">From raw capture to finished image</h2>\n<ol>\n<li>Capture an area or window and open it in the editor.</li>\n<li>Choose a background that keeps the screenshot readable. Add a frame or shadow if it helps separate the interface from the background.</li>\n<li>Set the aspect ratio for where the image will appear, such as a presentation slide or a social post.</li>\n<li>Review the export at its intended size. Skreen can export at the source image’s native pixel density for a sharper result.</li>\n</ol>\n<p>A bright background can be useful for product announcements. For dense text, use a quiet color and enough padding so the content remains the focus. You can <a href=\"/features/annotate-screenshots\">annotate</a> the same capture before exporting.</p>\n<h2 id=\"before-and-after-a-release-note-image\">Before and after: a release-note image</h2>\n<p>The raw capture shows a browser or app window edge to edge. For the finished version, place that same capture on a quiet background, add padding around it, and use a restrained frame or shadow to separate the window from the page. Judge legibility in the editor preview before export. Keep small interface text readable at the final size; a decorative background cannot fix an overly reduced capture.</p>\n",
+      "bodyHtml": "<h2 id=\"pick-a-look-that-fits-the-content\">Pick a look that fits the content</h2>\n<p>Skreen offers 48 curated gradient presets and 13 procedural patterns. You can also use a custom gradient or a desktop wallpaper, including your current wallpaper and installed macOS wallpapers. Auto-Beautify can suggest a treatment based on the colors in your screenshot.</p>\n<h2 id=\"from-raw-capture-to-finished-image\">Set up the background</h2>\n<ol>\n<li>Capture an area or window and open it in the editor.</li>\n<li>Choose a background that keeps the screenshot readable. Add a frame or shadow if it helps separate the interface from the background.</li>\n<li>Set the aspect ratio for where the image will appear, such as a presentation slide or a social post.</li>\n<li>Review the export at its intended size. Skreen can export at the source image’s native pixel density for a sharper result.</li>\n</ol>\n<p>A bright background can be useful for product announcements. For dense text, use a quiet color and enough padding so the content remains the focus. You can <a href=\"/features/annotate-screenshots\">annotate</a> the same capture before exporting.</p>\n<h2 id=\"before-and-after-a-release-note-image\">Before and after: a release-note image</h2>\n<p>The raw capture shows a browser or app window edge to edge. For the finished version, place that same capture on a quiet background, add padding around it, and use a restrained frame or shadow to separate the window from the page. Judge legibility in the editor preview before export. Keep small interface text readable at the final size; a decorative background cannot fix an overly reduced capture.</p>\n",
       "updatedIso": "2026-09-30"
     },
     "features/combine-screenshots": {
@@ -56,8 +56,8 @@
       "description": "Combine multiple Mac screenshots into one image with Skreen's grid and free-canvas layouts. Make clear comparisons, walkthroughs, and bug reports.",
       "canonical_url": "https://skreenme.com/features/combine-screenshots",
       "eyebrow": "Multi-image compositions",
-      "h1": "Put the whole sequence in one image.",
-      "lead": "A before-and-after, a three-step guide, or several related states can be easier to understand together. Skreen lets you arrange captures in a grid or on a free canvas.",
+      "h1": "Put related screenshots side by side.",
+      "lead": "Show a before and after, or lay out a few steps in order. Use a grid or place each capture freely on the canvas.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-combine.png",
       "related": [
@@ -72,7 +72,7 @@
           "body": "Give the layout a consistent finish."
         }
       ],
-      "bodyHtml": "<h2 id=\"choose-a-layout-for-the-story\">Choose a layout for the story</h2>\n<p>Use a grid when the images should have equal weight, such as several steps in a workflow. Use Free Canvas when you want to place captures at different sizes or positions. Skreen can add a new capture to an existing composition, so you can build the image as you work.</p>\n<h2 id=\"build-a-clear-comparison\">Build a clear comparison</h2>\n<ol>\n<li>Capture the first state and add it to a composition.</li>\n<li>Capture the next state, or add another existing capture.</li>\n<li>Align the images so the reader can compare the same region in each one. Add short <a href=\"/features/annotate-screenshots\">annotations</a> to identify the change.</li>\n<li>Apply a consistent <a href=\"/features/beautiful-backgrounds\">background and spacing</a>, then export a single image.</li>\n</ol>\n<p>If the source images have different sizes, preview the composition at the final display size. Small UI text may become hard to read when several full-screen captures are squeezed into one canvas; crop each frame to the relevant area first.</p>\n<h2 id=\"example-a-two-state-bug-report\">Example: a two-state bug report</h2>\n<p>Place a capture of the expected state next to the broken state in a two-column grid. Crop both to the same control, then add a short label above each one. The reader can compare the change without switching between files. If one state needs more room, move the captures to Free Canvas and size them independently. Export the composition as one image only after checking that both labels and the relevant UI are legible.</p>\n",
+      "bodyHtml": "<h2 id=\"choose-a-layout-for-the-story\">Choose a layout</h2>\n<p>Use a grid when the images should have equal weight, such as several steps in a workflow. Use Free Canvas when you want to place captures at different sizes or positions. Skreen can add a new capture to an existing composition, so you can build the image as you work.</p>\n<h2 id=\"build-a-clear-comparison\">Build a clear comparison</h2>\n<ol>\n<li>Capture the first state and add it to a composition.</li>\n<li>Capture the next state, or add another existing capture.</li>\n<li>Align the images so the reader can compare the same region in each one. Add short <a href=\"/features/annotate-screenshots\">annotations</a> to identify the change.</li>\n<li>Apply a consistent <a href=\"/features/beautiful-backgrounds\">background and spacing</a>, then export a single image.</li>\n</ol>\n<p>If the source images have different sizes, preview the composition at the final display size. Small UI text may become hard to read when several full-screen captures are squeezed into one canvas; crop each frame to the relevant area first.</p>\n<h2 id=\"example-a-two-state-bug-report\">Example: a two-state bug report</h2>\n<p>Place a capture of the expected state next to the broken state in a two-column grid. Crop both to the same control, then add a short label above each one. The reader can compare the change without switching between files. If one state needs more room, move the captures to Free Canvas and size them independently. Export the composition as one image only after checking that both labels and the relevant UI are legible.</p>\n",
       "updatedIso": "2026-09-30"
     },
     "features/ocr-and-qr": {
@@ -81,8 +81,8 @@
       "description": "Extract text and read QR codes from Mac screenshots with Skreen's Apple Vision recognition tools, built into the capture workflow.",
       "canonical_url": "https://skreenme.com/features/ocr-and-qr",
       "eyebrow": "Text and QR recognition",
-      "h1": "Get the information out of the image.",
-      "lead": "When you need a line of text or a QR destination, Skreen can recognize it from a capture on your Mac so you do not have to retype it.",
+      "h1": "Copy text without typing it again.",
+      "lead": "Skreen reads text and QR codes in screenshots on your Mac. Check the result, then copy what you need.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-text-recognition.png",
       "related": [
@@ -106,8 +106,8 @@
       "description": "Hide faces, email addresses, API keys, passwords, and other private details in Mac screenshots with Skreen's on-device detection and redaction tools.",
       "canonical_url": "https://skreenme.com/features/redact-screenshots",
       "eyebrow": "Private sharing",
-      "h1": "Show the screenshot. Hide what is private.",
-      "lead": "Skreen helps find sensitive details in a capture on your Mac. Review every match, then blur, pixelate, or cover only what should not be shared.",
+      "h1": "Cover private details before you share.",
+      "lead": "Skreen looks for faces and sensitive text on your Mac. Check each match, then blur, pixelate, or cover it.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-redaction.png",
       "related": [
@@ -122,7 +122,7 @@
           "body": "Explain the safe parts of the image."
         }
       ],
-      "bodyHtml": "<h2 id=\"find-details-before-they-leave-your-mac\">Find details before they leave your Mac</h2>\n<p>Skreen uses Apple Vision on your device to look for faces and sensitive text. Detection covers email addresses, phone numbers, card numbers, IP addresses, API keys, passwords, US Social Security numbers, and custom patterns you define. You can also select an area yourself when automatic detection misses something.</p>\n<h2 id=\"how-to-redact-a-screenshot\">How to redact a screenshot</h2>\n<ol>\n<li>Take a screenshot or open a capture in the Skreen editor.</li>\n<li>Run sensitive-data detection and inspect the proposed matches. Add or adjust selections where needed.</li>\n<li>Choose blur, pixelation, or a solid cover for each area. Use the manual selection for anything the detector did not identify.</li>\n<li>Zoom in and check the full image, including edges and background content, before exporting the file you intend to share.</li>\n</ol>\n<p>For text, the <code>Alt</code> key can snap a selection to word boundaries. This makes it easier to cover a single token without hiding the surrounding explanation.</p>\n<h2 id=\"what-changes-between-capture-and-export\">What changes between capture and export</h2>\n<p>Imagine a bug report showing a payment form. In the unedited capture, the field values sit beside the error you need to explain. Cover the card number with a solid block while keeping the form labels and surrounding interface visible. Check the exported file: the private value should be unreadable, and the evidence for the bug should still be clear.</p>\n<h2 id=\"choose-the-right-cover\">Choose the right cover</h2>\n<p>Blur or pixelation can make a design review easier to read while obscuring an incidental name or face. For secrets such as passwords, API keys, and payment details, a solid cover is the clearer choice. Automated detection is a helper, so always review the exported image yourself before sharing sensitive material.</p>\n",
+      "bodyHtml": "<h2 id=\"find-details-before-they-leave-your-mac\">Find details before they leave your Mac</h2>\n<p>Skreen uses Apple Vision on your device to look for faces and sensitive text. Detection covers email addresses, phone numbers, card numbers, IP addresses, API keys, passwords, US Social Security numbers, and custom patterns you define. You can also select an area yourself when automatic detection misses something.</p>\n<h2 id=\"how-to-redact-a-screenshot\">How to redact a screenshot</h2>\n<ol>\n<li>Take a screenshot or open a capture in the Skreen editor.</li>\n<li>Run sensitive-data detection and inspect the proposed matches. Add or adjust selections where needed.</li>\n<li>Choose blur, pixelation, or a solid cover for each area. Use the manual selection for anything the detector did not identify.</li>\n<li>Zoom in and check the full image, including edges and background content, before exporting the file you intend to share.</li>\n</ol>\n<p>For text, the <code>Alt</code> key can snap a selection to word boundaries. This makes it easier to cover a single token without hiding the surrounding explanation.</p>\n<h2 id=\"what-changes-between-capture-and-export\">Example: a payment form</h2>\n<p>Imagine a bug report showing a payment form. In the unedited capture, the field values sit beside the error you need to explain. Cover the card number with a solid block while keeping the form labels and surrounding interface visible. Check the exported file: the private value should be unreadable, and the evidence for the bug should still be clear.</p>\n<h2 id=\"choose-the-right-cover\">Choose the right cover</h2>\n<p>Blur or pixelation can make a design review easier to read while obscuring an incidental name or face. For secrets such as passwords, API keys, and payment details, a solid cover is the clearer choice. Automated detection is a helper, so always review the exported image yourself before sharing sensitive material.</p>\n",
       "updatedIso": "2026-09-30"
     },
     "features/scrolling-screenshots": {
@@ -131,8 +131,8 @@
       "description": "Capture long pages and scrollable views on Mac with Skreen. Learn how to start, pause, change direction, and finish a scrolling screenshot.",
       "canonical_url": "https://skreenme.com/features/scrolling-screenshots",
       "eyebrow": "Scrolling capture",
-      "h1": "Capture the whole story, even when it scrolls.",
-      "lead": "A long page does not have to become a stack of separate images. Skreen captures a scrolling view and stitches the frames into one screenshot you can edit and share.",
+      "h1": "Capture a page that keeps scrolling.",
+      "lead": "Select the scrollable area and move through the content you need. Skreen joins the frames into one image.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-scrolling-capture.png",
       "related": [
@@ -147,7 +147,7 @@
           "body": "Learn the built-in shortcuts and when to use Skreen."
         }
       ],
-      "bodyHtml": "<h2 id=\"how-to-take-a-scrolling-screenshot\">How to take a scrolling screenshot</h2>\n<ol>\n<li>Open the page or scrollable view and bring the part you want to capture into view.</li>\n<li>Start a scrolling capture in Skreen and select the content area. Keep the selection inside the scrolling region so fixed browser chrome is left out.</li>\n<li>Start scrolling. You can pause, change direction, resume, or cancel while capturing. Finish when you have reached the end of the section you need.</li>\n<li>Review the stitched image in the editor. Crop extra space, add an annotation, or <a href=\"/features/redact-screenshots\">hide private details</a> before you export.</li>\n</ol>\n<p>Skreen combines overlapping frames and works to avoid repeating elements that stay fixed while the content moves. The result is one image, so a reader can follow the page from top to bottom without opening several files.</p>\n<p>If macOS asks for Screen Recording access during the first capture, open System Settings, grant Skreen the requested access, and return to the app. macOS may ask you to restart the app before the new permission takes effect. Choose only the content you intend to capture; browser tabs and conversations can include private information outside the visible area.</p>\n<h2 id=\"when-it-helps\">When it helps</h2>\n<p>Use scrolling capture for a long article, a support conversation, a design review, a document, or a bug report where the content extends beyond one screen. If you only need what is visible right now, an <a href=\"/guides/how-to-screenshot-on-mac\">area or window capture</a> is quicker.</p>\n<h2 id=\"what-to-check-before-sharing\">What to check before sharing</h2>\n<p>Dynamic content can change while a page scrolls. Animations, expanding panels, and lazy-loaded sections may produce a different image from a static page. Keep the view steady, let content load, and review the final stitch before sending it. Scrolling capture works best when the content moves inside a clearly selected scroll area.</p>\n<h2 id=\"scrolling-capture-questions\">Scrolling capture questions</h2>\n<h3 id=\"why-is-part-of-the-page-repeated-or-missing\">Why is part of the page repeated or missing?</h3>\n<p>Moving banners, autoplay video, sticky elements, or content that loads during the scroll can interrupt the stitch. Let the page settle, select the actual scrolling region, and try a shorter capture. Inspect the exported image rather than assuming every frame joined cleanly.</p>\n<h3 id=\"can-i-capture-a-long-chat-or-document\">Can I capture a long chat or document?</h3>\n<p>Yes, when its content scrolls inside a selectable region. Start with a short section to confirm the result, then capture the full portion you need. If the view does not scroll consistently, use separate area captures and <a href=\"/features/combine-screenshots\">combine them</a>.</p>\n",
+      "bodyHtml": "<h2 id=\"how-to-take-a-scrolling-screenshot\">How to take a scrolling screenshot</h2>\n<ol>\n<li>Open the page or scrollable view and bring the part you want to capture into view.</li>\n<li>Start a scrolling capture in Skreen and select the content area. Keep the selection inside the scrolling region so fixed browser chrome is left out.</li>\n<li>Start scrolling. You can pause, change direction, resume, or cancel while capturing. Finish when you have reached the end of the section you need.</li>\n<li>Review the stitched image in the editor. Crop extra space, add an annotation, or <a href=\"/features/redact-screenshots\">hide private details</a> before you export.</li>\n</ol>\n<p>Skreen combines overlapping frames and works to avoid repeating elements that stay fixed while the content moves.</p>\n<p>If macOS asks for Screen Recording access during the first capture, open System Settings, grant Skreen the requested access, and return to the app. macOS may ask you to restart the app before the new permission takes effect. Choose only the content you intend to capture; browser tabs and conversations can include private information outside the visible area.</p>\n<h2 id=\"when-it-helps\">When it helps</h2>\n<p>Use scrolling capture for a long article, a support conversation, a design review, a document, or a bug report where the content extends beyond one screen. If you only need what is visible right now, an <a href=\"/guides/how-to-screenshot-on-mac\">area or window capture</a> is quicker.</p>\n<h2 id=\"what-to-check-before-sharing\">What to check before sharing</h2>\n<p>Dynamic content can change while a page scrolls. Animations, expanding panels, and lazy-loaded sections may produce a different image from a static page. Keep the view steady, let content load, and review the final stitch before sending it. Scrolling capture works best when the content moves inside a clearly selected scroll area.</p>\n<h2 id=\"scrolling-capture-questions\">Scrolling capture questions</h2>\n<h3 id=\"why-is-part-of-the-page-repeated-or-missing\">Why is part of the page repeated or missing?</h3>\n<p>Moving banners, autoplay video, sticky elements, or content that loads during the scroll can interrupt the stitch. Let the page settle, select the actual scrolling region, and try a shorter capture. Inspect the exported image rather than assuming every frame joined cleanly.</p>\n<h3 id=\"can-i-capture-a-long-chat-or-document\">Can I capture a long chat or document?</h3>\n<p>Yes, when its content scrolls inside a selectable region. Start with a short section to confirm the result, then capture the full portion you need. If the view does not scroll consistently, use separate area captures and <a href=\"/features/combine-screenshots\">combine them</a>.</p>\n",
       "updatedIso": "2026-09-30"
     },
     "guides/how-to-screenshot-on-mac": {
@@ -160,7 +160,7 @@
       "parent_label": "Mac guides",
       "eyebrow": "Mac screenshot guide",
       "h1": "How to take a screenshot on Mac.",
-      "lead": "macOS has simple shortcuts for a screen, an area, or a window. Here is the quickest way to use each one, plus what to do when the content scrolls or needs editing.",
+      "lead": "Use the built-in macOS shortcuts for a screen, area, or window. For scrolling pages and editing, here are the Skreen options.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-screenshot.png",
       "related": [
@@ -175,7 +175,7 @@
           "body": "Protect details before sharing."
         }
       ],
-      "bodyHtml": "<h2 id=\"the-built-in-mac-screenshot-shortcuts\">The built-in Mac screenshot shortcuts</h2>\n<table>\n<thead>\n<tr>\n<th>What you want</th>\n<th>Shortcut</th>\n<th>What happens</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>The entire screen</td>\n<td><code>Shift–Command–3</code></td>\n<td>macOS captures the screen.</td>\n</tr>\n<tr>\n<td>A selected area</td>\n<td><code>Shift–Command–4</code></td>\n<td>Drag the crosshair over the area you need.</td>\n</tr>\n<tr>\n<td>A window or menu</td>\n<td><code>Shift–Command–4</code>, then <code>Space</code></td>\n<td>Move the camera over a window and click.</td>\n</tr>\n<tr>\n<td>Screenshot controls</td>\n<td><code>Shift–Command–5</code></td>\n<td>Open the Screenshot app to choose a capture or recording mode.</td>\n</tr>\n</tbody>\n</table>\n<p>These are macOS shortcuts; you can use them without installing Skreen. Apple’s <a href=\"https://support.apple.com/en-us/102646\">screenshot guide</a> also explains where the resulting files are saved and how the Screenshot app’s options work.</p>\n<h2 id=\"if-the-page-is-longer-than-one-screen\">If the page is longer than one screen</h2>\n<p>A standard area or window screenshot captures what is visible. For a long page, document, or scrollable view, use <a href=\"/features/scrolling-screenshots\">Skreen’s scrolling capture</a>: select the content region, scroll through the part you need, and finish with one stitched image. Check the final image before sharing, especially if the page contains animation or content that loads as you scroll.</p>\n<h2 id=\"make-the-screenshot-ready-to-share\">Make the screenshot ready to share</h2>\n<p>Use <a href=\"/features/annotate-screenshots\">annotations</a> to point to the relevant button or problem. Add a <a href=\"/features/beautiful-backgrounds\">background</a> when presentation matters. If the capture contains personal information, use <a href=\"/features/redact-screenshots\">redaction</a> and inspect the export. Skreen can also <a href=\"/features/ocr-and-qr\">extract text and QR codes</a> from a capture.</p>\n<p>If a native macOS shortcut already produces the file you need, you can stop there. Use Skreen when you need the extra capture and editing steps together.</p>\n",
+      "bodyHtml": "<h2 id=\"the-built-in-mac-screenshot-shortcuts\">The built-in Mac screenshot shortcuts</h2>\n<table>\n<thead>\n<tr>\n<th>What you want</th>\n<th>Shortcut</th>\n<th>What happens</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>The entire screen</td>\n<td><code>Shift–Command–3</code></td>\n<td>macOS captures the screen.</td>\n</tr>\n<tr>\n<td>A selected area</td>\n<td><code>Shift–Command–4</code></td>\n<td>Drag the crosshair over the area you need.</td>\n</tr>\n<tr>\n<td>A window or menu</td>\n<td><code>Shift–Command–4</code>, then <code>Space</code></td>\n<td>Move the camera over a window and click.</td>\n</tr>\n<tr>\n<td>Screenshot controls</td>\n<td><code>Shift–Command–5</code></td>\n<td>Open the Screenshot app to choose a capture or recording mode.</td>\n</tr>\n</tbody>\n</table>\n<p>These are macOS shortcuts; you can use them without installing Skreen. Apple’s <a href=\"https://support.apple.com/en-us/102646\">screenshot guide</a> also explains where the resulting files are saved and how the Screenshot app’s options work.</p>\n<h2>Capture an area in Skreen</h2><p>Skreen uses <code>Shift–Command–0</code> by default for area capture. Drag to select what you need, and the screenshot opens in the Skreen editor. The <code>Shift–Command–4</code> shortcut in the table above belongs to macOS.</p>\n<h2 id=\"if-the-page-is-longer-than-one-screen\">If the page is longer than one screen</h2>\n<p>A standard area or window screenshot captures what is visible. For a long page, document, or scrollable view, use <a href=\"/features/scrolling-screenshots\">Skreen’s scrolling capture</a>: select the content region, scroll through the part you need, and finish with one stitched image. Check the final image before sharing, especially if the page contains animation or content that loads as you scroll.</p>\n<h2 id=\"make-the-screenshot-ready-to-share\">Make the screenshot ready to share</h2>\n<p>Use <a href=\"/features/annotate-screenshots\">annotations</a> to point to the relevant button or problem. Add a <a href=\"/features/beautiful-backgrounds\">background</a> when presentation matters. If the capture contains personal information, use <a href=\"/features/redact-screenshots\">redaction</a> and inspect the export. Skreen can also <a href=\"/features/ocr-and-qr\">extract text and QR codes</a> from a capture.</p>\n<p>If a native macOS shortcut already produces the file you need, you can stop there. Use Skreen when you need the extra capture and editing steps together.</p>\n",
       "updatedIso": "2026-09-30"
     }
   },
@@ -223,10 +223,10 @@
   "features": {
     "title": "Screenshot features for Mac — Skreen",
     "template": "features",
-    "description": "Explore Skreen's native Mac screenshot tools for scrolling capture, private redaction, annotations, backgrounds, OCR, QR codes, and combining images.",
+    "description": "Skreen for Mac captures scrolling pages and lets you add notes, backgrounds, OCR, QR recognition, and private-data covers.",
     "canonical_url": "https://skreenme.com/features",
-    "h1": "Everything you need after pressing capture.",
-    "lead": "Capture a screen, make the important part easy to see, protect private details, and export a finished image from one Mac app.",
+    "h1": "Capture, edit, and share screenshots on Mac.",
+    "lead": "Take a scrolling screenshot, mark a detail, cover private data, or put several captures in one image.",
     "items": [
       {
         "title": "Scrolling screenshots",
@@ -272,8 +272,8 @@
     "section": "guides",
     "description": "Practical guides to taking and editing screenshots on Mac.",
     "canonical_url": "https://skreenme.com/guides",
-    "h1": "Practical screenshot guides for Mac.",
-    "lead": "Start with the built-in macOS tools, then find the Skreen features that help you finish the image.",
+    "h1": "Screenshot guides for Mac.",
+    "lead": "Find the right macOS shortcut, then learn how to capture long pages and edit screenshots in Skreen.",
     "items": [
       {
         "title": "How to take a screenshot on Mac",
@@ -286,40 +286,40 @@
   "home": {
     "title": "Skreen — Screenshot Tool for Mac",
     "template": "home",
-    "description": "A native macOS screenshot tool with scrolling capture, annotations, beautiful backgrounds, text recognition, and private redaction.",
+    "description": "A macOS screenshot tool for scrolling pages, annotations, wallpapers, text recognition, and covering private details.",
     "canonical_url": "https://skreenme.com/",
     "image": "/assets/skreen-editor.png",
     "hero_title": "Screenshots for Mac,",
-    "hero_title_accent": "from capture to share.",
-    "hero_description": "Capture scrolling pages, add annotations, hide private details, and finish your screenshots in one native Mac app.",
+    "hero_title_accent": "ready to send.",
+    "hero_description": "Capture the part you need. Add a note, cover private details, and export the image.",
     "download_label": "Download for Mac",
     "download_url": "https://github.com/levskiy0/skreenme/releases/latest/download/skreenme.dmg",
     "hero_note": "Version 1.2.3 · macOS 14 or later",
     "features": [
       {
-        "title": "One long page. One screenshot.",
-        "body": "Save a long page or scrollable view as one image. Pause, change direction, and finish the capture when you have what you need.",
+        "title": "Capture more than one screen.",
+        "body": "Save a long page or scrollable view as one image. Pause or change direction while capturing.",
         "url": "/features/scrolling-screenshots",
         "icon": "/assets/icon-scrolling-capture.png",
         "label": "Scrolling capture"
       },
       {
-        "title": "Keep private details private.",
-        "body": "Find faces, emails, card numbers, and API keys on your Mac. Review what Skreen finds, then blur, pixelate, or cover it before sharing.",
+        "title": "Check what the screenshot reveals.",
+        "body": "Skreen finds faces, email addresses, card numbers, and API keys on your Mac. Check the matches and cover what should stay private.",
         "url": "/features/redact-screenshots",
         "icon": "/assets/icon-redaction.png",
         "label": "Private sharing"
       },
       {
-        "title": "Make it look finished.",
-        "body": "Choose a Mac wallpaper or a color drawn from your image. Add space, a frame, and a shadow while you see the result in the editor.",
+        "title": "Pick a background that fits.",
+        "body": "Use a Mac wallpaper or a color from the screenshot. Adjust the padding, frame, and shadow in the editor.",
         "url": "/features/beautiful-backgrounds",
         "icon": "/assets/icon-backgrounds.png",
         "label": "Backgrounds"
       },
       {
-        "title": "Show exactly what you mean.",
-        "body": "Draw an arrow, circle a detail, or add a note right where it matters. Your explanation stays with the screenshot.",
+        "title": "Add the explanation to the image.",
+        "body": "Point to a control, circle a detail, or leave a short note on the screenshot itself.",
         "url": "/features/annotate-screenshots",
         "icon": "/assets/icon-annotations.png",
         "label": "Annotations"

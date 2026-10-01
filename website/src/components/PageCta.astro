@@ -1,12 +1,14 @@
 ---
 import { DOWNLOAD_URL } from '../site';
-interface Props { titleId: string }
-const { titleId } = Astro.props;
+import { getUi, type Locale } from '../i18n';
+interface Props { titleId: string; locale?: Locale }
+const { titleId, locale = 'en' } = Astro.props;
+const ui = getUi(locale);
 ---
 <section class="page-cta" aria-labelledby={titleId}>
   <div class="article-banner-particles wide-banner-particles" aria-hidden="true"><span class="particle-dot"></span><span class="particle-ring"></span><span class="particle-plus"></span><span class="particle-diamond"></span><span class="particle-dot"></span><span class="particle-ring"></span><span class="particle-plus"></span><span class="particle-dot"></span><span class="particle-diamond"></span><span class="particle-plus"></span><span class="particle-ring"></span><span class="particle-dot"></span></div>
   <div class="container page-cta-inner">
-    <div><h2 id={titleId}>Make your next screenshot with Skreen.</h2><p>Capture, edit, and protect it in one native Mac app.</p></div>
-    <a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>Download Skreen for Mac</a>
+    <div><h2 id={titleId}>{ui.ctaTitle}</h2><p>{ui.ctaLead}</p></div>
+    <a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>{ui.downloadSkreen}</a>
   </div>
 </section>

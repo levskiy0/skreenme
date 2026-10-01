@@ -1,32 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import pages from '../data/pages.json';
-
-interface Release {
-  version: string;
-  date: string;
-  latest?: boolean;
-  download_url: string;
-  download_label: string;
-  notes: string[];
-}
-interface ChangelogData { title: string; description: string; intro: string; releases: Release[] }
-const h = pages.changelog as ChangelogData;
-const latest = h.releases[0];
+import ChangelogPage from '../components/ChangelogPage.astro';
+import { getPages } from '../i18n';
 ---
-<BaseLayout title={h.title} description={h.description} active="changelog">
-  <main id="main" class="releases-main">
-    <section class="page-hero releases-hero" aria-labelledby="releases-title"><div class="container releases-hero-inner">
-      <div class="releases-heading"><a class="back-link" href="/">Back to Skreen</a><h1 id="releases-title">Skreen releases.</h1><p>{h.intro}</p></div>
-      <div class="releases-current"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /><p>Skreen {latest.version} <span aria-hidden="true">·</span> {latest.date}</p><a class="button button-primary" href={latest.download_url} data-download-cta>{latest.download_label}</a></div>
-    </div></section>
-    <section class="container release-list" aria-label="Skreen releases">
-      {h.releases.map((release, index) => <article class:list={['release-entry', release.latest && 'release-entry--latest']} aria-labelledby={`release-${index + 1}`}>
-        <div class="release-meta"><span>{release.date}</span>{release.latest && <strong>Latest release</strong>}</div>
-        <div class="release-detail"><h2 id={`release-${index + 1}`}>Version {release.version}</h2><ul>{release.notes.map((note) => <li>{note}</li>)}</ul></div>
-        <div class="release-download"><a href={release.download_url} data-download-cta={release.latest ? '' : undefined}>{release.download_label}</a></div>
-      </article>)}
-    </section>
-    <div class="container release-bottom"><p>Need an older build or want to report a problem?</p><div><a href="https://github.com/levskiy0/skreenme/releases">All GitHub releases</a><a href="https://github.com/levskiy0/skreenme/issues">Send feedback</a></div></div>
-  </main>
-</BaseLayout>
+<ChangelogPage data={getPages('en').changelog} locale="en" />

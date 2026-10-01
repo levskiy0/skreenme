@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/finalize-sitemap.mjs && node scripts/check-release.mjs",
     "preview": "astro preview",
     "check": "astro check"
   },

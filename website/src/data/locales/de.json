@@ -1,0 +1,352 @@
+{
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "homeLabel": "Skreen-Startseite",
+    "mainNavigation": "Hauptnavigation",
+    "features": "Funktionen",
+    "macGuide": "Mac-Anleitung",
+    "faq": "FAQ",
+    "releases": "Versionen",
+    "download": "Laden",
+    "downloadForMac": "Für Mac laden",
+    "openNavigation": "Menü öffnen",
+    "closeNavigation": "Menü schließen",
+    "footerTagline": "Nimm lange Seiten auf, markiere wichtige Stellen und verdecke private Daten vor dem Teilen.",
+    "haveIdea": "Eine Idee? Schreib uns ↗",
+    "product": "Produkt",
+    "explore": "Entdecken",
+    "elsewhere": "Weitere Links",
+    "feedback": "Feedback",
+    "madeForMac": "Für macOS entwickelt.",
+    "backToTop": "Nach oben",
+    "footerNavigation": "Footernavigation",
+    "heroEyebrow": "Eine Screenshot-App für Mac",
+    "seeHow": "So funktioniert es",
+    "editorImageAlt": "Skreen-Screenshot-Editor mit einem Wolkenbild",
+    "socialImageAlt": "Skreen für Mac",
+    "proofLabel": "Was Skreen kann",
+    "proof": [
+      {
+        "title": "Eine ganze Seite. Ein Bild.",
+        "body": "Scrolle weiter und bestimme selbst, wann die Aufnahme endet."
+      },
+      {
+        "title": "Zeig, worauf es ankommt.",
+        "body": "Füge vor dem Teilen einen Pfeil, eine Notiz oder einen Rahmen hinzu."
+      },
+      {
+        "title": "Schütze private Details.",
+        "body": "Prüfe lokal erkannte Daten und verdecke Vertrauliches vor dem Export."
+      }
+    ],
+    "editor": "Der Editor",
+    "editorTitle": "Zeig im Screenshot,",
+    "editorAccent": "worauf es ankommt.",
+    "editorLead": "Schneide Unnötiges weg, füge eine Notiz hinzu oder verdecke ein Detail vor dem Senden.",
+    "exploreFeature": "Entdecken",
+    "workflow": "So funktioniert es",
+    "workflowTitle": "Screenshot aufnehmen.",
+    "workflowAccent": "Details erklären.",
+    "workflowLead": "Wähle mit Shift + ⌘ + 0 einen Bereich, bearbeite das Bild in Skreen und exportiere es.",
+    "moreFeatures": "Weitere Skreen-Funktionen",
+    "moreToExplore": "Außerdem in Skreen",
+    "textQr": "Text- und QR-Erkennung",
+    "combineScreenshots": "Screenshots kombinieren",
+    "allFeatures": "Alle Funktionen",
+    "goodToKnow": "Häufige Fragen",
+    "faqTitle": "Fragen zu",
+    "faqAccent": "Skreen.",
+    "ready": "Für deinen nächsten Screenshot",
+    "finalTitle": "Nimm auf, was du brauchst.",
+    "finalAccent": "Zeig nur das Nötige.",
+    "finalLead": "Füge eine Erklärung hinzu und verdecke private Daten vor dem Teilen.",
+    "readGuide": "Anleitung lesen",
+    "finishImage": "Bearbeite den Screenshot in Skreen.",
+    "scrollingPage": "Lange Seite aufnehmen",
+    "annotateScreenshot": "Screenshot kommentieren",
+    "hidePrivate": "Private Details verbergen",
+    "exploreFeatures": "Skreen-Funktionen entdecken",
+    "learnMore": "Mehr erfahren",
+    "updated": "Aktualisiert",
+    "forMac": "Skreen für macOS 14+",
+    "finishIt": "Probiere Skreen aus.",
+    "articleDownloadLead": "Skreen {version} läuft auf macOS 14 oder neuer.",
+    "downloadSkreen": "Skreen für Mac laden",
+    "keepExploring": "Ähnliche Anleitungen",
+    "ctaTitle": "Soll dein Screenshot mehr erklären?",
+    "ctaLead": "Nimm ihn in Skreen auf, markiere Details und verdecke private Daten vor dem Senden.",
+    "backToSkreen": "Zurück zu Skreen",
+    "releasesTitle": "Skreen-Versionen.",
+    "latestRelease": "Neueste Version",
+    "version": "Version",
+    "olderBuild": "Du brauchst eine ältere Version oder möchtest ein Problem melden?",
+    "allGithub": "Alle Versionen auf GitHub",
+    "sendFeedback": "Feedback senden"
+  },
+  "home": {
+    "title": "Skreen — Screenshot-App für Mac",
+    "description": "Erstelle lange Screenshots auf dem Mac, füge Anmerkungen und Hintergründe hinzu, erkenne Text und verdecke private Daten mit Skreen.",
+    "hero_title": "Screenshots für Mac,",
+    "hero_title_accent": "bereit zum Teilen.",
+    "hero_description": "Nimm den gewünschten Bereich auf. Füge eine Notiz hinzu, verdecke private Daten und exportiere das Bild.",
+    "download_label": "Für Mac laden",
+    "hero_note": "Version 1.2.3 · macOS 14 oder neuer",
+    "features": [
+      {
+        "title": "Nimm mehr als einen Bildschirm auf.",
+        "body": "Speichere eine lange Seite als Bild. Während der Aufnahme kannst du pausieren oder die Scrollrichtung ändern.",
+        "label": "Scrollaufnahme"
+      },
+      {
+        "title": "Prüfe, was im Screenshot zu sehen ist.",
+        "body": "Skreen sucht auf deinem Mac nach Gesichtern, E-Mails, Kartennummern und API-Schlüsseln. Prüfe die Treffer und verdecke Vertrauliches.",
+        "label": "Datenschutz"
+      },
+      {
+        "title": "Wähle einen passenden Hintergrund.",
+        "body": "Nutze ein Mac-Hintergrundbild oder eine Farbe aus dem Screenshot. Passe Abstand, Rahmen und Schatten im Editor an.",
+        "label": "Hintergründe"
+      },
+      {
+        "title": "Schreibe die Erklärung ins Bild.",
+        "body": "Zeige mit einem Pfeil auf ein Element, markiere einen Bereich oder füge eine kurze Notiz hinzu.",
+        "label": "Anmerkungen"
+      }
+    ],
+    "workflow": [
+      {
+        "title": "Aufnehmen",
+        "body": "Drücke Shift + ⌘ + 0 für einen Bereich. Lege ein eigenes Kürzel für Fenster fest oder starte die Scrollaufnahme über die Menüleiste."
+      },
+      {
+        "title": "Gestalten",
+        "body": "Füge einen Hintergrund und Anmerkungen hinzu oder kombiniere mehrere Aufnahmen."
+      },
+      {
+        "title": "Teilen",
+        "body": "Prüfe das Bild und exportiere es für ein Dokument, eine Nachricht oder einen Beitrag."
+      }
+    ],
+    "faq": [
+      {
+        "question": "Kann Skreen eine Seite aufnehmen, die länger als mein Bildschirm ist?",
+        "answer": "Ja. Wähle den scrollbaren Bereich, scrolle durch den Inhalt und prüfe das zusammengesetzte Bild vor dem Export."
+      },
+      {
+        "question": "Werden meine Screenshots hochgeladen?",
+        "answer": "Nein. Aufnahme, Bearbeitung, Texterkennung und Erkennung privater Daten laufen auf deinem Mac."
+      },
+      {
+        "question": "Kann ich mehrere Screenshots zu einem Bild verbinden?",
+        "answer": "Ja. Ordne sie in einem Raster oder frei auf der Arbeitsfläche an und exportiere die Komposition."
+      },
+      {
+        "question": "Kann ich Text aus einem Screenshot kopieren?",
+        "answer": "Ja. Skreen erkennt Text auf deinem Mac, damit du die benötigten Wörter kopieren kannst."
+      },
+      {
+        "question": "Kann ich den Hintergrund ändern?",
+        "answer": "Ja. Wähle ein Mac-Hintergrundbild, eine Volltonfarbe oder einen Farbverlauf und passe Abstand und Rahmen an."
+      },
+      {
+        "question": "Welche macOS-Version brauche ich?",
+        "answer": "Skreen benötigt macOS 14 Sonoma oder neuer."
+      }
+    ]
+  },
+  "features": {
+    "title": "Screenshot-Funktionen für Mac — Skreen",
+    "description": "Entdecke Scrollaufnahmen, Anmerkungen, Hintergründe, Datenschutz, OCR, QR-Codes und Bildkompositionen mit Skreen.",
+    "h1": "Screenshots auf dem Mac aufnehmen und bearbeiten.",
+    "lead": "Erfasse lange Seiten, markiere Details, verdecke private Daten oder setze mehrere Aufnahmen zusammen.",
+    "items": [
+      {
+        "title": "Lange Screenshots",
+        "body": "Nimm eine lange Seite auf, steuere den Scrollvorgang und erhalte ein Bild."
+      },
+      {
+        "title": "Private Details verbergen",
+        "body": "Erkenne sensible Texte und Gesichter lokal, prüfe die Treffer und verdecke sie."
+      },
+      {
+        "title": "Screenshots kommentieren",
+        "body": "Erkläre dein Bild mit Pfeilen, Beschriftungen, Formen und weiteren Werkzeugen."
+      },
+      {
+        "title": "Schöne Hintergründe",
+        "body": "Rahme dein Bild mit Verläufen, Mustern, Mac-Hintergrundbildern oder passenden Farben ein."
+      },
+      {
+        "title": "Text und QR-Codes",
+        "body": "Kopiere Text und lies QR-Codes mit lokaler Erkennung auf deinem Mac."
+      },
+      {
+        "title": "Screenshots kombinieren",
+        "body": "Ordne mehrere Aufnahmen im Raster oder frei auf einer Arbeitsfläche an."
+      }
+    ]
+  },
+  "guides": {
+    "title": "Anleitungen für Mac-Screenshots — Skreen",
+    "description": "Praktische Anleitungen zum Aufnehmen und Bearbeiten von Screenshots auf dem Mac.",
+    "h1": "Screenshot-Anleitungen für Mac.",
+    "lead": "Hier findest du macOS-Kürzel und erfährst, wie du lange Seiten aufnimmst oder Bilder in Skreen bearbeitest.",
+    "items": [
+      {
+        "title": "So machst du einen Screenshot auf dem Mac",
+        "body": "Kürzel für Bildschirm, Bereich und Fenster sowie Scrollaufnahmen und Bearbeitung."
+      }
+    ]
+  },
+  "changelog": {
+    "title": "Skreen-Versionen",
+    "description": "Neuigkeiten zu Skreen für Mac und die neueste Version: Aufnahmen, Bearbeitung, Hintergründe und lange Screenshots.",
+    "intro": "Aktuelle Skreen-Versionen, Änderungen und Downloads.",
+    "releases": [
+      {
+        "download_label": "1.2.3 für Mac laden",
+        "notes": [
+          "Nutze dein aktuelles Desktop-Bild oder ein installiertes macOS-Hintergrundbild für Screenshots.",
+          "Exportiere in der nativen Pixeldichte der Quelle für schärfere Ergebnisse.",
+          "Verbesserte Zusammensetzung und präziserer Zuschnitt langer Aufnahmen."
+        ]
+      },
+      {
+        "download_label": "Auf GitHub ansehen",
+        "notes": [
+          "Scrollaufnahmen für lange Seiten und Ansichten hinzugefügt.",
+          "Doppelte Inhalte und Lücken zwischen Einzelbildern behoben."
+        ]
+      },
+      {
+        "download_label": "Auf GitHub ansehen",
+        "notes": [
+          "Screenshot-Verlauf, Schnellzugriff, Text- und QR-Erkennung sowie Bildkompositionen hinzugefügt.",
+          "Rasterbearbeitung, Unschärfe und Auswahl verbessert."
+        ]
+      }
+    ]
+  },
+  "articles": {
+    "features/annotate-screenshots": {
+      "title": "Screenshots auf dem Mac kommentieren — Skreen",
+      "description": "Füge Pfeile, Text, Formen und Markierungen zu Mac-Screenshots hinzu. Erkläre Fehlerberichte und Ideen klar mit Skreen.",
+      "h1": "Markiere die Stelle, auf die es ankommt.",
+      "lead": "Setze einen Pfeil, Text oder eine Form direkt in den Screenshot. So brauchst du keine separate Erklärung.",
+      "related": [
+        {
+          "title": "Screenshots kombinieren",
+          "body": "Erkläre eine Folge auf einer Arbeitsfläche."
+        },
+        {
+          "title": "Private Details verbergen",
+          "body": "Schütze Daten vor dem Teilen."
+        }
+      ],
+      "bodyHtml": "<h2>Erkläre das Bild ohne lange Nachricht</h2><p>Skreen bietet 13 Werkzeuge für Anmerkungen. Zeige mit einem Pfeil auf eine Schaltfläche, benenne einen Zustand mit Text oder umrahme einen Bereich. Messwerkzeuge helfen beim Designfeedback, wenn Position und Größe wichtig sind.</p><h2>Ein einfacher Ablauf</h2><ol><li>Nimm einen Bereich, ein Fenster oder eine <a href=\"/features/scrolling-screenshots\">lange Seite</a> auf.</li><li>Setze ein oder zwei Markierungen, die zeigen, worauf es ankommt.</li><li>Prüfe private Nachrichten oder Zugangsdaten und <a href=\"/features/redact-screenshots\">verdecke sie</a> vor dem Export.</li></ol><p>Für einen Fehlerbericht markiere die betroffene Schaltfläche. Für eine Anleitung kannst du mehrere Bilder <a href=\"/features/combine-screenshots\">kombinieren</a>. Prüfe das Ergebnis in der späteren Anzeigegröße.</p><h2>Die ursprüngliche Oberfläche sichtbar lassen</h2><p>Halte Beschriftungen kurz und verwende für mehrere Schritte eine einheitliche Farbe. Schneide den Screenshot zuerst zu und platziere Markierungen möglichst außerhalb wichtiger Texte. Prüfe den Export in der Größe, in der ihn andere sehen werden.</p><p>Für einen Fehlerbericht markierst du das Bedienelement oder die Meldung, die den Fehler ausgelöst hat. Für eine Anleitung kannst du nummerierte Aufnahmen in einer <a href=\"/features/combine-screenshots\">gemeinsamen Komposition</a> anordnen, wenn ein einzelnes Bild den Ablauf nicht vollständig zeigt.</p>"
+    },
+    "features/beautiful-backgrounds": {
+      "title": "Schöne Screenshot-Hintergründe für Mac — Skreen",
+      "description": "Gestalte Mac-Screenshots mit Verläufen, Mustern, Hintergrundbildern, Rahmen und automatischer Farbauswahl in Skreen.",
+      "h1": "Gib deinem Screenshot etwas Raum.",
+      "lead": "Wähle einen Hintergrund und passe Abstand, Rahmen und Schatten für Dokumente oder Präsentationen an.",
+      "related": [
+        {
+          "title": "Screenshots kommentieren",
+          "body": "Ergänze eine hilfreiche Erklärung."
+        },
+        {
+          "title": "Screenshots kombinieren",
+          "body": "Gib mehreren Bildern einen einheitlichen Stil."
+        }
+      ],
+      "bodyHtml": "<h2>Wähle einen passenden Look</h2><p>Skreen bietet 48 Farbverläufe und 13 Muster. Du kannst auch eigene Verläufe, dein aktuelles Desktop-Bild oder installierte macOS-Hintergrundbilder verwenden. Die automatische Gestaltung schlägt Farben passend zum Screenshot vor.</p><h2>Hintergrund und Abstand anpassen</h2><ol><li>Nimm einen Bereich oder ein Fenster auf und öffne es im Editor.</li><li>Wähle einen gut lesbaren Hintergrund. Ergänze bei Bedarf Rahmen und Schatten.</li><li>Stelle das Seitenverhältnis für eine Folie oder einen Beitrag ein.</li><li>Prüfe die Ausgabe in der geplanten Größe.</li></ol><p>Für textreiche Oberflächen eignen sich ruhige Farben und großzügige Abstände. Vor dem Export kannst du denselben Screenshot auch <a href=\"/features/annotate-screenshots\">kommentieren</a>.</p><h2>Beispiel: ein Bild für Versionshinweise</h2><p>Ein unbearbeiteter Screenshot zeigt das Fenster ohne Abstand zum Rand. Setze dieselbe Aufnahme für die fertige Version auf einen ruhigen Hintergrund, gib ihr Luft und trenne sie mit einem dezenten Rahmen oder Schatten von der Seite. Beurteile die Lesbarkeit in der Editorvorschau.</p><p>Skreen kann mit der ursprünglichen Pixeldichte exportieren, damit das Ergebnis scharf bleibt. Ein heller Hintergrund passt zu einer Produktankündigung; bei viel Text helfen eine zurückhaltende Farbe und großzügige Abstände. Du kannst denselben Screenshot vor dem Export auch <a href=\"/features/annotate-screenshots\">mit Anmerkungen versehen</a>. Ein dekorativer Hintergrund macht zu stark verkleinerte Schrift nicht lesbar.</p>"
+    },
+    "features/combine-screenshots": {
+      "title": "Screenshots auf dem Mac kombinieren — Skreen",
+      "description": "Kombiniere Mac-Screenshots in einem Raster oder auf einer freien Arbeitsfläche für Vergleiche und Anleitungen.",
+      "h1": "Stelle passende Screenshots nebeneinander.",
+      "lead": "Vergleiche zwei Zustände oder zeige mehrere Schritte. Nutze ein Raster oder ordne die Bilder frei an.",
+      "related": [
+        {
+          "title": "Screenshots kommentieren",
+          "body": "Markiere Änderungen in jedem Bild."
+        },
+        {
+          "title": "Schöne Hintergründe",
+          "body": "Gib der Komposition einen einheitlichen Stil."
+        }
+      ],
+      "bodyHtml": "<h2>Wähle eine Anordnung</h2><p>Ein Raster eignet sich für gleichwertige Schritte. Auf der freien Arbeitsfläche kannst du Größen und Positionen einzeln festlegen. Neue Aufnahmen lassen sich während der Arbeit hinzufügen.</p><h2>Erstelle einen klaren Vergleich</h2><ol><li>Nimm den ersten Zustand auf und füge ihn hinzu.</li><li>Nimm den zweiten Zustand auf oder wähle ein vorhandenes Bild.</li><li>Richte vergleichbare Bereiche aus und ergänze kurze <a href=\"/features/annotate-screenshots\">Beschriftungen</a>.</li><li>Wähle einen einheitlichen <a href=\"/features/beautiful-backgrounds\">Hintergrund und Abstand</a>, dann exportiere ein Bild.</li></ol><p>Wenn Oberflächentext zu klein wird, schneide jedes Bild auf den wichtigen Bereich zu und prüfe die Ausgabegröße.</p><h2>Beispiel: zwei Zustände eines Fehlers</h2><p>Zeige den erwarteten Zustand neben dem fehlerhaften in einem Raster mit zwei Spalten. Schneide beide Bilder auf dasselbe Bedienelement zu und beschrifte sie kurz. So lässt sich der Unterschied erkennen, ohne zwischen Dateien zu wechseln. Braucht ein Zustand mehr Platz, ordne die Bilder auf der freien Arbeitsfläche mit unterschiedlichen Größen an.</p><p>Wenn die Ausgangsbilder verschiedene Abmessungen haben, prüfe die Komposition in der späteren Anzeigegröße. Kleine Oberflächentexte werden unleserlich, wenn mehrere vollständige Bildschirme auf eine Fläche gepresst werden. Schneide deshalb jeden Screenshot auf den relevanten Bereich zu.</p>"
+    },
+    "features/ocr-and-qr": {
+      "title": "Text und QR-Codes aus Mac-Screenshots kopieren — Skreen",
+      "description": "Erkenne Text und QR-Codes in Mac-Screenshots mit Apple Vision direkt im Aufnahmeablauf von Skreen.",
+      "h1": "Kopiere Text, statt ihn abzutippen.",
+      "lead": "Skreen erkennt Text und QR-Codes auf deinem Mac. Prüfe das Ergebnis und kopiere, was du brauchst.",
+      "related": [
+        {
+          "title": "Screenshot auf dem Mac",
+          "body": "Beginne mit dem passenden Kürzel."
+        },
+        {
+          "title": "Private Details verbergen",
+          "body": "Schütze erkannte private Daten."
+        }
+      ],
+      "bodyHtml": "<h2>Text ohne Abtippen kopieren</h2><p>Verwende die Textaufnahme oder erkenne Text in einem bereits geöffneten Bild. Skreen nutzt Apple Vision auf deinem Gerät. So kannst du etwa eine Fehlermeldung in ein Support-Ticket kopieren und das Bild als Kontext behalten.</p><h2>Prüfe das Ergebnis</h2><ol><li>Nimm eine Zeile auf oder öffne ein bestehendes Bild.</li><li>Starte die Texterkennung.</li><li>Vergleiche Satzzeichen, Zahlen und Zeilenumbrüche mit dem Original.</li><li>Kopiere den Text in dein Dokument.</li></ol><p>Skreen liest auch QR-Codes. Prüfe die Zieladresse vor dem Öffnen. Kleine Schrift und geringer Kontrast können Fehler verursachen; <a href=\"/features/redact-screenshots\">verdecke private Daten</a> vor dem Teilen.</p><h2>QR-Code aus einer Aufnahme lesen</h2><p>Skreen erkennt QR-Codes im aufgenommenen Inhalt. Steht ein Code auf einer Präsentationsfolie, fotografiere den Bereich und lies das Ziel, bevor du die Seite öffnest. Prüfe die tatsächliche URL und verlasse dich nicht nur auf die Beschriftung daneben.</p><h2>Das Bild als Referenz behalten</h2><p>Winzige Schrift, wenig Kontrast, ungewöhnliche Fonts und überlagerte Elemente können zu Erkennungsfehlern führen. Vergleiche das Ergebnis mit dem Screenshot, bevor du einen Befehl, eine Adresse oder eine wichtige Zahl verwendest. Wenn der visuelle Kontext wichtig ist, behalte die Aufnahme zusammen mit dem kopierten Text.</p>"
+    },
+    "features/redact-screenshots": {
+      "title": "Private Daten in Mac-Screenshots verbergen — Skreen",
+      "description": "Verdecke Gesichter, E-Mails, API-Schlüssel, Passwörter und andere private Daten in Mac-Screenshots mit Skreen.",
+      "h1": "Verdecke private Daten vor dem Teilen.",
+      "lead": "Skreen sucht auf deinem Mac nach Gesichtern und sensiblen Daten. Prüfe die Treffer und verdecke die betreffenden Stellen.",
+      "related": [
+        {
+          "title": "Lange Screenshots",
+          "body": "Nimm eine lange Ansicht vor der Bearbeitung auf."
+        },
+        {
+          "title": "Screenshots kommentieren",
+          "body": "Erkläre die unbedenklichen Bereiche."
+        }
+      ],
+      "bodyHtml": "<h2>Finde Details auf deinem Mac</h2><p>Skreen nutzt Apple Vision lokal, um Gesichter und sensible Texte zu erkennen: E-Mails, Telefonnummern, Kartennummern, IP-Adressen, API-Schlüssel, Passwörter und eigene Muster. Du kannst Bereiche auch selbst auswählen.</p><h2>So machst du Daten unkenntlich</h2><ol><li>Nimm einen Screenshot auf oder öffne ihn im Editor.</li><li>Starte die Erkennung und prüfe die vorgeschlagenen Bereiche.</li><li>Wähle Unschärfe, Pixelung oder eine deckende Fläche und ergänze fehlende Stellen.</li><li>Kontrolliere die exportierte Datei vor dem Versand.</li></ol><p>Automatische Erkennung unterstützt dich, ersetzt aber keine eigene Prüfung. Sieh dir bei <a href=\"/features/scrolling-screenshots\">langen Screenshots</a> das gesamte Bild an.</p><h2>Vor dem Export genau hinsehen</h2><p>Die Erkennung berücksichtigt auch US-Sozialversicherungsnummern und selbst definierte Muster. Übersehene Bereiche kannst du manuell auswählen. Bei Text lässt sich eine Auswahl mit <code>Alt</code> an Wortgrenzen ausrichten, damit ein einzelner Wert verdeckt wird und die Erklärung daneben sichtbar bleibt. Vergrößere das Bild und prüfe auch die Ränder und den Hintergrund.</p><h2>Die passende Abdeckung wählen</h2><p>Zeigt ein Fehlerbericht ein Zahlungsformular, verdecke die Kartennummer mit einer deckenden Fläche. Feldbezeichnungen und Fehlermeldung können sichtbar bleiben. Weichzeichnen oder Verpixeln kann für einen beiläufigen Namen oder ein Gesicht in einer Designbesprechung reichen. Für Passwörter, API-Schlüssel und Zahlungsdaten ist eine deckende Fläche die klarere Wahl. Kontrolliere die exportierte Datei selbst.</p>"
+    },
+    "features/scrolling-screenshots": {
+      "title": "Lange Screenshots auf dem Mac — Skreen",
+      "description": "Nimm lange Seiten und scrollbare Ansichten auf dem Mac auf. Starte, pausiere und beende Scrollaufnahmen mit Skreen.",
+      "h1": "Nimm auch den Rest der Seite auf.",
+      "lead": "Wähle den scrollbaren Bereich und scrolle durch den gewünschten Inhalt. Skreen fügt die Einzelbilder zusammen.",
+      "related": [
+        {
+          "title": "Screenshots kommentieren",
+          "body": "Zeig, wo andere hinschauen sollen."
+        },
+        {
+          "title": "Screenshot auf dem Mac",
+          "body": "Lerne die integrierten Tastenkürzel kennen."
+        }
+      ],
+      "bodyHtml": "<h2>So nimmst du eine lange Seite auf</h2><ol><li>Öffne die Seite und gehe zum Anfang des gewünschten Inhalts.</li><li>Starte die Scrollaufnahme in Skreen und wähle den Inhaltsbereich ohne feste Browserleisten.</li><li>Scrolle weiter. Währenddessen kannst du pausieren, die Richtung ändern oder abbrechen.</li><li>Prüfe das zusammengesetzte Bild, schneide Überflüssiges ab und <a href=\"/features/redact-screenshots\">verdecke private Details</a> vor dem Export.</li></ol><p>Skreen verbindet überlappende Bilder und versucht, feste Elemente nicht zu wiederholen. Bei Animationen oder nachladenden Inhalten solltest du das Ergebnis besonders genau prüfen.</p><h2>Wann es hilft</h2><p>Scrollaufnahmen eignen sich für Artikel, Gespräche, Dokumente und Fehlerberichte, die über einen Bildschirm hinausgehen. Reicht der sichtbare Bereich, ist eine normale <a href=\"/guides/how-to-screenshot-on-mac\">Bereichs- oder Fensteraufnahme</a> schneller.</p><h2>Berechtigung für Bildschirmaufnahmen</h2><p>Fragt macOS beim ersten Versuch nach einer Berechtigung, öffne die Systemeinstellungen, erlaube Skreen den angeforderten Zugriff und kehre zur App zurück. Unter Umständen muss die App neu gestartet werden. Wähle nur den Inhalt, den du aufnehmen willst: Browser-Tabs und Unterhaltungen können auch außerhalb des sichtbaren Bereichs private Informationen enthalten.</p><h2>Das zusammengesetzte Bild prüfen</h2><p>Animationen, ausklappende Bereiche und nachladende Inhalte können sich während des Scrollens verändern. Warte, bis die Seite ruhig ist, scrolle gleichmäßig und prüfe das fertige Bild. Die Aufnahme funktioniert am besten innerhalb eines klar ausgewählten Scrollbereichs.</p><h2>Häufige Fragen</h2><h3>Warum fehlt ein Teil oder erscheint doppelt?</h3><p>Bewegliche Banner, automatisch startende Videos, fixierte Elemente oder später geladener Inhalt können die Verbindung der Einzelbilder stören. Versuche einen kürzeren Abschnitt und wähle den Bereich, der tatsächlich scrollt. Sieh dir danach die exportierte Datei an.</p><h3>Kann ich einen langen Chat oder ein Dokument aufnehmen?</h3><p>Ja, wenn der Inhalt in einem auswählbaren Bereich scrollt. Teste zuerst einen kurzen Abschnitt. Scrollt die Ansicht nicht gleichmäßig, kannst du mehrere Ausschnitte aufnehmen und <a href=\"/features/combine-screenshots\">zusammenfügen</a>.</p>"
+    },
+    "guides/how-to-screenshot-on-mac": {
+      "title": "Screenshot auf dem Mac erstellen — Tastenkürzel | Skreen",
+      "description": "Lerne macOS-Kürzel für den ganzen Bildschirm, einen Bereich und ein Fenster kennen und erfahre, wann Skreen hilft.",
+      "h1": "So machst du einen Screenshot auf dem Mac.",
+      "lead": "Mit macOS-Kürzeln nimmst du Bildschirm, Bereich oder Fenster auf. Für lange Seiten und Bearbeitung findest du hier die Skreen-Funktionen.",
+      "parent_label": "Mac-Anleitungen",
+      "related": [
+        {
+          "title": "Lange Screenshots",
+          "body": "Erfasse Inhalt außerhalb des sichtbaren Bereichs."
+        },
+        {
+          "title": "Private Details verbergen",
+          "body": "Schütze Daten vor dem Teilen."
+        }
+      ],
+      "bodyHtml": "<h2>Die integrierten macOS-Kürzel</h2><table><thead><tr><th>Aufgabe</th><th>Kürzel</th><th>Ergebnis</th></tr></thead><tbody><tr><td>Ganzer Bildschirm</td><td><code>Shift–Command–3</code></td><td>Der Bildschirm wird aufgenommen.</td></tr><tr><td>Ausgewählter Bereich</td><td><code>Shift–Command–4</code></td><td>Ziehe das Fadenkreuz über den Bereich.</td></tr><tr><td>Fenster oder Menü</td><td><code>Shift–Command–4</code>, dann <code>Space</code></td><td>Bewege die Kamera auf ein Fenster und klicke.</td></tr><tr><td>Screenshot-Steuerung</td><td><code>Shift–Command–5</code></td><td>Wähle einen Aufnahme- oder Aufzeichnungsmodus.</td></tr></tbody></table><p>Diese Kürzel funktionieren ohne Skreen. Die <a href=\"https://support.apple.com/en-us/102646\">Apple-Anleitung</a> erklärt auch, wo Dateien gespeichert werden.</p><h2>Bereich mit Skreen aufnehmen</h2><p>In Skreen startet <code>Shift–Command–0</code> standardmäßig die Bereichsaufnahme. Ziehe einen Rahmen um den gewünschten Bereich; der Screenshot öffnet sich anschließend im Skreen-Editor. <code>Shift–Command–4</code> in der Tabelle oben gehört zu macOS.</p><h2>Wenn die Seite länger ist</h2><p>Normale Screenshots erfassen den sichtbaren Teil. Für lange Dokumente nutze die <a href=\"/features/scrolling-screenshots\">Scrollaufnahme</a> in Skreen und prüfe das zusammengesetzte Bild.</p><h2>Bereite das Bild zum Teilen vor</h2><p>Füge <a href=\"/features/annotate-screenshots\">Anmerkungen</a> hinzu, wähle einen <a href=\"/features/beautiful-backgrounds\">Hintergrund</a> oder <a href=\"/features/redact-screenshots\">verdecke private Daten</a>. Skreen kann auch <a href=\"/features/ocr-and-qr\">Text und QR-Codes erkennen</a>.</p>"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, getUi, withLocale, type Locale } from '../i18n';
+
+interface Release {
+  version: string;
+  date: string;
+  latest?: boolean;
+  download_url: string;
+  download_label: string;
+  notes: string[];
+}
+interface ChangelogData { title: string; description: string; intro: string; releases: Release[] }
+interface Props { data: ChangelogData; locale?: Locale }
+const { data: h, locale = 'en' } = Astro.props;
+const ui = getUi(locale);
+const latest = h.releases[0];
+const releaseDates = ['2026-09-28', '2026-08-03', '2026-08-01'];
+const shownDate = (index: number, date: string) => locale === 'en' ? date : formatDate(releaseDates[index], locale);
+---
+<BaseLayout title={h.title} description={h.description} active="changelog" locale={locale}>
+  <main id="main" class="releases-main">
+    <section class="page-hero releases-hero" aria-labelledby="releases-title"><div class="container releases-hero-inner">
+      <div class="releases-heading"><a class="back-link" href={withLocale(locale, '/')}>{ui.backToSkreen}</a><h1 id="releases-title">{ui.releasesTitle}</h1><p>{h.intro}</p></div>
+      <div class="releases-current"><img src="/assets/skreen-mascot.png" width="512" height="512" alt="" aria-hidden="true" /><p>Skreen {latest.version} <span aria-hidden="true">·</span> {shownDate(0, latest.date)}</p><a class="button button-primary" href={latest.download_url} data-download-cta>{latest.download_label}</a></div>
+    </div></section>
+    <section class="container release-list" aria-label={ui.releasesTitle}>
+      {h.releases.map((release, index) => <article class:list={['release-entry', release.latest && 'release-entry--latest']} aria-labelledby={`release-${index + 1}`}>
+        <div class="release-meta"><span>{shownDate(index, release.date)}</span>{release.latest && <strong>{ui.latestRelease}</strong>}</div>
+        <div class="release-detail"><h2 id={`release-${index + 1}`}>{ui.version} {release.version}</h2><ul>{release.notes.map((note) => <li>{note}</li>)}</ul></div>
+        <div class="release-download"><a href={release.download_url} data-download-cta={release.latest ? '' : undefined}>{release.download_label}</a></div>
+      </article>)}
+    </section>
+    <div class="container release-bottom"><p>{ui.olderBuild}</p><div><a href="https://github.com/levskiy0/skreenme/releases">{ui.allGithub}</a><a href="https://github.com/levskiy0/skreenme/issues">{ui.sendFeedback}</a></div></div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import ArticlePage from '../../../components/ArticlePage.astro';
+import { getPages, translatedLocales, type Locale } from '../../../i18n';
+import type { ArticlePageData } from '../../../types';
+
+export function getStaticPaths() {
+  return translatedLocales.flatMap((lang) => Object.entries(getPages(lang).articles).map(([id, article]) => {
+    const [section, slug] = id.split('/');
+    return { params: { lang, section, slug }, props: { article, slug } };
+  }));
+}
+const { article, slug } = Astro.props as { article: ArticlePageData; slug: string };
+const locale = Astro.params.lang as Locale;
+---
+<ArticlePage article={article} slug={slug} locale={locale} />
