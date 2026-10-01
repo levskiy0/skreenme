@@ -63,8 +63,7 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-description { max-width: 610px; margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.58; }
 .hero-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 .hero-note { margin-top: 10px; color: #777; font-size: 12px; }
-.hero-device { position: relative; overflow: hidden; width: min(100%, 1130px); aspect-ratio: 1.54; margin-top: 24px; background: #222; box-shadow: 0 28px 75px rgba(0, 0, 0, .16); }
-.hero-device img { position: absolute; top: -5%; left: -5%; width: 110%; max-width: none; height: auto; }
+.hero-device { width: min(100%, 1160px); height: auto; margin-top: 24px; filter: drop-shadow(0 28px 45px rgba(0, 0, 0, .14)); }
 
 /* A short proof strip separates the opening scene from the product tour. */
 .proof-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
