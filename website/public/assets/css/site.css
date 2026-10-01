@@ -52,7 +52,7 @@ h1, h2, h3 { text-wrap: balance; }
 .ambient-particle--plus::before, .ambient-particle--plus::after { content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 1.5px; background: currentColor; transform: translate(-50%, -50%); }
 .ambient-particle--plus::after { transform: translate(-50%, -50%) rotate(90deg); }
 
-/* The opening scene shows the real editor in its captured and styled states. */
+/* Static editor screenshot in the opening section. */
 .hero { overflow: clip; padding-bottom: clamp(80px, 9svh, 132px); background: var(--paper); }
 .hero-layout { display: flex; flex-direction: column; align-items: center; padding-top: clamp(78px, 7.8svh, 110px); text-align: center; }
 .hero-copy { width: 100%; max-width: 980px; padding-bottom: clamp(42px, 4.8svh, 64px); }
@@ -63,47 +63,8 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-description { max-width: 610px; margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.58; }
 .hero-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 .hero-note { margin-top: 10px; color: #777; font-size: 12px; }
-.hero-device { width: min(100%, 1130px); margin-top: 24px; }
-.hero-story-sticky { position: relative; width: 100%; }
-.hero-story-particles { inset: -105px -155px; }
-.hero-story-particles .ambient-particle, .faq-particles .ambient-particle { will-change: transform; }
-.hero-story-stage { position: relative; z-index: 1; }
-.hero-scroll-cue { position: fixed; z-index: 20; bottom: clamp(22px, 3svh, 38px); left: 50%; display: block; color: #35383a; opacity: 0; visibility: hidden; transform: translate(-50%, 10px); transition: opacity .25s ease, transform .25s ease, visibility .25s ease; pointer-events: none; }
-.hero-scroll-cue.is-visible { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-.hero-scroll-cue svg { display: block; width: 24px; height: 32px; }
-.hero-scroll-wheel { transform-origin: center; animation: scroll-wheel 1.8s ease-in-out infinite; }
-@keyframes scroll-wheel { 0%, 20%, 100% { opacity: 1; transform: translateY(0); } 55% { opacity: .3; transform: translateY(7px); } 70% { opacity: 0; transform: translateY(7px); } }
-.hero-story-intro { display: none; }
-.hero-story-product, .hero-capture-flash { display: none; }
-.hero-editor { position: relative; overflow: hidden; aspect-ratio: 1.54; border-radius: 24px; background: transparent; box-shadow: 0 28px 75px rgba(0, 0, 0, .16); }
-.hero-editor img { position: absolute; top: -5%; left: -5%; width: 110%; max-width: none; height: auto; }
-.hero-editor-empty { opacity: 0; }
-.hero-editor-capture { opacity: 1; }
-.hero-device.is-story-ready { height: 220svh; }
-.hero-device.is-story-ready .hero-story-sticky { position: sticky; top: var(--story-center-top, 0px); width: min(100%, calc((100svh - 190px) * 1.54)); margin-inline: auto; }
-.hero-device.is-story-ready .hero-story-intro { position: absolute; z-index: 3; inset: 0; display: block; overflow: hidden; border-radius: 24px; opacity: var(--intro-opacity, 1); transform: translateY(var(--intro-offset, 0px)); box-shadow: 0 28px 75px rgba(0, 0, 0, .16); will-change: transform, opacity; pointer-events: none; }
-.hero-story-intro img { position: absolute; top: -5%; left: -5%; width: 110%; max-width: none; height: auto; }
-.hero-device.is-story-ready .hero-capture-flash { position: absolute; z-index: 8; inset: -10px; display: block; border-radius: 26px; background: #fff; opacity: var(--capture-flash-opacity, 0); box-shadow: 0 0 70px 22px rgba(255, 255, 255, .9); pointer-events: none; }
-.hero-device.is-story-ready .hero-story-product { position: absolute; z-index: 2; top: var(--product-top, 50%); left: var(--product-left, 50%); display: block; width: 620px; height: 359px; opacity: var(--product-opacity, 0); transform: translate(-50%, calc(-50% + var(--product-enter-y, 0px))) scale(calc(var(--product-scale, 1) * var(--product-enter-scale, 1))); transform-origin: center; will-change: transform, opacity; pointer-events: none; }
-.hero-product-card { display: grid; grid-template-columns: 52% 48%; width: 100%; height: 100%; overflow: hidden; border: 1px solid #dedede; border-radius: 16px; background: #fff; box-shadow: 0 24px 58px rgba(0, 0, 0, .13); text-align: left; }
-.hero-product-photo { position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 37%, #f3f0e9 0, #e7e2d9 70%, #d9d3c9 100%); }
-.hero-product-photo-label { position: absolute; z-index: 1; top: 23px; left: 22px; color: #565951; font-size: 10px; font-weight: 760; letter-spacing: .12em; }
-.hero-product-art { width: 86%; height: 82%; object-fit: contain; }
-.hero-product-info { display: flex; flex-direction: column; justify-content: space-between; padding: 25px 28px 27px; }
-.hero-product-brand { display: flex; justify-content: space-between; align-items: center; color: #262626; font-size: 10px; font-weight: 800; letter-spacing: .17em; }
-.hero-product-brand span:last-child { color: #747474; font-size: 9px; font-weight: 650; letter-spacing: .08em; }
-.hero-product-details > span { color: #777; font-size: 10px; font-weight: 760; letter-spacing: .13em; }
-.hero-product-details h3 { margin-top: 10px; font-size: 35px; font-weight: 690; letter-spacing: -.055em; line-height: 1; }
-.hero-product-details p { max-width: 228px; margin-top: 12px; color: #777; font-size: 12px; line-height: 1.55; }
-.hero-product-meta { margin-top: 20px; color: #737373; font-size: 11px; }
-.hero-product-bottom { display: flex; justify-content: space-between; align-items: center; }
-.hero-product-bottom strong { font-size: 22px; letter-spacing: -.04em; }
-.hero-product-bottom span { padding: 12px 15px; border-radius: 999px; background: #202020; color: #fff; font-size: 11px; font-weight: 710; }
-.hero-product-selection { position: absolute; top: calc(-1 * var(--selection-outset, 20px)); left: calc(-1 * var(--selection-outset, 20px)); width: calc((100% + var(--selection-padding, 40px)) * var(--selection-progress, 0)); height: calc((100% + var(--selection-padding, 40px)) * var(--selection-progress, 0)); border: 1px dashed #232323; border-radius: 2px; background: rgba(65, 65, 65, .07); opacity: var(--selection-opacity, 0); }
-.hero-selection-cursor { position: absolute; right: -29px; bottom: -29px; width: 56px; height: 56px; overflow: visible; filter: drop-shadow(0 1px 1px rgba(255, 255, 255, .9)); }
-.hero-device.is-story-ready .hero-editor { z-index: 4; opacity: var(--editor-opacity, 0); transform: translateY(var(--editor-rise, 48px)) scale(var(--editor-scale, .94)); will-change: transform, opacity; }
-.hero-device.is-story-ready .hero-editor-empty { opacity: 1; }
-.hero-device.is-story-ready .hero-editor-capture { opacity: var(--result-opacity, 0); }
+.hero-device { position: relative; overflow: hidden; width: min(100%, 1130px); aspect-ratio: 1.54; margin-top: 24px; border-radius: 24px; background: #222; box-shadow: 0 28px 75px rgba(0, 0, 0, .16); }
+.hero-device img { position: absolute; top: -5%; left: -5%; width: 110%; max-width: none; height: auto; }
 
 /* A short proof strip separates the opening scene from the product tour. */
 .proof-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
@@ -215,12 +176,7 @@ h1, h2, h3 { text-wrap: balance; }
   .hero-actions { gap: 8px; margin-top: 12px; }
   .hero-actions .button { min-height: 43px; padding: 0 17px; font-size: 12px; }
   .hero-note { margin-top: 10px; font-size: 11px; }
-  .hero-device { width: calc(100% + 32px); margin: 24px -16px 0; }
-  .hero-scroll-cue { bottom: 18px; }
-  .hero-editor { border-radius: 16px 16px 0 0; }
-  .hero-device.is-story-ready { height: 260svh; }
-  .hero-device.is-story-ready .hero-story-sticky { width: 100%; }
-  .hero-device.is-story-ready .hero-story-intro { border-radius: 16px; }
+  .hero-device { width: calc(100% + 32px); margin: 24px -16px 0; border-radius: 16px 16px 0 0; }
   .proof-grid { grid-template-columns: 1fr; gap: 0; padding-top: 15px; padding-bottom: 15px; }
   .proof-item, .proof-item + .proof-item { display: grid; grid-template-columns: 38px 1fr; column-gap: 14px; padding: 23px 0; border: 0; border-bottom: 1px solid var(--line); }
   .proof-item:last-child { border-bottom: 0; }

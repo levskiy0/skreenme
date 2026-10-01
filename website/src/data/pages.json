@@ -328,7 +328,7 @@
     "workflow": [
       {
         "title": "Capture",
-        "body": "Use a shortcut to capture an area, window, or scrolling view."
+        "body": "Press Shift + ⌘ + 0 to select an area. Set your own hotkey for window capture, or start scrolling capture from the menu bar."
       },
       {
         "title": "Shape",

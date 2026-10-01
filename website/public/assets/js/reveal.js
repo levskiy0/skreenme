@@ -3,7 +3,7 @@
   if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
 
   const targets = document.querySelectorAll([
-    '.hero-copy', '.hero-device', '.proof-item', '.showcase-heading',
+    '.proof-item', '.showcase-heading',
     '.showcase-feature', '.workflow-heading', '.workflow-step', '.more-features',
     '.faq-heading', '.faq-list', '.index-hero-inner', '.index-feature',
     '.index-guide', '.index-extra', '.article-hero-copy', '.article-hero-icon',
