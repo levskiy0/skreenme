@@ -111,6 +111,19 @@
   }
 
   const closingScene = document.querySelector('.download-close');
+  if (closingScene) {
+    if ('IntersectionObserver' in window) {
+      const landscapeObserver = new IntersectionObserver((entries, observer) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          closingScene.classList.add('has-landscape-image');
+          observer.disconnect();
+        }
+      }, { rootMargin: '1000px 0px' });
+      landscapeObserver.observe(closingScene);
+    } else {
+      closingScene.classList.add('has-landscape-image');
+    }
+  }
   if (closingScene && !reducedMotion.matches) {
     let frame = 0;
     const updateScene = () => {
