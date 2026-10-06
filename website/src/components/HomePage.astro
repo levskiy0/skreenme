@@ -21,7 +21,7 @@ interface HomeData {
 interface Props { data: HomeData; locale: Locale }
 const { data: h, locale } = Astro.props;
 const ui = getUi(locale);
-const heroImageWidths = [640, 960, 1280, 1920, 2414];
+const heroImageWidths = [640, 960, 1280, 1920, 2340];
 const heroImageSrcSet = (format: 'avif' | 'webp') =>
   heroImageWidths.map((width) => `/assets/skreen-editor-clouds-${width}.${format} ${width}w`).join(', ');
 const heroImageSizes = '(max-width: 620px) calc(100vw - 32px), (max-width: 820px) calc(100vw - 42px), (max-width: 1224px) calc(100vw - 64px), 1160px';
@@ -53,7 +53,7 @@ const structuredData = {
         <picture class="hero-picture">
           <source type="image/avif" srcset={heroImageSrcSet('avif')} sizes={heroImageSizes} />
           <source type="image/webp" srcset={heroImageSrcSet('webp')} sizes={heroImageSizes} />
-          <img class="hero-device" src="/assets/skreen-editor-clouds.png" width="2414" height="1650" alt={ui.editorImageAlt} fetchpriority="high" decoding="async" />
+          <img class="hero-device" src="/assets/skreen-editor-clouds.png" width="2340" height="1596" alt={ui.editorImageAlt} fetchpriority="high" decoding="async" />
         </picture>
       </div>
     </section>

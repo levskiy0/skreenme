@@ -4,6 +4,39 @@
         <title>Skreen Updates</title>
         <language>en</language>
         <item>
+            <title>Version 1.2.4</title>
+            <pubDate>Mon, 07 Oct 2026 02:00:16 +0000</pubDate>
+            <sparkle:version>47</sparkle:version>
+            <sparkle:shortVersionString>1.2.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>New</h3>
+                <ul>
+                    <li>Freehand styling for arrows, rectangles, and ellipses, with varied pen pressure and a distinct hand-drawn contour for every new shape</li>
+                    <li>Five procedural arrow accents — Click, Ripple, Rays, Burst, and Ink Burst — with custom colors and on-canvas size and rotation controls</li>
+                    <li>Input annotations for left and right clicks, scrolling, and custom keyboard shortcuts, with optional key names</li>
+                    <li>A refreshed library of 39 vector Cartoon stickers in Hands, Symbols, and Emotions, alongside custom stickers</li>
+                </ul>
+                <h3>Improvements</h3>
+                <ul>
+                    <li>More shape contours, line patterns, and counter badges, including clouds, waves, zigzags, location pins, and flags</li>
+                    <li>Refreshed editor toolbars, icons, preferences, and consistently sized style previews</li>
+                    <li>Crop dimensions, aspect ratios, and larger Cancel and Apply buttons now live in the top toolbar</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Faster editing and resizing of procedural shapes, especially cloud ellipses</li>
+                    <li>Image backgrounds now restore correctly when switching screenshot presets</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.2.4/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+        <language>en</language>
+        <item>
             <title>Version 1.2.3</title>
             <pubDate>Mon, 28 Sep 2026 15:16:16 +0000</pubDate>
             <sparkle:version>46</sparkle:version>

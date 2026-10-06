@@ -17,7 +17,7 @@ Capture an area, window, or scrolling page. Edit the image, copy text from it, o
 ---
 
 <p align="center">
-  <img src="assets/readme-editor.png" alt="Skreen editor showing a styled screenshot of a chameleon food product card">
+  <img src="assets/readme-editor.png" alt="Skreen editor showing a cloud image with a curved arrow and hand-shaped arrowheads">
 </p>
 
 Most screenshots need a little work after capture. You might crop away a sidebar, point to a button, or hide an email address.
