@@ -187,11 +187,11 @@
     "intro": "The latest Skreen builds, what changed, and where to download them.",
     "releases": [
       {
-        "version": "1.2.3",
+        "version": "1.2.4",
         "date": "28 September 2026",
         "latest": true,
         "download_url": "https://github.com/levskiy0/skreenme/releases/latest/download/skreenme.dmg",
-        "download_label": "Download 1.2.3 for Mac",
+        "download_label": "Download 1.2.4 for Mac",
         "notes": [
           "Use your current desktop wallpaper or an installed macOS wallpaper as a screenshot background.",
           "Export at the source image's native pixel density for sharper results.",
@@ -294,7 +294,7 @@
     "hero_description": "Capture the part you need. Add a note, cover private details, and export the image.",
     "download_label": "Download for Mac",
     "download_url": "https://github.com/levskiy0/skreenme/releases/latest/download/skreenme.dmg",
-    "hero_note": "Version 1.2.3 · macOS 14 or later",
+    "hero_note": "Version 1.2.4 · macOS 14 or later",
     "features": [
       {
         "title": "Capture more than one screen.",

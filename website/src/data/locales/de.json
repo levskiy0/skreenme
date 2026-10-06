@@ -90,7 +90,7 @@
     "hero_title_accent": "bereit zum Teilen.",
     "hero_description": "Nimm den gewünschten Bereich auf. Füge eine Notiz hinzu, verdecke private Daten und exportiere das Bild.",
     "download_label": "Für Mac laden",
-    "hero_note": "Version 1.2.3 · macOS 14 oder neuer",
+    "hero_note": "Version 1.2.4 · macOS 14 oder neuer",
     "features": [
       {
         "title": "Nimm mehr als einen Bildschirm auf.",
@@ -204,7 +204,7 @@
     "intro": "Aktuelle Skreen-Versionen, Änderungen und Downloads.",
     "releases": [
       {
-        "download_label": "1.2.3 für Mac laden",
+        "download_label": "1.2.4 für Mac laden",
         "notes": [
           "Nutze dein aktuelles Desktop-Bild oder ein installiertes macOS-Hintergrundbild für Screenshots.",
           "Exportiere in der nativen Pixeldichte der Quelle für schärfere Ergebnisse.",

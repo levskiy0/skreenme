@@ -90,7 +90,7 @@
     "hero_title_accent": "prontas para enviar.",
     "hero_description": "Capture a área necessária. Adicione uma nota, oculte dados privados e exporte a imagem.",
     "download_label": "Baixar para Mac",
-    "hero_note": "Versão 1.2.3 · macOS 14 ou posterior",
+    "hero_note": "Versão 1.2.4 · macOS 14 ou posterior",
     "features": [
       {
         "title": "Capture mais de uma tela.",
@@ -204,7 +204,7 @@
     "intro": "Versões recentes do Skreen, mudanças e links de download.",
     "releases": [
       {
-        "download_label": "Baixar 1.2.3 para Mac",
+        "download_label": "Baixar 1.2.4 para Mac",
         "notes": [
           "Use seu papel de parede atual ou um dos papéis de parede instalados no macOS como fundo.",
           "Exporte na densidade de pixels original para imagens mais nítidas.",

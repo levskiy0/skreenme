@@ -90,7 +90,7 @@
     "hero_title_accent": "prêtes à envoyer.",
     "hero_description": "Capturez la zone utile. Ajoutez une note, masquez les données privées et exportez l’image.",
     "download_label": "Télécharger pour Mac",
-    "hero_note": "Version 1.2.3 · macOS 14 ou version ultérieure",
+    "hero_note": "Version 1.2.4 · macOS 14 ou version ultérieure",
     "features": [
       {
         "title": "Capturez plus qu’un écran.",
@@ -204,7 +204,7 @@
     "intro": "Les dernières versions de Skreen, leurs changements et les liens de téléchargement.",
     "releases": [
       {
-        "download_label": "Télécharger 1.2.3 pour Mac",
+        "download_label": "Télécharger 1.2.4 pour Mac",
         "notes": [
           "Utilisez votre fond d’écran actuel ou un fond installé de macOS pour vos captures.",
           "Exportez à la densité de pixels de l’image source pour un résultat plus net.",

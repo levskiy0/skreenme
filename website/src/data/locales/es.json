@@ -90,7 +90,7 @@
     "hero_title_accent": "listas para enviar.",
     "hero_description": "Captura lo que necesitas. Añade una nota, oculta datos privados y exporta la imagen.",
     "download_label": "Descargar para Mac",
-    "hero_note": "Versión 1.2.3 · macOS 14 o posterior",
+    "hero_note": "Versión 1.2.4 · macOS 14 o posterior",
     "features": [
       {
         "title": "Captura más de una pantalla.",
@@ -204,7 +204,7 @@
     "intro": "Las versiones recientes de Skreen, sus cambios y los enlaces de descarga.",
     "releases": [
       {
-        "download_label": "Descargar 1.2.3 para Mac",
+        "download_label": "Descargar 1.2.4 para Mac",
         "notes": [
           "Usa tu fondo de escritorio actual o uno de los fondos instalados de macOS para tus capturas.",
           "Exporta con la densidad de píxeles original para obtener imágenes más nítidas.",
