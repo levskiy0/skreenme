@@ -4,10 +4,10 @@
         <title>Skreen Updates</title>
         <language>en</language>
         <item>
-            <title>Version 1.2.5</title>
+            <title>Version 1.2.51</title>
             <pubDate>Mon, 26 Oct 2026 11:28:48 +0000</pubDate>
             <sparkle:version>48</sparkle:version>
-            <sparkle:shortVersionString>1.2.5</sparkle:shortVersionString>
+            <sparkle:shortVersionString>1.2.51</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <description><![CDATA[
                 <h3>Before updating</h3>
@@ -34,7 +34,7 @@
                 </ul>
             ]]></description>
             <enclosure
-                    url="https://github.com/levskiy0/skreenme/releases/download/v1.2.5/skreenme.dmg"
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.2.51/skreenme.dmg"
                     length="0"
                     type="application/octet-stream"
                     sparkle:edSignature="" />
