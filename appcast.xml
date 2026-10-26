@@ -4,6 +4,42 @@
         <title>Skreen Updates</title>
         <language>en</language>
         <item>
+            <title>Version 1.2.5</title>
+            <pubDate>Mon, 26 Oct 2026 11:28:48 +0000</pubDate>
+            <sparkle:version>48</sparkle:version>
+            <sparkle:shortVersionString>1.2.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <h3>Before updating</h3>
+                <p>Version 1.2.5 starts a new <code>.skreen</code> project history. Screenshot history and recovery sessions from earlier versions are not imported. Export any work you need before updating. Existing exported images are unaffected.</p>
+                <h3>New</h3>
+                <ul>
+                    <li>Editable screenshot projects: captures and edits are saved automatically as <code>.skreen</code> files in <code>~/Documents/Skreen</code>, keeping original images, annotations, and styling together. Reopen them from History or Finder.</li>
+                    <li>Text callouts with adjustable arrows or speech-bubble tails, caption frames, and Rounded, Pill, Outline, or Marker badges.</li>
+                    <li>Solid and Soft arrow styles, alongside refined Freehand arrows and shape contours.</li>
+                    <li>The canvas grows automatically to fit annotations outside the screenshot, with matching backgrounds in the editor and exported images.</li>
+                </ul>
+                <h3>Improvements</h3>
+                <ul>
+                    <li>Redesigned Quick Access history fan with menu bar, screen edge, and Dock placement, scroll navigation, faster previews, and feedback when opening the editor.</li>
+                    <li>Copying from Quick Access keeps the fan open and confirms success on the Copy button.</li>
+                    <li>Screenshot styling and watermarks now apply to clipboard copies and Quick Access actions.</li>
+                    <li>Project storage controls show disk usage and offer optional age-based cleanup and separate cache clearing. Projects are kept forever by default, without count or size limits.</li>
+                    <li>Refreshed native editor controls, floating panels, and searchable sidebar preferences. The About page includes Website, Feedback, Share, and update controls.</li>
+                </ul>
+                <h3>Fixes</h3>
+                <ul>
+                    <li>Fixed edits being lost during automatic styling or unchanged crops, distorted shape contours, and Cartoon arrow folds near the tip.</li>
+                    <li>Improved text recognition panel positioning and scrolling.</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                    url="https://github.com/levskiy0/skreenme/releases/download/v1.2.5/skreenme.dmg"
+                    length="0"
+                    type="application/octet-stream"
+                    sparkle:edSignature="" />
+        </item>
+        <item>
             <title>Version 1.2.4</title>
             <pubDate>Mon, 07 Oct 2026 02:00:16 +0000</pubDate>
             <sparkle:version>47</sparkle:version>
