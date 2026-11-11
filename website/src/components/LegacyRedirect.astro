@@ -1,0 +1,15 @@
+---
+// Retired URLs from the previous site that still receive search clicks.
+// GitHub Pages cannot send HTTP 301, so an instant meta refresh carries the move;
+// Google treats a zero-delay refresh as a permanent redirect.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withLocale, type Locale } from '../i18n';
+
+interface Props { locale?: Locale }
+const { locale = 'en' } = Astro.props;
+const target = withLocale(locale, '/');
+---
+<BaseLayout title="Skreen — Screenshot Tool for Mac" description="This page has moved to the Skreen home page." locale={locale} noindex>
+  <meta slot="head" http-equiv="refresh" content={`0;url=${target}`} />
+  <main id="main" class="article-main"><section class="page-hero index-hero"><div class="container index-hero-inner"><h1>This page has moved.</h1><p><a href={target}>Continue to Skreen</a></p></div></section></main>
+</BaseLayout>

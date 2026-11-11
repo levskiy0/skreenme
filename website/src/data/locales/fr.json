@@ -233,7 +233,7 @@
     "features/annotate-screenshots": {
       "title": "Annoter des captures d’écran sur Mac — Skreen",
       "description": "Ajoutez flèches, textes, formes et surlignages à vos captures Mac avec Skreen pour expliquer clairement erreurs et idées.",
-      "h1": "Montrez le détail qui compte.",
+      "h1": "Annoter des captures d’écran sur Mac.",
       "lead": "Placez une flèche, une légende ou une forme sur la capture. Le commentaire voyage avec l’image.",
       "related": [
         {
@@ -250,7 +250,7 @@
     "features/beautiful-backgrounds": {
       "title": "Arrière-plans pour captures d’écran Mac — Skreen",
       "description": "Présentez vos captures Mac avec dégradés, motifs, fonds d’écran, cadres et couleurs suggérées dans Skreen.",
-      "h1": "Laissez respirer votre capture.",
+      "h1": "Ajouter un arrière-plan à une capture d’écran.",
       "lead": "Choisissez un fond, puis réglez les marges, le cadre et l’ombre pour un document ou une présentation.",
       "related": [
         {
@@ -267,7 +267,7 @@
     "features/combine-screenshots": {
       "title": "Assembler des captures d’écran sur Mac — Skreen",
       "description": "Assemblez plusieurs captures Mac en une image avec une grille ou une toile libre pour comparer et expliquer.",
-      "h1": "Placez les captures liées côte à côte.",
+      "h1": "Assembler des captures d’écran en une image.",
       "lead": "Comparez deux états ou montrez plusieurs étapes. Utilisez une grille ou disposez les images librement.",
       "related": [
         {
@@ -284,7 +284,7 @@
     "features/ocr-and-qr": {
       "title": "Copier texte et QR depuis une capture Mac — Skreen",
       "description": "Extrayez du texte et lisez des QR depuis vos captures Mac avec Apple Vision et Skreen.",
-      "h1": "Copiez du texte sans le ressaisir.",
+      "h1": "Copier du texte et des QR codes depuis une capture.",
       "lead": "Skreen reconnaît le texte et les QR codes sur votre Mac. Vérifiez le résultat avant de le copier.",
       "related": [
         {
@@ -301,7 +301,7 @@
     "features/redact-screenshots": {
       "title": "Masquer les données dans une capture Mac — Skreen",
       "description": "Masquez visages, e-mails, clés API, mots de passe et autres détails privés sur vos captures Mac avec Skreen.",
-      "h1": "Masquez les données privées avant l’envoi.",
+      "h1": "Masquer les données privées dans une capture d’écran.",
       "lead": "Skreen cherche les visages et les données sensibles sur votre Mac. Vérifiez les résultats et masquez les zones utiles.",
       "related": [
         {
@@ -318,7 +318,7 @@
     "features/scrolling-screenshots": {
       "title": "Captures défilantes sur Mac — Skreen",
       "description": "Capturez de longues pages sur Mac avec Skreen. Lancez, mettez en pause et terminez une capture défilante.",
-      "h1": "Capturez la suite de la page.",
+      "h1": "Faire une capture d’écran défilante sur Mac.",
       "lead": "Sélectionnez la zone défilante et parcourez le contenu voulu. Skreen assemble les images en une seule capture.",
       "related": [
         {

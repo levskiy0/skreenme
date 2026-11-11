@@ -92,23 +92,28 @@ export function localizeHtml(locale: Locale, html: string): string {
   return html.replace(/href="(\/(?!\/)[^"]*)"/g, (_, path: string) => `href="${withLocale(locale, path)}"`);
 }
 
+/** Pages and links marked `en_only` exist only in English and are left out of every translation. */
+export function isEnglishOnly(item: object): boolean {
+  return 'en_only' in item && item.en_only === true;
+}
+
 export function getPages(locale: Locale) {
   if (locale === 'en') return english;
   const t = translations[locale];
-  const articles = Object.fromEntries(Object.entries(english.articles).map(([id, article]) => {
+  const articles = Object.fromEntries(Object.entries(english.articles).filter(([, article]) => !isEnglishOnly(article)).map(([id, article]) => {
     const translated = t.articles[id as keyof typeof t.articles];
     return [id, {
       ...article,
       ...translated,
       updatedIso: '2026-10-01',
       bodyHtml: localizeHtml(locale, translated.bodyHtml),
-      related: article.related.map((item, index) => ({ ...item, ...translated.related[index], url: withLocale(locale, item.url) })),
+      related: article.related.map((item, index) => ({ ...item, ...translated.related[index], url: withLocale(locale, item.url) })).filter((item) => !isEnglishOnly(item)),
       parent_url: withLocale(locale, 'parent_url' in article ? article.parent_url : '/features'),
     }];
   }));
   const combineIndex = (key: 'features' | 'guides') => ({
     ...english[key], ...t[key],
-    items: english[key].items.map((item, index) => ({ ...item, ...t[key].items[index], url: withLocale(locale, item.url) })),
+    items: english[key].items.map((item, index) => ({ ...item, ...t[key].items[index], url: withLocale(locale, item.url) })).filter((item) => !isEnglishOnly(item)),
   });
   return {
     home: {

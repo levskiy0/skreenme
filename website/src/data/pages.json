@@ -6,7 +6,7 @@
       "description": "Add arrows, text, shapes, and highlights to Mac screenshots in Skreen. Make bug reports, instructions, and design feedback easier to follow.",
       "canonical_url": "https://skreenme.com/features/annotate-screenshots",
       "eyebrow": "Screenshot annotations",
-      "h1": "Mark the detail people need to see.",
+      "h1": "Annotate screenshots on Mac.",
       "lead": "Add an arrow, label, or shape to the screenshot itself. It saves a separate explanation.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-annotations.png",
@@ -31,7 +31,7 @@
       "description": "Add a wallpaper, gradient, or pattern behind a Mac screenshot. Adjust padding, framing, and shadows in Skreen.",
       "canonical_url": "https://skreenme.com/features/beautiful-backgrounds",
       "eyebrow": "Screenshot styling",
-      "h1": "Give a screenshot some room.",
+      "h1": "Add beautiful backgrounds to screenshots.",
       "lead": "Place your capture on a background, then adjust its padding, frame, and shadow for a document or presentation.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-backgrounds.png",
@@ -45,6 +45,12 @@
           "title": "Combine screenshots",
           "url": "/features/combine-screenshots",
           "body": "Give several captures one layout."
+        },
+        {
+          "title": "How to screenshot a window",
+          "url": "/guides/how-to-screenshot-a-window-on-mac",
+          "body": "Capture a clean window to frame.",
+          "en_only": true
         }
       ],
       "bodyHtml": "<h2 id=\"pick-a-look-that-fits-the-content\">Pick a look that fits the content</h2>\n<p>Skreen offers 48 curated gradient presets and 13 procedural patterns. You can also use a custom gradient or a desktop wallpaper, including your current wallpaper and installed macOS wallpapers. Auto-Beautify can suggest a treatment based on the colors in your screenshot.</p>\n<h2 id=\"from-raw-capture-to-finished-image\">Set up the background</h2>\n<ol>\n<li>Capture an area or window and open it in the editor.</li>\n<li>Choose a background that keeps the screenshot readable. Add a frame or shadow if it helps separate the interface from the background.</li>\n<li>Set the aspect ratio for where the image will appear, such as a presentation slide or a social post.</li>\n<li>Review the export at its intended size. Skreen can export at the source image’s native pixel density for a sharper result.</li>\n</ol>\n<p>A bright background can be useful for product announcements. For dense text, use a quiet color and enough padding so the content remains the focus. You can <a href=\"/features/annotate-screenshots\">annotate</a> the same capture before exporting.</p>\n<h2 id=\"before-and-after-a-release-note-image\">Before and after: a release-note image</h2>\n<p>The raw capture shows a browser or app window edge to edge. For the finished version, place that same capture on a quiet background, add padding around it, and use a restrained frame or shadow to separate the window from the page. Judge legibility in the editor preview before export. Keep small interface text readable at the final size; a decorative background cannot fix an overly reduced capture.</p>\n",
@@ -56,7 +62,7 @@
       "description": "Combine multiple Mac screenshots into one image with Skreen's grid and free-canvas layouts. Make clear comparisons, walkthroughs, and bug reports.",
       "canonical_url": "https://skreenme.com/features/combine-screenshots",
       "eyebrow": "Multi-image compositions",
-      "h1": "Put related screenshots side by side.",
+      "h1": "Combine screenshots into one image.",
       "lead": "Show a before and after, or lay out a few steps in order. Use a grid or place each capture freely on the canvas.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-combine.png",
@@ -81,7 +87,7 @@
       "description": "Extract text and read QR codes from Mac screenshots with Skreen's Apple Vision recognition tools, built into the capture workflow.",
       "canonical_url": "https://skreenme.com/features/ocr-and-qr",
       "eyebrow": "Text and QR recognition",
-      "h1": "Copy text without typing it again.",
+      "h1": "Copy text and QR codes from a screenshot.",
       "lead": "Skreen reads text and QR codes in screenshots on your Mac. Check the result, then copy what you need.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-text-recognition.png",
@@ -95,6 +101,12 @@
           "title": "Redact screenshots",
           "url": "/features/redact-screenshots",
           "body": "Protect recognized private information."
+        },
+        {
+          "title": "How to copy text from an image",
+          "url": "/guides/how-to-copy-text-from-an-image-on-mac",
+          "body": "Live Text in macOS and on-screen text capture.",
+          "en_only": true
         }
       ],
       "bodyHtml": "<h2 id=\"capture-text-without-retyping\">Capture text without retyping</h2>\n<p>Use Skreen’s Capture Text action when the text itself is all you need. You can also recognize text from an image already open in the editor. Recognition uses Apple’s Vision framework on your device.</p>\n<p>For example, capture an error message from an app, copy it as text, and paste it into a support ticket. You can still save the image when the visual context matters.</p>\n<h2 id=\"copy-text-step-by-step\">Copy text step by step</h2>\n<ol>\n<li>Capture the line or open an existing screenshot in Skreen.</li>\n<li>Use Capture Text or the editor’s text recognition action.</li>\n<li>Compare the recognized text against the image, especially punctuation, numbers, and line breaks.</li>\n<li>Copy the text into your document or support ticket. Keep the screenshot with it when the original layout helps explain the problem.</li>\n</ol>\n<h2 id=\"read-a-qr-code-from-a-capture\">Read a QR code from a capture</h2>\n<p>Skreen can detect QR codes in captured content. Review the recognized destination before opening or sharing it, just as you would with any link from an unfamiliar source.</p>\n<p>For example, if a QR code appears in a presentation slide, capture that region and read the destination in Skreen before deciding whether to visit it. Check the actual URL rather than relying on the surrounding label.</p>\n<h2 id=\"check-the-result\">Check the result</h2>\n<p>OCR accuracy depends on the image. Tiny text, low contrast, unusual fonts, and overlapping UI can produce mistakes. Compare the recognized text with the screenshot before you rely on it for a command, address, or important number. If the image contains private data, <a href=\"/features/redact-screenshots\">redact it before sharing</a>.</p>\n",
@@ -106,7 +118,7 @@
       "description": "Hide faces, email addresses, API keys, passwords, and other private details in Mac screenshots with Skreen's on-device detection and redaction tools.",
       "canonical_url": "https://skreenme.com/features/redact-screenshots",
       "eyebrow": "Private sharing",
-      "h1": "Cover private details before you share.",
+      "h1": "Blur and redact screenshots on Mac.",
       "lead": "Skreen looks for faces and sensitive text on your Mac. Check each match, then blur, pixelate, or cover it.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-redaction.png",
@@ -120,6 +132,12 @@
           "title": "Annotate screenshots",
           "url": "/features/annotate-screenshots",
           "body": "Explain the safe parts of the image."
+        },
+        {
+          "title": "A CleanShot X alternative",
+          "url": "/guides/cleanshot-x-alternative",
+          "body": "Compare redaction and capture features.",
+          "en_only": true
         }
       ],
       "bodyHtml": "<h2 id=\"find-details-before-they-leave-your-mac\">Find details before they leave your Mac</h2>\n<p>Skreen uses Apple Vision on your device to look for faces and sensitive text. Detection covers email addresses, phone numbers, card numbers, IP addresses, API keys, passwords, US Social Security numbers, and custom patterns you define. You can also select an area yourself when automatic detection misses something.</p>\n<h2 id=\"how-to-redact-a-screenshot\">How to redact a screenshot</h2>\n<ol>\n<li>Take a screenshot or open a capture in the Skreen editor.</li>\n<li>Run sensitive-data detection and inspect the proposed matches. Add or adjust selections where needed.</li>\n<li>Choose blur, pixelation, or a solid cover for each area. Use the manual selection for anything the detector did not identify.</li>\n<li>Zoom in and check the full image, including edges and background content, before exporting the file you intend to share.</li>\n</ol>\n<p>For text, the <code>Alt</code> key can snap a selection to word boundaries. This makes it easier to cover a single token without hiding the surrounding explanation.</p>\n<h2 id=\"what-changes-between-capture-and-export\">Example: a payment form</h2>\n<p>Imagine a bug report showing a payment form. In the unedited capture, the field values sit beside the error you need to explain. Cover the card number with a solid block while keeping the form labels and surrounding interface visible. Check the exported file: the private value should be unreadable, and the evidence for the bug should still be clear.</p>\n<h2 id=\"choose-the-right-cover\">Choose the right cover</h2>\n<p>Blur or pixelation can make a design review easier to read while obscuring an incidental name or face. For secrets such as passwords, API keys, and payment details, a solid cover is the clearer choice. Automated detection is a helper, so always review the exported image yourself before sharing sensitive material.</p>\n",
@@ -131,7 +149,7 @@
       "description": "Capture long pages and scrollable views on Mac with Skreen. Learn how to start, pause, change direction, and finish a scrolling screenshot.",
       "canonical_url": "https://skreenme.com/features/scrolling-screenshots",
       "eyebrow": "Scrolling capture",
-      "h1": "Capture a page that keeps scrolling.",
+      "h1": "Take a scrolling screenshot on Mac.",
       "lead": "Select the scrollable area and move through the content you need. Skreen joins the frames into one image.",
       "updated": "30 September 2026",
       "icon": "/assets/icon-scrolling-capture.png",
@@ -145,6 +163,12 @@
           "title": "How to screenshot on Mac",
           "url": "/guides/how-to-screenshot-on-mac",
           "body": "Learn the built-in shortcuts and when to use Skreen."
+        },
+        {
+          "title": "How to screenshot a whole webpage",
+          "url": "/guides/how-to-screenshot-a-whole-webpage-on-mac",
+          "body": "Browser full-page options and scrolling capture.",
+          "en_only": true
         }
       ],
       "bodyHtml": "<h2 id=\"how-to-take-a-scrolling-screenshot\">How to take a scrolling screenshot</h2>\n<ol>\n<li>Open the page or scrollable view and bring the part you want to capture into view.</li>\n<li>Start a scrolling capture in Skreen and select the content area. Keep the selection inside the scrolling region so fixed browser chrome is left out.</li>\n<li>Start scrolling. You can pause, change direction, resume, or cancel while capturing. Finish when you have reached the end of the section you need.</li>\n<li>Review the stitched image in the editor. Crop extra space, add an annotation, or <a href=\"/features/redact-screenshots\">hide private details</a> before you export.</li>\n</ol>\n<p>Skreen combines overlapping frames and works to avoid repeating elements that stay fixed while the content moves.</p>\n<p>If macOS asks for Screen Recording access during the first capture, open System Settings, grant Skreen the requested access, and return to the app. macOS may ask you to restart the app before the new permission takes effect. Choose only the content you intend to capture; browser tabs and conversations can include private information outside the visible area.</p>\n<h2 id=\"when-it-helps\">When it helps</h2>\n<p>Use scrolling capture for a long article, a support conversation, a design review, a document, or a bug report where the content extends beyond one screen. If you only need what is visible right now, an <a href=\"/guides/how-to-screenshot-on-mac\">area or window capture</a> is quicker.</p>\n<h2 id=\"what-to-check-before-sharing\">What to check before sharing</h2>\n<p>Dynamic content can change while a page scrolls. Animations, expanding panels, and lazy-loaded sections may produce a different image from a static page. Keep the view steady, let content load, and review the final stitch before sending it. Scrolling capture works best when the content moves inside a clearly selected scroll area.</p>\n<h2 id=\"scrolling-capture-questions\">Scrolling capture questions</h2>\n<h3 id=\"why-is-part-of-the-page-repeated-or-missing\">Why is part of the page repeated or missing?</h3>\n<p>Moving banners, autoplay video, sticky elements, or content that loads during the scroll can interrupt the stitch. Let the page settle, select the actual scrolling region, and try a shorter capture. Inspect the exported image rather than assuming every frame joined cleanly.</p>\n<h3 id=\"can-i-capture-a-long-chat-or-document\">Can I capture a long chat or document?</h3>\n<p>Yes, when its content scrolls inside a selectable region. Start with a short section to confirm the result, then capture the full portion you need. If the view does not scroll consistently, use separate area captures and <a href=\"/features/combine-screenshots\">combine them</a>.</p>\n",
@@ -173,14 +197,200 @@
           "title": "Redact screenshots",
           "url": "/features/redact-screenshots",
           "body": "Protect details before sharing."
+        },
+        {
+          "title": "Change where screenshots are saved",
+          "url": "/guides/how-to-change-where-screenshots-are-saved-on-mac",
+          "body": "Move captures off the Desktop.",
+          "en_only": true
         }
       ],
       "bodyHtml": "<h2 id=\"the-built-in-mac-screenshot-shortcuts\">The built-in Mac screenshot shortcuts</h2>\n<table>\n<thead>\n<tr>\n<th>What you want</th>\n<th>Shortcut</th>\n<th>What happens</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>The entire screen</td>\n<td><code>Shift–Command–3</code></td>\n<td>macOS captures the screen.</td>\n</tr>\n<tr>\n<td>A selected area</td>\n<td><code>Shift–Command–4</code></td>\n<td>Drag the crosshair over the area you need.</td>\n</tr>\n<tr>\n<td>A window or menu</td>\n<td><code>Shift–Command–4</code>, then <code>Space</code></td>\n<td>Move the camera over a window and click.</td>\n</tr>\n<tr>\n<td>Screenshot controls</td>\n<td><code>Shift–Command–5</code></td>\n<td>Open the Screenshot app to choose a capture or recording mode.</td>\n</tr>\n</tbody>\n</table>\n<p>These are macOS shortcuts; you can use them without installing Skreen. Apple’s <a href=\"https://support.apple.com/en-us/102646\">screenshot guide</a> also explains where the resulting files are saved and how the Screenshot app’s options work.</p>\n<h2>Capture an area in Skreen</h2><p>Skreen uses <code>Shift–Command–0</code> by default for area capture. Drag to select what you need, and the screenshot opens in the Skreen editor. The <code>Shift–Command–4</code> shortcut in the table above belongs to macOS.</p>\n<h2 id=\"if-the-page-is-longer-than-one-screen\">If the page is longer than one screen</h2>\n<p>A standard area or window screenshot captures what is visible. For a long page, document, or scrollable view, use <a href=\"/features/scrolling-screenshots\">Skreen’s scrolling capture</a>: select the content region, scroll through the part you need, and finish with one stitched image. Check the final image before sharing, especially if the page contains animation or content that loads as you scroll.</p>\n<h2 id=\"make-the-screenshot-ready-to-share\">Make the screenshot ready to share</h2>\n<p>Use <a href=\"/features/annotate-screenshots\">annotations</a> to point to the relevant button or problem. Add a <a href=\"/features/beautiful-backgrounds\">background</a> when presentation matters. If the capture contains personal information, use <a href=\"/features/redact-screenshots\">redaction</a> and inspect the export. Skreen can also <a href=\"/features/ocr-and-qr\">extract text and QR codes</a> from a capture.</p>\n<p>If a native macOS shortcut already produces the file you need, you can stop there. Use Skreen when you need the extra capture and editing steps together.</p>\n",
       "updatedIso": "2026-09-30"
+    },
+    "guides/how-to-screenshot-a-whole-webpage-on-mac": {
+      "title": "How to Screenshot a Whole Webpage on Mac | Skreen",
+      "template": "article",
+      "description": "Capture a full webpage on Mac in Safari, Chrome, or Firefox without extensions, or take a scrolling screenshot of any app with Skreen.",
+      "canonical_url": "https://skreenme.com/guides/how-to-screenshot-a-whole-webpage-on-mac",
+      "section": "guides",
+      "parent_url": "/guides",
+      "parent_label": "Mac guides",
+      "eyebrow": "Full-page screenshots",
+      "h1": "How to screenshot a whole webpage on Mac.",
+      "lead": "The standard macOS shortcuts stop at the edge of the screen. Here is how to capture the whole page in each browser, and what to use outside the browser.",
+      "updated": "12 November 2026",
+      "icon": "/assets/icon-scrolling-capture.png",
+      "related": [
+        {
+          "title": "Scrolling screenshots",
+          "url": "/features/scrolling-screenshots",
+          "body": "Capture long views in any app, not only the browser."
+        },
+        {
+          "title": "How to take a screenshot on Mac",
+          "url": "/guides/how-to-screenshot-on-mac",
+          "body": "The built-in shortcuts for screen, area, and window."
+        }
+      ],
+      "en_only": true,
+      "bodyHtml": "<p><code>Shift–Command–3</code>, <code>Shift–Command–4</code>, and the Screenshot app (<code>Shift–Command–5</code>) capture what is visible on the screen. A long article, a pricing table, or a chat history is usually taller than the window, so you need a different method for the rest of the page.</p>\n<h2 id=\"safari\">Safari: export the page as a PDF or capture it in Web Inspector</h2>\n<ol>\n<li>Open the page and choose <strong>File → Export as PDF…</strong>. Safari saves the whole page as one PDF.</li>\n<li>If you need an image, open the PDF in Preview and choose <strong>File → Export…</strong>, then pick PNG or JPEG.</li>\n</ol>\n<p>For an image that matches the screen layout more closely, turn on <strong>Safari → Settings → Advanced → Show features for web developers</strong>. Open Web Inspector with <code>Option–Command–I</code>, select the <code>&lt;body&gt;</code> or <code>&lt;html&gt;</code> node in the Elements tab, right-click it, and choose <strong>Capture Screenshot</strong>.</p>\n<h2 id=\"chrome\">Chrome, Edge, Arc, and other Chromium browsers</h2>\n<ol>\n<li>Press <code>Option–Command–I</code> to open Developer Tools.</li>\n<li>Press <code>Shift–Command–P</code> to open the command menu and type <em>screenshot</em>.</li>\n<li>Choose <strong>Capture full size screenshot</strong>. The browser saves a PNG of the entire page to your Downloads folder.</li>\n</ol>\n<h2 id=\"firefox\">Firefox</h2>\n<p>Right-click an empty part of the page and choose <strong>Take Screenshot</strong>, or press <code>Shift–Command–S</code>. Click <strong>Save full page</strong>, then download or copy the image.</p>\n<h2 id=\"what-can-go-wrong\">What can go wrong with browser captures</h2>\n<ul>\n<li><strong>Lazy-loaded images</strong> may appear blank. Scroll to the bottom of the page once before you capture.</li>\n<li><strong>Infinite feeds</strong> have no real end. The browser captures only what has loaded.</li>\n<li><strong>Scrollable panels inside a page</strong>, such as a chat column or a code viewer, are not expanded by full-page capture.</li>\n<li><strong>Apps outside the browser</strong>, such as Slack, Notes, Mail, or Xcode, have no full-page option at all.</li>\n</ul>\n<h2 id=\"scrolling-capture-in-skreen\">A scrolling screenshot of any window with Skreen</h2>\n<p>Skreen’s <a href=\"/features/scrolling-screenshots\">scrolling capture</a> works on the region you select, in any app:</p>\n<ol>\n<li>Choose <strong>Scrolling Capture</strong> from the Skreen menu bar icon.</li>\n<li>Select the area that scrolls, such as the article column or the message list.</li>\n<li>Start the capture. Skreen scrolls the content for you; pause, change direction, or finish when you reach the part you need.</li>\n<li>Check the stitched image in the editor before you share it.</li>\n</ol>\n<p>Skreen detects the overlap between frames and avoids repeating fixed headers, footers, sidebars, and floating controls. When the image is ready, you can <a href=\"/features/annotate-screenshots\">add arrows and notes</a> or <a href=\"/features/redact-screenshots\">cover private details</a> in the same editor.</p>\n<h2 id=\"which-method\">Which method to use</h2>\n<table>\n<thead>\n<tr><th>Method</th><th>Works in</th><th>Result</th></tr>\n</thead>\n<tbody>\n<tr><td>Safari Export as PDF</td><td>Safari</td><td>PDF of the whole page</td></tr>\n<tr><td>Chrome Capture full size screenshot</td><td>Chromium browsers</td><td>PNG of the whole page</td></tr>\n<tr><td>Firefox Save full page</td><td>Firefox</td><td>PNG of the whole page</td></tr>\n<tr><td>Skreen Scrolling Capture</td><td>Any app on macOS 14 or later</td><td>One image of the selected scrolling region, ready to edit</td></tr>\n</tbody>\n</table>\n<h2 id=\"faq\">Questions</h2>\n<h3>Does macOS have a built-in scrolling screenshot?</h3>\n<p>The built-in Screenshot tool captures the screen, a window, or a selected area as it appears on screen. For anything taller, use a browser’s full-page option or a scrolling capture tool.</p>\n<h3>Can I capture a whole page without an extension?</h3>\n<p>Yes. Safari, Chrome, and Firefox can all do it with the built-in steps above.</p>\n",
+      "updatedIso": "2026-11-12",
+      "datePublishedIso": "2026-11-12"
+    },
+    "guides/how-to-screenshot-a-window-on-mac": {
+      "title": "Screenshot a Window on Mac, With or Without Shadow | Skreen",
+      "template": "article",
+      "description": "Capture a single window on Mac with Shift–Command–4 and Space, remove the window shadow, copy it to the clipboard, or frame it in Skreen.",
+      "canonical_url": "https://skreenme.com/guides/how-to-screenshot-a-window-on-mac",
+      "section": "guides",
+      "parent_url": "/guides",
+      "parent_label": "Mac guides",
+      "eyebrow": "Window screenshots",
+      "h1": "How to screenshot a window on Mac.",
+      "lead": "Capture one window instead of the whole screen, decide whether you want the shadow, and send it straight to the clipboard.",
+      "updated": "12 November 2026",
+      "icon": "/assets/icon-screenshot.png",
+      "related": [
+        {
+          "title": "Beautiful backgrounds",
+          "url": "/features/beautiful-backgrounds",
+          "body": "Place a window capture on a clean background."
+        },
+        {
+          "title": "Change where screenshots are saved",
+          "url": "/guides/how-to-change-where-screenshots-are-saved-on-mac",
+          "body": "Stop filling your Desktop with captures."
+        }
+      ],
+      "en_only": true,
+      "bodyHtml": "<h2 id=\"capture-one-window\">Capture one window</h2>\n<ol>\n<li>Press <code>Shift–Command–4</code>. The pointer turns into a crosshair.</li>\n<li>Press <code>Space</code>. The pointer turns into a camera and the window under it is highlighted.</li>\n<li>Click the window you want. macOS saves the image to the Desktop by default.</li>\n</ol>\n<p>The same method works for an open menu. You can also press <code>Shift–Command–5</code> and click <strong>Capture Selected Window</strong> in the toolbar.</p>\n<h2 id=\"remove-the-shadow\">Remove the window shadow</h2>\n<p>A window capture includes the window’s drop shadow on a transparent background, which adds empty space around the image. To leave it out for one capture, <strong>hold <code>Option</code> while you click</strong> the window.</p>\n<p>To turn the shadow off for every window capture, run this in Terminal:</p>\n<pre><code>defaults write com.apple.screencapture disable-shadow -bool true\nkillall SystemUIServer</code></pre>\n<p>To bring the shadow back:</p>\n<pre><code>defaults delete com.apple.screencapture disable-shadow\nkillall SystemUIServer</code></pre>\n<h2 id=\"copy-instead-of-saving\">Copy to the clipboard instead of saving a file</h2>\n<p>Add <code>Control</code> to the shortcut: press <code>Control–Shift–Command–4</code>, then <code>Space</code>, then click the window. Paste the image into a chat, an email, or a document with <code>Command–V</code>.</p>\n<h2 id=\"window-capture-in-skreen\">Capture a window in Skreen</h2>\n<p>In Skreen, choose <strong>Capture Window</strong> from the menu bar icon. Pick the window with the pointer, or choose it from the list of open windows in the menu. The capture opens in the editor, where you can:</p>\n<ul>\n<li>place it on a <a href=\"/features/beautiful-backgrounds\">gradient, wallpaper, or solid background</a> with padding, rounded corners, and a shadow you control;</li>\n<li>point to the important part with <a href=\"/features/annotate-screenshots\">arrows, text, and numbered steps</a>;</li>\n<li><a href=\"/features/redact-screenshots\">hide names, emails, or tokens</a> before you share it.</li>\n</ul>\n<h2 id=\"faq\">Questions</h2>\n<h3>Why does my window screenshot have a big transparent border?</h3>\n<p>That border is the window shadow. Hold <code>Option</code> when you click, or turn the shadow off with the Terminal command above.</p>\n<h3>Where did my window screenshot go?</h3>\n<p>By default, macOS saves screenshots to the Desktop. See <a href=\"/guides/how-to-change-where-screenshots-are-saved-on-mac\">how to change where screenshots are saved</a>.</p>\n",
+      "updatedIso": "2026-11-12",
+      "datePublishedIso": "2026-11-12"
+    },
+    "guides/how-to-change-where-screenshots-are-saved-on-mac": {
+      "title": "Change Where Screenshots Are Saved on Mac | Skreen",
+      "template": "article",
+      "description": "Move Mac screenshots off the Desktop: pick a folder in the Screenshot app, set one with a Terminal command, or copy captures to the clipboard.",
+      "canonical_url": "https://skreenme.com/guides/how-to-change-where-screenshots-are-saved-on-mac",
+      "section": "guides",
+      "parent_url": "/guides",
+      "parent_label": "Mac guides",
+      "eyebrow": "Screenshot settings",
+      "h1": "How to change where screenshots are saved on Mac.",
+      "lead": "macOS saves screenshots to the Desktop by default. Choose another folder in a few clicks, or skip files entirely and copy to the clipboard.",
+      "updated": "12 November 2026",
+      "icon": "/assets/icon-editor.png",
+      "related": [
+        {
+          "title": "How to take a screenshot on Mac",
+          "url": "/guides/how-to-screenshot-on-mac",
+          "body": "All built-in shortcuts in one table."
+        },
+        {
+          "title": "How to screenshot a window",
+          "url": "/guides/how-to-screenshot-a-window-on-mac",
+          "body": "Capture one window, with or without the shadow."
+        }
+      ],
+      "en_only": true,
+      "bodyHtml": "<h2 id=\"screenshot-app-options\">Choose a folder in the Screenshot app</h2>\n<ol>\n<li>Press <code>Shift–Command–5</code> to open the Screenshot toolbar.</li>\n<li>Click <strong>Options</strong>.</li>\n<li>Under <strong>Save to</strong>, choose Desktop, Documents, Clipboard, Mail, Messages, or Preview, or pick <strong>Other Location…</strong> and select a folder.</li>\n</ol>\n<p>The setting applies to every shortcut, including <code>Shift–Command–3</code> and <code>Shift–Command–4</code>. Create a dedicated folder first, for example <em>Pictures/Screenshots</em>, so captures do not mix with other files.</p>\n<h2 id=\"terminal\">Set the folder with Terminal</h2>\n<p>If you prefer a command, create the folder and point macOS to it:</p>\n<pre><code>mkdir -p ~/Pictures/Screenshots\ndefaults write com.apple.screencapture location ~/Pictures/Screenshots\nkillall SystemUIServer</code></pre>\n<p>To go back to the Desktop:</p>\n<pre><code>defaults delete com.apple.screencapture location\nkillall SystemUIServer</code></pre>\n<h2 id=\"clipboard\">Skip the file and copy to the clipboard</h2>\n<p>Add <code>Control</code> to any screenshot shortcut, for example <code>Control–Shift–Command–4</code>. macOS copies the image instead of saving a file, and you paste it with <code>Command–V</code>. You can also choose <strong>Clipboard</strong> under <strong>Save to</strong> to make this the default.</p>\n<h2 id=\"file-format\">Change the file format</h2>\n<p>macOS saves screenshots as PNG. To save JPEG files instead, run:</p>\n<pre><code>defaults write com.apple.screencapture type jpg\nkillall SystemUIServer</code></pre>\n<p>Replace <code>jpg</code> with <code>png</code> to switch back.</p>\n<h2 id=\"find-lost-screenshots\">Find screenshots you cannot locate</h2>\n<p>Open <strong>Shift–Command–5 → Options</strong> to see where captures go now. To list every screenshot on your Mac, search in Finder or Spotlight for <code>kMDItemIsScreenCapture:1</code>.</p>\n<h2 id=\"skreen\">Where Skreen saves images</h2>\n<p>Skreen keeps the macOS setting untouched. Edited images are saved to the folder chosen in <strong>Skreen Settings → Export</strong>, which is your Downloads folder until you pick another one. You can also copy the finished image, drag it straight into another app, or reopen earlier captures from the editor’s history.</p>\n",
+      "updatedIso": "2026-11-12",
+      "datePublishedIso": "2026-11-12"
+    },
+    "guides/how-to-copy-text-from-an-image-on-mac": {
+      "title": "How to Copy Text from an Image on Mac | Skreen",
+      "template": "article",
+      "description": "Copy text from a screenshot, photo, or PDF on Mac with Live Text in Preview, Photos, and Safari, or capture text and QR codes from any part of the screen with Skreen.",
+      "canonical_url": "https://skreenme.com/guides/how-to-copy-text-from-an-image-on-mac",
+      "section": "guides",
+      "parent_url": "/guides",
+      "parent_label": "Mac guides",
+      "eyebrow": "Text recognition",
+      "h1": "How to copy text from an image on Mac.",
+      "lead": "macOS can recognize text in images you open. For text that is only on screen, capture it and copy the result in one step.",
+      "updated": "12 November 2026",
+      "icon": "/assets/icon-text-recognition.png",
+      "related": [
+        {
+          "title": "Text and QR recognition",
+          "url": "/features/ocr-and-qr",
+          "body": "Read text and QR codes from a capture in Skreen."
+        },
+        {
+          "title": "Redact screenshots",
+          "url": "/features/redact-screenshots",
+          "body": "Cover sensitive text before sharing."
+        }
+      ],
+      "en_only": true,
+      "bodyHtml": "<h2 id=\"live-text\">Use Live Text in Preview, Photos, and Safari</h2>\n<p>On macOS Monterey and later, Live Text recognizes text in images:</p>\n<ol>\n<li>Open the image or screenshot in Preview or Photos, or find it on a web page in Safari.</li>\n<li>Move the pointer over the text until it changes to a text cursor.</li>\n<li>Drag to select the words and press <code>Command–C</code>.</li>\n</ol>\n<p>You can also press <code>Space</code> on an image in Finder to open Quick Look and select text there. If text cannot be selected, check that <strong>Live Text</strong> is turned on in <strong>System Settings → General → Language &amp; Region</strong>.</p>\n<h2 id=\"text-on-screen\">Copy text that is only on the screen</h2>\n<p>Live Text works on images you open. Text in a video, a remote desktop session, an error dialog, or a locked PDF must be captured first. The usual route is to take a screenshot, open it in Preview, and select the text. Skreen shortens this to one action:</p>\n<ol>\n<li>Choose <strong>Capture Text</strong> from the Skreen menu bar icon.</li>\n<li>Select the area that contains the text or a QR code.</li>\n<li>Skreen recognizes the text on your Mac with Apple Vision and shows it in a small result panel. Copy what you need.</li>\n</ol>\n<p>Nothing is uploaded: recognition runs on your Mac. If you already have a capture open in the editor, use <a href=\"/features/ocr-and-qr\">Text &amp; QR</a> to read the current image.</p>\n<h2 id=\"qr-codes\">Read a QR code on the screen</h2>\n<p>A QR code on a web page or in a presentation can be read the same way. Select it with <strong>Capture Text</strong>, and Skreen shows the decoded payload, such as a link or Wi-Fi details, so you can copy it without reaching for your phone.</p>\n<h2 id=\"accuracy\">Get cleaner results</h2>\n<ul>\n<li>Capture only the text you need. Smaller selections avoid stray words from toolbars and sidebars.</li>\n<li>Zoom in on small or low-contrast text before capturing.</li>\n<li>Review numbers, codes, and passwords character by character. Similar shapes such as <code>0</code> and <code>O</code> can be confused.</li>\n<li>Handwriting and stylized fonts are recognized less reliably than printed text.</li>\n</ul>\n",
+      "updatedIso": "2026-11-12",
+      "datePublishedIso": "2026-11-12"
+    },
+    "guides/best-screenshot-app-for-mac": {
+      "title": "Best Screenshot Apps for Mac in 2026, Compared | Skreen",
+      "template": "article",
+      "description": "An honest comparison of Mac screenshot apps: the built-in Screenshot tool, CleanShot X, Shottr, Snagit, and Skreen, by capture, editing, privacy, and price.",
+      "canonical_url": "https://skreenme.com/guides/best-screenshot-app-for-mac",
+      "section": "guides",
+      "parent_url": "/guides",
+      "parent_label": "Mac guides",
+      "eyebrow": "Comparison",
+      "h1": "The best screenshot apps for Mac in 2026.",
+      "lead": "Five tools, compared by what they capture, how you edit the result, and what they cost. We make Skreen, so we list where other apps are the better choice.",
+      "updated": "12 November 2026",
+      "icon": "/assets/icon-editor.png",
+      "related": [
+        {
+          "title": "A CleanShot X alternative",
+          "url": "/guides/cleanshot-x-alternative",
+          "body": "How Skreen and CleanShot X differ."
+        },
+        {
+          "title": "All Skreen features",
+          "url": "/features",
+          "body": "Capture, edit, and share screenshots on Mac."
+        }
+      ],
+      "en_only": true,
+      "bodyHtml": "<p>Most people need three things from a screenshot tool: capture the right part of the screen, explain it with a mark or two, and share it without leaking private details. Here is how the main Mac options handle that. Features were checked in November 2026; prices change, so confirm them on each developer’s site.</p>\n<h2 id=\"at-a-glance\">At a glance</h2>\n<table>\n<thead>\n<tr><th></th><th>macOS Screenshot</th><th>Skreen</th><th>CleanShot X</th><th>Shottr</th><th>Snagit</th></tr>\n</thead>\n<tbody>\n<tr><td>Area, window, full screen</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>\n<tr><td>Scrolling capture</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>\n<tr><td>Annotations</td><td>Basic Markup</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>\n<tr><td>Text recognition (OCR)</td><td>Live Text in opened images</td><td>Yes, plus QR</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>\n<tr><td>Automatic detection of private data</td><td>No</td><td>Yes, on device</td><td>Manual blur and pixelate</td><td>Manual</td><td>Manual</td></tr>\n<tr><td>Backgrounds and framing</td><td>No</td><td>Yes</td><td>Yes</td><td>Basic</td><td>Effects</td></tr>\n<tr><td>Screen recording</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td></tr>\n<tr><td>Cloud share links</td><td>No</td><td>No</td><td>Yes</td><td>Limited</td><td>Yes</td></tr>\n<tr><td>Platforms</td><td>macOS</td><td>macOS 14+</td><td>macOS</td><td>macOS</td><td>macOS and Windows</td></tr>\n<tr><td>Price model</td><td>Included</td><td>Free during public beta</td><td>Paid license, optional cloud plan</td><td>Free to try, paid license</td><td>Subscription</td></tr>\n</tbody>\n</table>\n<h2 id=\"macos-screenshot\">macOS Screenshot: enough for quick captures</h2>\n<p>The built-in tool (<code>Shift–Command–3</code>, <code>4</code>, and <code>5</code>) captures the screen, an area, or a window, records video, and offers basic Markup from the floating thumbnail. It is the right choice when you only need the file. It has no scrolling capture and no tools for backgrounds or automatic redaction. See <a href=\"/guides/how-to-screenshot-on-mac\">how to take a screenshot on Mac</a>.</p>\n<h2 id=\"skreen\">Skreen: capture, explain, and protect in one editor</h2>\n<p>Skreen is a menu bar app for macOS 14 and later. It captures an area, a window, the full screen, a repeated area, a timed capture, or a <a href=\"/features/scrolling-screenshots\">scrolling region</a>. The editor has arrows, text, shapes, numbered steps, a magnifier, and stickers. It can <a href=\"/features/combine-screenshots\">combine several screenshots</a> in a grid or on a free canvas, add <a href=\"/features/beautiful-backgrounds\">backgrounds</a>, and read <a href=\"/features/ocr-and-qr\">text and QR codes</a>.</p>\n<p>Its distinctive feature is <a href=\"/features/redact-screenshots\">on-device detection of faces, emails, phone numbers, card numbers, API keys, passwords</a>, and custom patterns, which you review before export. Choose Skreen if you share screenshots of real work and want to explain them and protect data in one place. It does not record video or upload to a cloud.</p>\n<h2 id=\"cleanshot-x\">CleanShot X: the broadest feature set</h2>\n<p>CleanShot X covers screenshots, scrolling capture, screen recording with GIF export, annotation, a background tool, text recognition, and cloud share links. It is a mature paid app, also available through Setapp. Choose it if you record video as often as you take screenshots or rely on share links. See <a href=\"/guides/cleanshot-x-alternative\">how Skreen compares with CleanShot X</a>.</p>\n<h2 id=\"shottr\">Shottr: small and fast</h2>\n<p>Shottr is a lightweight capture tool with scrolling capture, OCR, annotation, and pixel-level tools such as a ruler and color picker that designers and developers like. It does not record video. Choose it if you want a minimal utility and precise measurement.</p>\n<h2 id=\"snagit\">Snagit: for teams on Mac and Windows</h2>\n<p>Snagit from TechSmith captures images and video on both macOS and Windows and includes templates for step-by-step guides. It is sold as a subscription. Choose it if your team documents processes across both platforms.</p>\n<h2 id=\"how-to-choose\">How to choose</h2>\n<ul>\n<li><strong>You just need a file:</strong> the built-in macOS tool.</li>\n<li><strong>You share screenshots that may contain private data:</strong> Skreen.</li>\n<li><strong>You record screen videos and share links:</strong> CleanShot X.</li>\n<li><strong>You want a tiny utility with pixel tools:</strong> Shottr.</li>\n<li><strong>Your team works on Mac and Windows:</strong> Snagit.</li>\n</ul>\n",
+      "updatedIso": "2026-11-12",
+      "datePublishedIso": "2026-11-12"
+    },
+    "guides/cleanshot-x-alternative": {
+      "title": "A Free CleanShot X Alternative for Mac — Skreen",
+      "template": "article",
+      "description": "Compare Skreen and CleanShot X: scrolling capture, annotations, backgrounds, OCR, and on-device detection of private data. Skreen is free during its public beta.",
+      "canonical_url": "https://skreenme.com/guides/cleanshot-x-alternative",
+      "section": "guides",
+      "parent_url": "/guides",
+      "parent_label": "Mac guides",
+      "eyebrow": "Comparison",
+      "h1": "A CleanShot X alternative for Mac.",
+      "lead": "Skreen covers the screenshot side of CleanShot X and adds automatic detection of private data. Here is what each app does, so you can decide which fits.",
+      "updated": "12 November 2026",
+      "icon": "/assets/icon-redaction.png",
+      "related": [
+        {
+          "title": "Best screenshot apps for Mac",
+          "url": "/guides/best-screenshot-app-for-mac",
+          "body": "Five Mac screenshot tools compared."
+        },
+        {
+          "title": "Redact screenshots",
+          "url": "/features/redact-screenshots",
+          "body": "On-device detection of private details."
+        }
+      ],
+      "en_only": true,
+      "bodyHtml": "<p>CleanShot X is a popular paid screenshot and screen recording app for Mac. If you mostly take screenshots and want a different approach to editing and privacy, Skreen is an alternative worth trying. We make Skreen, so the comparison below also lists what CleanShot X does and Skreen does not. Features were checked in November 2026.</p>\n<h2 id=\"side-by-side\">Side by side</h2>\n<table>\n<thead>\n<tr><th></th><th>Skreen</th><th>CleanShot X</th></tr>\n</thead>\n<tbody>\n<tr><td>Area, window, full screen, timer</td><td>Yes</td><td>Yes</td></tr>\n<tr><td>Repeat the last area</td><td>Yes</td><td>Yes</td></tr>\n<tr><td>Scrolling capture</td><td>Yes, with pause and direction control</td><td>Yes</td></tr>\n<tr><td>Annotation tools</td><td>Arrows, text, shapes, steps, magnifier, ruler, stickers</td><td>Arrows, text, shapes, steps, highlights</td></tr>\n<tr><td>Automatic detection of private data</td><td>Faces, emails, phones, cards, API keys, passwords, custom patterns</td><td>Manual blur and pixelate</td></tr>\n<tr><td>Combine screenshots</td><td>Grid and free canvas</td><td>Not a core feature</td></tr>\n<tr><td>Backgrounds</td><td>Gradients, patterns, wallpapers, Auto-Beautify</td><td>Background tool</td></tr>\n<tr><td>Text recognition</td><td>Text and QR codes, on device</td><td>Text</td></tr>\n<tr><td>Code images</td><td>Yes</td><td>No</td></tr>\n<tr><td>Screen recording and GIF</td><td>No</td><td>Yes</td></tr>\n<tr><td>Cloud share links</td><td>No</td><td>Yes</td></tr>\n<tr><td>Price</td><td>Free during public beta</td><td>Paid license, optional cloud plan</td></tr>\n</tbody>\n</table>\n<h2 id=\"where-skreen-differs\">Where Skreen is different</h2>\n<h3>Private data is found for you</h3>\n<p>Skreen uses Apple Vision on your Mac to find faces and sensitive text in a screenshot: email addresses, phone numbers, card numbers, IP addresses, API keys, passwords, and your own regular expressions. You review each match and choose blur, pixelation, or a solid cover. <a href=\"/features/redact-screenshots\">Learn how redaction works</a>.</p>\n<h3>Several screenshots become one image</h3>\n<p>Capture a few screens, then arrange them in a <a href=\"/features/combine-screenshots\">grid or on a free canvas</a> inside the same editor. This helps with before-and-after comparisons and step-by-step bug reports.</p>\n<h3>Screenshots and code share one editor</h3>\n<p>Paste code, pick one of 21 languages and 10 themes, and export a styled code image next to your screenshots.</p>\n<h2 id=\"where-cleanshot-wins\">Where CleanShot X is the better choice</h2>\n<ul>\n<li><strong>Screen recording.</strong> Skreen does not record video or GIFs.</li>\n<li><strong>Share links.</strong> CleanShot Cloud uploads a capture and gives you a link; Skreen keeps everything on your Mac.</li>\n<li><strong>Maturity.</strong> CleanShot X has been on the market for years and is available through Setapp. Skreen is in public beta.</li>\n<li><strong>Older macOS.</strong> Skreen requires macOS 14 Sonoma or later.</li>\n</ul>\n<h2 id=\"switching\">Switching to Skreen</h2>\n<ol>\n<li>Download Skreen and move it to Applications. It lives in the menu bar.</li>\n<li>Skreen captures an area with <code>Shift–Command–0</code> by default, so it does not take over the macOS or CleanShot shortcuts. You can remap every capture shortcut in Settings.</li>\n<li>Try a <a href=\"/features/scrolling-screenshots\">scrolling capture</a> and run sensitive-data detection on a real screenshot to see whether the workflow suits you.</li>\n</ol>\n<p>Both apps can be installed side by side, so you can compare them on your own work before deciding.</p>\n",
+      "updatedIso": "2026-11-12",
+      "datePublishedIso": "2026-11-12"
     }
   },
   "changelog": {
-    "title": "Skreen releases",
+    "title": "Skreen for Mac — Release Notes and Changelog",
     "template": "releases",
     "description": "Read what's new in Skreen for Mac and download the latest version. Release notes for capture, editing, backgrounds, and scrolling screenshots.",
     "canonical_url": "https://skreenme.com/changelog",
@@ -270,16 +480,58 @@
     "title": "Mac Screenshot Guides — Skreen",
     "template": "features",
     "section": "guides",
-    "description": "Practical guides to taking and editing screenshots on Mac.",
+    "description": "Practical guides to Mac screenshots: shortcuts, full-page and window captures, save locations, copying text from images, and app comparisons.",
     "canonical_url": "https://skreenme.com/guides",
     "h1": "Screenshot guides for Mac.",
-    "lead": "Find the right macOS shortcut, then learn how to capture long pages and edit screenshots in Skreen.",
+    "lead": "Find the right macOS shortcut, capture whole pages and windows, copy text from images, and compare screenshot apps for Mac.",
     "items": [
       {
         "title": "How to take a screenshot on Mac",
         "url": "/guides/how-to-screenshot-on-mac",
         "body": "Shortcuts for full screen, area, and window captures, plus scrolling pages and editing.",
         "icon": "/assets/icon-screenshot.png"
+      },
+      {
+        "title": "How to screenshot a whole webpage",
+        "url": "/guides/how-to-screenshot-a-whole-webpage-on-mac",
+        "body": "Full-page captures in Safari, Chrome, and Firefox, and scrolling capture in any app.",
+        "icon": "/assets/icon-scrolling-capture.png",
+        "en_only": true
+      },
+      {
+        "title": "How to screenshot a window",
+        "url": "/guides/how-to-screenshot-a-window-on-mac",
+        "body": "Capture one window, remove the shadow, or copy it straight to the clipboard.",
+        "icon": "/assets/icon-screenshot.png",
+        "en_only": true
+      },
+      {
+        "title": "Change where screenshots are saved",
+        "url": "/guides/how-to-change-where-screenshots-are-saved-on-mac",
+        "body": "Pick a folder, use the clipboard, or change the file format.",
+        "icon": "/assets/icon-editor.png",
+        "en_only": true
+      },
+      {
+        "title": "How to copy text from an image",
+        "url": "/guides/how-to-copy-text-from-an-image-on-mac",
+        "body": "Live Text in macOS, and capturing text or QR codes from the screen.",
+        "icon": "/assets/icon-text-recognition.png",
+        "en_only": true
+      },
+      {
+        "title": "Best screenshot apps for Mac",
+        "url": "/guides/best-screenshot-app-for-mac",
+        "body": "The built-in tool, Skreen, CleanShot X, Shottr, and Snagit compared.",
+        "icon": "/assets/icon-editor.png",
+        "en_only": true
+      },
+      {
+        "title": "A CleanShot X alternative",
+        "url": "/guides/cleanshot-x-alternative",
+        "body": "What Skreen and CleanShot X each do, side by side.",
+        "icon": "/assets/icon-redaction.png",
+        "en_only": true
       }
     ]
   },
@@ -289,8 +541,8 @@
     "description": "A macOS screenshot tool for scrolling pages, annotations, wallpapers, text recognition, and covering private details.",
     "canonical_url": "https://skreenme.com/",
     "image": "/assets/skreen-editor.png",
-    "hero_title": "Screenshots for Mac,",
-    "hero_title_accent": "ready to send.",
+    "hero_title": "Screenshot tool for Mac.",
+    "hero_title_accent": "Capture, mark up, share.",
     "hero_description": "Capture the part you need. Add a note, cover private details, and export the image.",
     "download_label": "Download for Mac",
     "download_url": "https://github.com/levskiy0/skreenme/releases/latest/download/skreenme.dmg",

@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AmbientParticles from './AmbientParticles.astro';
 import { DOWNLOAD_URL, VERSION } from '../site';
 import { iconWebp } from '../images';
-import { canonicalInternalPath, getUi, withLocale, type Locale } from '../i18n';
+import { canonicalInternalPath, getUi, languageTags, withLocale, type Locale } from '../i18n';
 
 interface HomeData {
   title: string;
@@ -25,16 +25,48 @@ const heroImageWidths = [640, 960, 1280, 1920, 2340];
 const heroImageSrcSet = (format: 'avif' | 'webp') =>
   heroImageWidths.map((width) => `/assets/skreen-editor-clouds-${width}.${format} ${width}w`).join(', ');
 const heroImageSizes = '(max-width: 620px) calc(100vw - 32px), (max-width: 820px) calc(100vw - 42px), (max-width: 1224px) calc(100vw - 64px), 1160px';
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const organization = {
+  '@type': 'Organization',
+  '@id': 'https://skreenme.com/#organization',
+  name: 'Skreen',
+  url: 'https://skreenme.com/',
+  logo: 'https://skreenme.com/assets/skreen-favicon.png',
+  sameAs: ['https://github.com/levskiy0/skreenme'],
+};
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Skreen',
-  url: new URL(Astro.url.pathname, Astro.site).toString(),
-  description: h.description,
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'macOS 14 or later',
-  softwareVersion: VERSION,
-  downloadUrl: DOWNLOAD_URL,
+  '@graph': [
+    organization,
+    {
+      '@type': 'WebSite',
+      '@id': 'https://skreenme.com/#website',
+      name: 'Skreen',
+      url: 'https://skreenme.com/',
+      publisher: { '@id': 'https://skreenme.com/#organization' },
+      inLanguage: ['en', 'es', 'de', 'fr', 'pt-BR', 'ru'],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Skreen',
+      url: pageUrl,
+      description: h.description,
+      inLanguage: languageTags[locale],
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'macOS 14 or later',
+      softwareVersion: VERSION,
+      downloadUrl: DOWNLOAD_URL,
+      image: 'https://skreenme.com/assets/skreen-favicon.png',
+      screenshot: 'https://skreenme.com/assets/skreen-editor-clouds.png',
+      // Skreen is a free download during the public beta.
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+      publisher: { '@id': 'https://skreenme.com/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: h.faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+    },
+  ],
 };
 ---
 

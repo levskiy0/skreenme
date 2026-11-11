@@ -9,6 +9,8 @@ interface Props {
   article?: boolean;
   articleModified?: string;
   noindex?: boolean;
+  /** False for pages that exist only in English: no hreflang set, and the language switcher falls back to each locale's guides index. */
+  translated?: boolean;
   structuredData?: Record<string, unknown>;
   active?: 'features' | 'guides' | 'changelog';
   locale?: Locale;
@@ -22,6 +24,7 @@ const {
   article = false,
   articleModified,
   noindex = false,
+  translated = true,
   structuredData,
   active,
   locale = 'en',
@@ -33,6 +36,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const socialImage = new URL(image, Astro.site);
 const path = englishPath(Astro.url.pathname);
 const alternateUrl = (language: Locale) => new URL(withLocale(language, path), Astro.site).toString();
+const switcherPath = (language: Locale) => translated || language === 'en' ? withLocale(language, path) : withLocale(language, '/guides');
+const emitHreflang = !noindex && translated;
 ---
 
 <!doctype html>
@@ -44,8 +49,8 @@ const alternateUrl = (language: Locale) => new URL(withLocale(language, path), A
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {!noindex && locales.map((language) => <link rel="alternate" hreflang={languageTags[language]} href={alternateUrl(language)} />)}
-    {!noindex && <link rel="alternate" hreflang="x-default" href={alternateUrl('en')} />}
+    {emitHreflang && locales.map((language) => <link rel="alternate" hreflang={languageTags[language]} href={alternateUrl(language)} />)}
+    {emitHreflang && <link rel="alternate" hreflang="x-default" href={alternateUrl('en')} />}
     <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:site_name" content="Skreen" />
     <meta property="og:title" content={title} />
@@ -83,7 +88,7 @@ const alternateUrl = (language: Locale) => new URL(withLocale(language, path), A
             <a href={withLocale(locale, '/changelog')} aria-current={active === 'changelog' ? 'page' : undefined}>{headerNav.releases}</a>
           </nav>
           <div class="island-actions">
-            {!noindex && <details class="language-switcher"><summary aria-label={languageNames[locale]}>{locale.toUpperCase()}</summary><div class="language-options">{locales.map((language) => <a href={withLocale(language, path)} lang={languageTags[language]} aria-current={locale === language ? 'page' : undefined}>{languageNames[language]}</a>)}</div></details>}
+            {!noindex && <details class="language-switcher"><summary aria-label={languageNames[locale]}>{locale.toUpperCase()}</summary><div class="language-options">{locales.map((language) => <a href={switcherPath(language)} lang={languageTags[language]} aria-current={locale === language ? 'page' : undefined}>{languageNames[language]}</a>)}</div></details>}
             <a class="header-download" href={DOWNLOAD_URL} aria-label={ui.downloadSkreen} data-download-cta>{ui.download}</a>
             <button class="island-menu-button" type="button" aria-label={ui.openNavigation} data-open-label={ui.openNavigation} data-close-label={ui.closeNavigation} aria-controls="site-primary-navigation" aria-expanded="false"><span class="island-menu-lines" aria-hidden="true"></span></button>
           </div>
@@ -100,7 +105,7 @@ const alternateUrl = (language: Locale) => new URL(withLocale(language, path), A
         </div>
         <nav class="footer-sitemap" aria-label={ui.footerNavigation}>
           <div class="footer-column"><h2>{ui.product}</h2><a href={withLocale(locale, '/features')}>{ui.features}</a><a href={DOWNLOAD_URL} data-download-cta>{ui.downloadForMac}</a></div>
-          <div class="footer-column"><h2>{ui.explore}</h2><a href={withLocale(locale, '/guides/how-to-screenshot-on-mac')}>{ui.macGuide}</a><a href={withLocale(locale, '/#faq')}>{ui.faq}</a><a href={withLocale(locale, '/changelog')}>{ui.releases}</a></div>
+          <div class="footer-column"><h2>{ui.explore}</h2><a href={withLocale(locale, '/guides')}>{ui.macGuide}</a><a href={withLocale(locale, '/#faq')}>{ui.faq}</a><a href={withLocale(locale, '/changelog')}>{ui.releases}</a></div>
           <div class="footer-column"><h2>{ui.elsewhere}</h2><a href="https://github.com/levskiy0/skreenme">GitHub</a><a href="https://github.com/levskiy0/skreenme/issues">{ui.feedback}</a></div>
         </nav>
       </div>

@@ -34,6 +34,13 @@ for (const file of htmlFiles) {
   htmlByUrl.set(`${origin}${pagePath(file)}`, await readFile(file, 'utf8'));
 }
 
+// A page is English-only when no translated build exists at any locale path.
+function isEnglishOnly(url) {
+  const pathname = new URL(url).pathname;
+  if (/^\/(es|de|fr|pt|ru)(?=\/)/.test(pathname)) return false;
+  return Object.entries(localePaths).every(([language, prefix]) => language === 'en' || !htmlByUrl.has(`${origin}${prefix}${pathname}`));
+}
+
 const sitemap = await readFile(join(dist, 'sitemap.xml'), 'utf8');
 const sitemapUrls = new Map();
 for (const block of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
@@ -54,6 +61,11 @@ for (const [url, html] of htmlByUrl) {
   if (!/<title>[^<]+<\/title>/.test(html)) errors.push(`Missing title: ${url}`);
   if (!/<meta name="description" content="[^"]+"/.test(html)) errors.push(`Missing description: ${url}`);
   if (!/<h1\b[^>]*>/.test(html)) errors.push(`Missing H1: ${url}`);
+  if (isEnglishOnly(url)) {
+    // English-only pages have no translations, so they carry no hreflang set.
+    if (/hreflang=/.test(html.match(/<head>[\s\S]*?<\/head>/)?.[0] ?? '')) errors.push(`English-only page has hreflang: ${url}`);
+    continue;
+  }
   const expectedAlternates = alternatesFor(url);
   for (const language of [...languages, 'x-default']) {
     const alternateUrl = language === 'x-default' ? expectedAlternates.en : expectedAlternates[language];
@@ -64,6 +76,10 @@ for (const [url, html] of htmlByUrl) {
 for (const [url, block] of sitemapUrls) {
   if (!htmlByUrl.has(url)) errors.push(`Sitemap URL has no built page: ${url}`);
   const links = [...block.matchAll(/<xhtml:link\b[^>]*hreflang="([^"]+)"[^>]*href="([^"]+)"/g)];
+  if (isEnglishOnly(url)) {
+    if (links.length > 1 || links.some(([, language, href]) => language !== 'en' || href !== url)) errors.push(`English-only page has sitemap alternates: ${url}`);
+    continue;
+  }
   if (links.length !== languages.length) errors.push(`Wrong sitemap alternate count: ${url} (${links.length})`);
   const expectedAlternates = alternatesFor(url);
   for (const [, language, alternateUrl] of links) {
@@ -89,5 +105,6 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log(`Release SEO checks passed: ${sitemapUrls.size} indexable pages, ${htmlByUrl.size} built pages, six languages.`);
+  const englishOnly = [...sitemapUrls.keys()].filter(isEnglishOnly).length;
+  console.log(`Release SEO checks passed: ${sitemapUrls.size} indexable pages (${englishOnly} English-only), ${htmlByUrl.size} built pages, six languages.`);
 }

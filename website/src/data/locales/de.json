@@ -233,7 +233,7 @@
     "features/annotate-screenshots": {
       "title": "Screenshots auf dem Mac kommentieren — Skreen",
       "description": "Füge Pfeile, Text, Formen und Markierungen zu Mac-Screenshots hinzu. Erkläre Fehlerberichte und Ideen klar mit Skreen.",
-      "h1": "Markiere die Stelle, auf die es ankommt.",
+      "h1": "Screenshots auf dem Mac beschriften.",
       "lead": "Setze einen Pfeil, Text oder eine Form direkt in den Screenshot. So brauchst du keine separate Erklärung.",
       "related": [
         {
@@ -250,7 +250,7 @@
     "features/beautiful-backgrounds": {
       "title": "Schöne Screenshot-Hintergründe für Mac — Skreen",
       "description": "Gestalte Mac-Screenshots mit Verläufen, Mustern, Hintergrundbildern, Rahmen und automatischer Farbauswahl in Skreen.",
-      "h1": "Gib deinem Screenshot etwas Raum.",
+      "h1": "Hintergründe für Screenshots auf dem Mac.",
       "lead": "Wähle einen Hintergrund und passe Abstand, Rahmen und Schatten für Dokumente oder Präsentationen an.",
       "related": [
         {
@@ -267,7 +267,7 @@
     "features/combine-screenshots": {
       "title": "Screenshots auf dem Mac kombinieren — Skreen",
       "description": "Kombiniere Mac-Screenshots in einem Raster oder auf einer freien Arbeitsfläche für Vergleiche und Anleitungen.",
-      "h1": "Stelle passende Screenshots nebeneinander.",
+      "h1": "Screenshots zu einem Bild kombinieren.",
       "lead": "Vergleiche zwei Zustände oder zeige mehrere Schritte. Nutze ein Raster oder ordne die Bilder frei an.",
       "related": [
         {
@@ -284,7 +284,7 @@
     "features/ocr-and-qr": {
       "title": "Text und QR-Codes aus Mac-Screenshots kopieren — Skreen",
       "description": "Erkenne Text und QR-Codes in Mac-Screenshots mit Apple Vision direkt im Aufnahmeablauf von Skreen.",
-      "h1": "Kopiere Text, statt ihn abzutippen.",
+      "h1": "Text und QR-Codes aus Screenshots kopieren.",
       "lead": "Skreen erkennt Text und QR-Codes auf deinem Mac. Prüfe das Ergebnis und kopiere, was du brauchst.",
       "related": [
         {
@@ -301,7 +301,7 @@
     "features/redact-screenshots": {
       "title": "Private Daten in Mac-Screenshots verbergen — Skreen",
       "description": "Verdecke Gesichter, E-Mails, API-Schlüssel, Passwörter und andere private Daten in Mac-Screenshots mit Skreen.",
-      "h1": "Verdecke private Daten vor dem Teilen.",
+      "h1": "Private Daten in Screenshots verbergen.",
       "lead": "Skreen sucht auf deinem Mac nach Gesichtern und sensiblen Daten. Prüfe die Treffer und verdecke die betreffenden Stellen.",
       "related": [
         {
@@ -318,7 +318,7 @@
     "features/scrolling-screenshots": {
       "title": "Lange Screenshots auf dem Mac — Skreen",
       "description": "Nimm lange Seiten und scrollbare Ansichten auf dem Mac auf. Starte, pausiere und beende Scrollaufnahmen mit Skreen.",
-      "h1": "Nimm auch den Rest der Seite auf.",
+      "h1": "Scrolling-Screenshots auf dem Mac erstellen.",
       "lead": "Wähle den scrollbaren Bereich und scrolle durch den gewünschten Inhalt. Skreen fügt die Einzelbilder zusammen.",
       "related": [
         {

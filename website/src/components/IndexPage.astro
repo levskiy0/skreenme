@@ -3,15 +3,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageCta from './PageCta.astro';
 import type { IndexData } from '../types';
 import { iconWebp } from '../images';
-import { canonicalInternalPath, getUi, withLocale, type Locale } from '../i18n';
+import { canonicalInternalPath, getUi, languageTags, withLocale, type Locale } from '../i18n';
 
 interface Props { data: IndexData; locale?: Locale }
 const { data: h, locale = 'en' } = Astro.props;
 const ui = getUi(locale);
 const isGuides = h.section === 'guides';
+const site = Astro.site ?? new URL('https://skreenme.com');
+const pageUrl = new URL(Astro.url.pathname, site).toString();
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: h.h1.replace(/\.$/, ''),
+      description: h.description,
+      url: pageUrl,
+      inLanguage: languageTags[locale],
+      hasPart: h.items.map((item) => ({ '@type': 'WebPage', name: item.title, url: new URL(canonicalInternalPath(item.url), site).toString() })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Skreen', item: new URL(withLocale(locale, '/'), site).toString() },
+        { '@type': 'ListItem', position: 2, name: h.h1.replace(/\.$/, ''), item: pageUrl },
+      ],
+    },
+  ],
+};
 ---
 
-<BaseLayout title={h.title} description={h.description} active={isGuides ? 'guides' : 'features'} locale={locale}>
+<BaseLayout title={h.title} description={h.description} active={isGuides ? 'guides' : 'features'} locale={locale} structuredData={structuredData}>
   <main id="main" class:list={['index-main', isGuides ? 'index-main--guides' : 'index-main--features']}>
     <section class="page-hero index-hero" aria-labelledby="index-title">
       <div class="container index-hero-inner"><h1 id="index-title">{h.h1}</h1><p>{h.lead}</p></div>

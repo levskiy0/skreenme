@@ -9,6 +9,7 @@ export interface FeatureLink {
   image_width?: number;
   image_height?: number;
   media_label?: string;
+  en_only?: boolean;
 }
 
 export interface IndexData {
@@ -35,6 +36,8 @@ export interface ArticleData {
   image_alt?: string;
   image_caption?: string;
   related?: FeatureLink[];
+  en_only?: boolean;
+  datePublishedIso?: string;
 }
 
 export interface ArticlePageData extends ArticleData {

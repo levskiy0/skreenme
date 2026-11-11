@@ -26,6 +26,15 @@ languages so the language switcher and hreflang links remain reciprocal.
 Translations live in src/data/locales/. If a page is added or removed, update
 all five translation files and the release checks together.
 
+Exception: an article or link marked "en_only": true in pages.json exists only
+in English. It gets no hreflang set and no sitemap alternates, is left out of
+the translated guide lists, and the language switcher sends other languages to
+their /guides/ page. Append English-only related links and guide items after
+the translated ones so the index-based translation mapping stays aligned.
+
+Retired URLs that still get search clicks (/app/, /pt/app/) are noindex pages
+with an instant meta refresh to the home page; GitHub Pages cannot send 301.
+
 Download buttons link to skreenme.dmg in the latest GitHub Release. The stable
 URL is in src/site.ts; the same URL is recorded in page data. Keep version text
 and release notes current when publishing a new release. Upload the asset as

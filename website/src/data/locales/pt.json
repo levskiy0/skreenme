@@ -233,7 +233,7 @@
     "features/annotate-screenshots": {
       "title": "Anotar capturas de tela no Mac — Skreen",
       "description": "Adicione setas, texto, formas e destaques a capturas no Mac com o Skreen. Explique erros e ideias com clareza.",
-      "h1": "Marque o detalhe que importa.",
+      "h1": "Anotar capturas de tela no Mac.",
       "lead": "Coloque uma seta, legenda ou forma na própria captura. Assim você não precisa explicar em outra mensagem.",
       "related": [
         {
@@ -250,7 +250,7 @@
     "features/beautiful-backgrounds": {
       "title": "Fundos para capturas de tela no Mac — Skreen",
       "description": "Deixe capturas no Mac mais bonitas com gradientes, padrões, papéis de parede, molduras e cores sugeridas no Skreen.",
-      "h1": "Dê espaço à sua captura.",
+      "h1": "Fundos para capturas de tela no Mac.",
       "lead": "Escolha um fundo e ajuste margens, moldura e sombra para usar a imagem em um documento ou apresentação.",
       "related": [
         {
@@ -267,7 +267,7 @@
     "features/combine-screenshots": {
       "title": "Combinar capturas de tela no Mac — Skreen",
       "description": "Combine capturas no Mac em uma imagem usando grade ou tela livre para comparações e tutoriais.",
-      "h1": "Coloque capturas relacionadas lado a lado.",
+      "h1": "Combinar capturas de tela em uma imagem.",
       "lead": "Compare dois estados ou mostre uma sequência. Use uma grade ou organize as imagens livremente.",
       "related": [
         {
@@ -284,7 +284,7 @@
     "features/ocr-and-qr": {
       "title": "Copiar texto e QR de capturas no Mac — Skreen",
       "description": "Extraia texto e leia códigos QR em capturas no Mac com Apple Vision integrado ao Skreen.",
-      "h1": "Copie o texto sem digitar de novo.",
+      "h1": "Copiar texto e QR codes de capturas de tela.",
       "lead": "O Skreen reconhece texto e códigos QR no Mac. Confira o resultado e copie o que precisa.",
       "related": [
         {
@@ -301,7 +301,7 @@
     "features/redact-screenshots": {
       "title": "Ocultar dados em capturas no Mac — Skreen",
       "description": "Oculte rostos, e-mails, chaves de API, senhas e outros dados privados em capturas no Mac com o Skreen.",
-      "h1": "Oculte dados privados antes de enviar.",
+      "h1": "Ocultar dados privados em capturas de tela.",
       "lead": "O Skreen procura rostos e dados sensíveis no Mac. Confira os resultados e cubra as áreas necessárias.",
       "related": [
         {
@@ -318,7 +318,7 @@
     "features/scrolling-screenshots": {
       "title": "Capturas de tela longas no Mac — Skreen",
       "description": "Capture páginas longas no Mac com o Skreen. Aprenda a iniciar, pausar e terminar uma captura com rolagem.",
-      "h1": "Capture a parte da página que continua.",
+      "h1": "Captura de tela com rolagem no Mac.",
       "lead": "Selecione a área com rolagem e percorra o conteúdo. O Skreen une os quadros em uma imagem.",
       "related": [
         {

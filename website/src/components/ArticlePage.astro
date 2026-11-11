@@ -4,30 +4,51 @@ import PageCta from './PageCta.astro';
 import { DOWNLOAD_URL, VERSION } from '../site';
 import { iconWebp } from '../images';
 import type { ArticlePageData } from '../types';
-import { canonicalInternalPath, formatDate, getUi, normalizeHtmlLinks, withLocale, type Locale } from '../i18n';
+import { canonicalInternalPath, formatDate, getUi, languageTags, normalizeHtmlLinks, withLocale, type Locale } from '../i18n';
 
 interface Props { article: ArticlePageData; slug: string; locale?: Locale }
 const { article: h, slug, locale = 'en' } = Astro.props;
 const ui = getUi(locale);
 const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 const modifiedDate = h.updatedIso;
+const site = Astro.site ?? new URL('https://skreenme.com');
+const absolute = (path: string) => new URL(canonicalInternalPath(path), site).toString();
+const parentUrl = h.parent_url ?? withLocale(locale, '/features');
+const organization = { '@type': 'Organization', '@id': 'https://skreenme.com/#organization', name: 'Skreen', url: 'https://skreenme.com/', logo: 'https://skreenme.com/assets/skreen-favicon.png' };
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: h.h1,
-  description: h.description,
-  url: articleUrl,
-  dateModified: modifiedDate,
-  publisher: { '@type': 'Organization', name: 'Skreen', url: 'https://skreenme.com/' },
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: h.h1.replace(/\.$/, ''),
+      description: h.description,
+      url: articleUrl,
+      mainEntityOfPage: articleUrl,
+      inLanguage: languageTags[locale],
+      image: absolute(h.image ?? h.icon ?? '/assets/skreen-mascot.png'),
+      datePublished: h.datePublishedIso ?? modifiedDate,
+      dateModified: modifiedDate,
+      author: organization,
+      publisher: organization,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Skreen', item: absolute(withLocale(locale, '/')) },
+        { '@type': 'ListItem', position: 2, name: h.parent_label ?? ui.allFeatures, item: absolute(parentUrl) },
+        { '@type': 'ListItem', position: 3, name: h.h1.replace(/\.$/, ''), item: articleUrl },
+      ],
+    },
+  ],
 };
 ---
 
-<BaseLayout title={h.title} description={h.description} image={h.image} article articleModified={modifiedDate} active={h.section === 'guides' ? 'guides' : 'features'} structuredData={structuredData} locale={locale}>
+<BaseLayout title={h.title} description={h.description} image={h.image} article articleModified={modifiedDate} active={h.section === 'guides' ? 'guides' : 'features'} structuredData={structuredData} locale={locale} translated={!h.en_only}>
   <main id="main" class="article-main">
     <section class="page-hero article-hero" aria-labelledby="article-title">
       <div class:list={['container', 'article-hero-inner', h.icon && !h.image && 'article-hero-inner--icon']}>
         <div class="article-hero-copy">
-          <a class="back-link" href={canonicalInternalPath(h.parent_url ?? withLocale(locale, '/features'))}>{h.parent_label ?? ui.allFeatures}</a>
+          <a class="back-link" href={canonicalInternalPath(parentUrl)}>{h.parent_label ?? ui.allFeatures}</a>
           <h1 id="article-title">{h.h1}</h1>
           <p class="article-lead">{h.lead}</p>
           <p class="article-updated">{ui.updated} {locale === 'en' ? h.updated : formatDate(h.updatedIso, locale)} <span aria-hidden="true">·</span> {ui.forMac}</p>
