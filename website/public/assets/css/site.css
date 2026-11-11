@@ -66,6 +66,26 @@ h1, h2, h3 { text-wrap: balance; }
 .hero-picture { display: block; width: 100%; }
 .hero-device { width: min(100%, 1160px); height: auto; margin-top: 24px; filter: drop-shadow(0 28px 45px rgba(0, 0, 0, .14)); }
 
+/* Clicking the editor screenshot opens the promo video. */
+.hero-video-trigger { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
+.hero-video-trigger .hero-device { transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
+.hero-video-trigger:hover .hero-device { transform: scale(1.008); }
+.hero-video-trigger:focus-visible { outline: none; }
+.hero-video-trigger:focus-visible .hero-play { outline: 3px solid var(--ink); outline-offset: 4px; }
+.hero-play { position: absolute; top: calc(50% + 12px); left: 50%; display: grid; place-items: center; width: 84px; height: 84px; padding-left: 4px; border-radius: 50%; background: rgba(22, 22, 22, .82); color: #fff; box-shadow: 0 18px 40px rgba(0, 0, 0, .22); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transform: translate(-50%, -50%); transition: transform .3s cubic-bezier(.22, 1, .36, 1), background-color .3s; }
+.hero-video-trigger:hover .hero-play { background: var(--ink); transform: translate(-50%, -50%) scale(1.08); }
+.promo-dialog { width: min(1280px, calc(100vw - 32px)); max-width: none; max-height: calc(100svh - 32px); padding: 0; overflow: visible; border: 0; border-radius: 14px; background: #000; box-shadow: 0 30px 90px rgba(0, 0, 0, .45); }
+.promo-dialog::backdrop { background: rgba(10, 10, 10, .78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.promo-dialog[open] { animation: promo-in .32s cubic-bezier(.22, 1, .36, 1); }
+.promo-video { display: block; width: 100%; height: auto; max-height: calc(100svh - 32px); border-radius: 14px; background: #000; }
+.promo-close { position: absolute; top: -14px; right: -14px; z-index: 1; display: grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 50%; background: #fff; color: var(--ink); box-shadow: 0 6px 18px rgba(0, 0, 0, .25); cursor: pointer; }
+.promo-close:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+@keyframes promo-in { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+@media (max-width: 620px) {
+  .hero-play { width: 64px; height: 64px; }
+  .promo-close { top: -46px; right: 0; }
+}
+
 /* A short proof strip separates the opening scene from the product tour. */
 .proof-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
 .proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding-top: 72px; padding-bottom: 75px; }

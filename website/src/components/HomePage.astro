@@ -50,13 +50,20 @@ const structuredData = {
           <div class="hero-actions"><a class="button button-primary" href={DOWNLOAD_URL} data-download-cta>{h.download_label}</a><a class="button button-secondary" href="#see-it">{ui.seeHow}</a></div>
           <p class="hero-note">{h.hero_note}</p>
         </div>
-        <picture class="hero-picture">
-          <source type="image/avif" srcset={heroImageSrcSet('avif')} sizes={heroImageSizes} />
-          <source type="image/webp" srcset={heroImageSrcSet('webp')} sizes={heroImageSizes} />
-          <img class="hero-device" src="/assets/skreen-editor-clouds.png" width="2340" height="1596" alt={ui.editorImageAlt} fetchpriority="high" decoding="async" />
-        </picture>
+        <button type="button" class="hero-video-trigger" data-promo-open aria-haspopup="dialog" aria-label={ui.watchVideo}>
+          <picture class="hero-picture">
+            <source type="image/avif" srcset={heroImageSrcSet('avif')} sizes={heroImageSizes} />
+            <source type="image/webp" srcset={heroImageSrcSet('webp')} sizes={heroImageSizes} />
+            <img class="hero-device" src="/assets/skreen-editor-clouds.png" width="2340" height="1596" alt={ui.editorImageAlt} fetchpriority="high" decoding="async" />
+          </picture>
+          <span class="hero-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5.5v13l11-6.5z" fill="currentColor" /></svg></span>
+        </button>
       </div>
     </section>
+    <dialog class="promo-dialog" data-promo-dialog aria-label={ui.watchVideo}>
+      <button type="button" class="promo-close" data-promo-close aria-label={ui.closeVideo}><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg></button>
+      <video class="promo-video" data-promo-video controls playsinline preload="none" poster="/assets/skreen-promo-poster.jpg" width="1920" height="1080"><source src="/assets/skreen-promo.mp4" type="video/mp4" /></video>
+    </dialog>
     <section class="proof-strip" aria-label={ui.proofLabel}><div class="container proof-grid">
       {ui.proof.map((item, index) => <div class="proof-item"><img class="proof-icon" src={iconWebp(['/assets/icon-scrolling-capture.png', '/assets/icon-annotations.png', '/assets/icon-redaction.png'][index], 160)} width="160" height="160" alt="" aria-hidden="true" loading="lazy" /><h2>{item.title}</h2><p>{item.body}</p></div>)}
     </div></section>
@@ -84,5 +91,5 @@ const structuredData = {
       </div>
     </section>
   </main>
-  <script is:inline src="/assets/js/home.js?v=20261002-2" defer></script>
+  <script is:inline src="/assets/js/home.js?v=20261112-1" defer></script>
 </BaseLayout>

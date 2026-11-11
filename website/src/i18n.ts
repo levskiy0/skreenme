@@ -27,7 +27,7 @@ const englishUi = {
   haveIdea: 'Have an idea? Tell us ↗', product: 'Product', explore: 'Explore', elsewhere: 'Elsewhere', feedback: 'Feedback',
   madeForMac: 'Made for macOS.', backToTop: 'Back to top', footerNavigation: 'Footer navigation',
   heroEyebrow: 'A screenshot app made for Mac', seeHow: 'See how it works',
-  editorImageAlt: 'Skreen screenshot editor showing a cloud image', socialImageAlt: 'Skreen for Mac',
+  editorImageAlt: 'Skreen screenshot editor showing a cloud image', watchVideo: 'Watch the 30-second video', closeVideo: 'Close video', socialImageAlt: 'Skreen for Mac',
   proofLabel: 'What you can do', proof: [
     { title: 'A whole page, one image.', body: 'Keep scrolling. You decide where the capture stops.' },
     { title: 'Point to what matters.', body: 'Add an arrow, a note, or a frame before you send it.' },

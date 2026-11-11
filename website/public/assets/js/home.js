@@ -1,4 +1,21 @@
 (() => {
+  const dialog = document.querySelector('[data-promo-dialog]');
+  const trigger = document.querySelector('[data-promo-open]');
+  if (!dialog || !trigger || typeof dialog.showModal !== 'function') return;
+  const video = dialog.querySelector('[data-promo-video]');
+
+  trigger.addEventListener('click', () => {
+    dialog.showModal();
+    video.currentTime = 0;
+    const playing = video.play();
+    if (playing) playing.catch(() => {});
+  });
+  dialog.querySelector('[data-promo-close]').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('close', () => video.pause());
+})();
+
+(() => {
   const answers = Array.from(document.querySelectorAll('.faq-list details'));
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const expanded = new WeakMap(answers.map((answer) => [answer, answer.open]));

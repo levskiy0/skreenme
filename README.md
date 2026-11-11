@@ -1,7 +1,7 @@
 <div align="center">
 
 <p align="center">
-  <img src="assets/logo.png" height="64" alt="Skreen[me] — Screenshot Beautifier for macOS">
+  <img src="assets/mascot.png" width="128" height="128" alt="Skreen mascot — a black and green chameleon">
 </p>
 
 **Skreen is a screenshot editor for macOS.**
@@ -17,7 +17,11 @@ Capture an area, window, or scrolling page. Edit the image, copy text from it, o
 ---
 
 <p align="center">
-  <img src="assets/readme-editor.png" alt="Skreen editor showing a cloud image with a curved arrow and hand-shaped arrowheads">
+  <a href="https://skreenme.com/assets/skreen-promo.mp4" title="Watch the full video with sound">
+    <img src="assets/readme-promo.gif" width="720" alt="Skreen promo: capture a screenshot, point to a bug with an arrow, and send it to a chat">
+  </a>
+  <br>
+  <sub><a href="https://skreenme.com/assets/skreen-promo.mp4">▶ Watch the full video with sound</a></sub>
 </p>
 
 Most screenshots need a little work after capture. You might crop away a sidebar, point to a button, or hide an email address.
